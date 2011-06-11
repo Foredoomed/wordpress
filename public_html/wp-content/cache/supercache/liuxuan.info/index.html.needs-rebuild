@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Zhixingheyi</title>
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/uncomplicated/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+
+
+
+
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<meta name="generator" content="WordPress 3.1.3" />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[307,326] -->
+<meta name="description" content="Focus on {Web,Java,RoR,MySQL,OpenSource,Linux}" />
+<meta name="keywords" content="Web,Java,RoR,MySQL,OpenSource,Linux" />
+<link rel="canonical" href="http://liuxuan.info/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 19.198 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1307799818 58.35.197.184';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="container">
+
+
+<div id="header">
+	<h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+		<div class="border"></div>
+	<h2>Where the truth distortion is.</h2>
+</div>
+	
+
+<div id="menuholder">
+		<div class="menu">
+			<div class="page-navi"><ul><li class="current_page_item"><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+		</div>
+
+		
+</div>
+<div id="content">
+						
+	<div class="post" id="post-166">
+	<h2><a href="http://liuxuan.info/2011/06/11/comparison-of-raid/" rel="bookmark" title="Permanent Link to 常用磁盘阵列比较">常用磁盘阵列比较</a>
+<span>
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+</span></h2>
+	
+			<div class="postmetadata"><p>Posted on June 11th, 2011 under <a href="http://liuxuan.info/category/architecture/" title="View all posts in Architecture" rel="category tag">Architecture</a></p></div>
+				
+			<div class="entry">
+				<p><strong>• RAID-0 (交错模式-stripe):</strong><br />
+这种模式主要是利用容量相同的磁盘来达成,效能会比较好。 所谓的交错 (stripe) 是因为数据是同步写到不同的磁盘上头去的意思，也就是说，假设我有两颗磁盘设定成 RAID-0，那么当我有 100MB 数据要写入时, 则 100MB 会被拆成两个 50MB 分别写入不同的磁盘上头去。所以，因为每一个磁盘写入的数据量只有一半。因此，读写的效能都会大大的增加；而且越多颗磁盘所组成的 RAID-0 在理论上，性能增加的越明显。 但是这种模式有个最大的问题，那就是，因为一笔数据被拆成几个部分分布在不同的磁盘上面, 因此『任何一颗磁盘的损毁,都会让你的数据救不回来』。另外,如果使用不同容量的磁盘来达成 RAID-0 时，则在储存数据长大到一定程度时， RAID-0 的性能会变差。假设我用了一颗 20GB 两颗 16GB 的硬盘好了，那么当总数据量少于 48GB (16&#215;3) 时,性能是很不错的。 但是当超过 48GB 时,则数据仅能储存在 20GB 那一颗了 (可用容量剩下 4GB )，所以性能就会变差。</p>
+<p><strong>• RAID-1 (映像模式-mirror):</strong><br />
+这种模式也是需要相同的磁盘容量的，最好是一模一样的磁盘。 如果是不同容量的磁盘组成 RAID-1 时，那么总容量将以最小的那一颗磁盘为主。 这种模式主要是『让同一份数据,完整的保存在两颗磁盘上头』。也就是说，如果我有一个 100MB 的文件,且我仅有两颗磁盘组成 RAID-1 时, 那么这两颗磁盘将会同步写入 100MB 到他们的储存空间去，因此,整体容量几乎少了 50%。由于两颗硬盘内容一模一样，好像镜子映照出来一样，所以我们也称他为 mirror 模式。这种模式最大的优点大概就是在进行备份吧，因为所有的数据都被存放在两个磁盘上面，所以任何一颗磁盘损毁时，所有的数据可都还是保存的好好的。至于性能上面,由于要写入的数据变多了(需要同步写入两颗硬盘嘛)。所以，性能会比单颗磁盘还要差一些。没办法，因为我们都是透过同一个总线在进行数据的通行。 不过，读取的效能还不错,因为数据有两份,如果多进程在读取同一笔数据时，RAID 会自行取得最佳的读取平衡。事实上，为了保有 RAID-1 的储存优点，又想要具有类似 RAID-0 的效能增强。所以，后来也有所谓的 RAID-0+1，亦即同时具有 RAID-0 与 RAID-1 的功能。但是，这样的功能至少需要四颗以上的相同容量的磁盘才行。而且总可用容量会减少一半 (因为 RAID-1)。</p>
+<p><strong>• RAID-5:</strong><br />
+这个类型最有趣，也是目前最常见的一种类型了。 RAID-5 会整合多个磁盘 (通常需要三个以上),然后每个磁盘驱动器上面都会记录少许的其它部磁盘驱动器的信息 ，由于这个动作，因此,实际上可以使用的容量其实是 (N-1)*S ,那个 N 为全部的磁盘驱动器总数,S 则是最小的那个磁盘的容量。 少掉的空间就是用来作为信息记录用的。<br />
+由于这个机制的存在,因此,当那 N 部磁盘驱动器有任何一部出问题时, 他的数据都会被平均记录到其它 N-1 部磁盘驱动器内,所以,只要你将坏掉的那一颗拿掉, 换一颗好的磁盘后,该磁盘原本的内容就会被恢复，这个作用非常重要。除此之外，因应目前所谓的热拔插 RAID 架构,因此,很多的硬件 RAID 在制作这个 RAID-5 的类型时，他会使用 N+1 颗磁盘,其中 N 颗用来作为 RAID-5 之用, 另外那一颗则做为磁盘损坏时的实时处理之用。 所以，假设有10颗磁盘在这样的架构下时，则事实上只有9颗在进行 RAID-5 的存取，一颗作为错误处理。所以总容量应该是 8xS 。而当有任何一颗磁盘出问题时，留作磁盘损坏时错误处理使用的磁盘就派上用场了,他会立刻被重建。因此，您只要将有问题的磁盘拔掉，换上一颗新的就行了。不过需要注意的是，因为 RAID-5 仅能处理一颗硬盘坏掉时的情况，如果同时有两颗以上的磁盘损毁，那么所有的数据还是还是会完蛋的。 所以，特别重要的信息还是得要复制出来才行。至于存取性能，读取的性能几乎可以媲美 RAID-0，但是写入的性能就无法像 RAID-0 那样明显。因为还得要计算分别写入到所有磁盘当中的奇偶校验信息和相对应的数据，所以写入的性能虽然是会增加不少。</p>
+<p><strong>• RAID-10/01:</strong></p>
+<p>RAID-10/01分为：RAID-1+0或RAID-0+1（都至少需要4块以上的磁盘）。</p>
+<p>RAID-1+0是先镜像再分区数据。是将所有硬盘分为两组，视为是RAID-0的最低组合，然后将这两组各自视为RAID-1运作。RAID-1+0有着不错的读取速度，而且拥有比RAID-0更高的数据保护性。</p>
+<p>RAID-0+1则是跟RAID-1+0的程序相反，是先分区再将数据镜射到两组硬盘。它将所有的硬盘分为两组，变成RAID-1的最低组合，而将两组硬盘各自视为RAID-0运作。RAID-0+1比起RAID 1+0有着更快的读写速度，不过也多了一些会让整个硬盘组停止运转的机率；因为只要同一组的硬盘全部损毁，RAID-0+1就会停止运作，而RAID- 1+0则可以在牺牲RAID-0的优势下正常运作。</p>
+<p>RAID-10巧妙的利用了RAID-0的速度以及RAID-1的保护两种特性，不过它的缺点是需要的硬盘数较多，因为至少必须拥有四个以上的偶数硬盘才能使用。</p>
+				
+				Tags: <a href="http://liuxuan.info/tag/raid/" rel="tag">RAID</a>			</div>
+
+			</div>
+	
+						
+	<div class="post" id="post-163">
+	<h2><a href="http://liuxuan.info/2011/06/11/nothing-but-sad/" rel="bookmark" title="Permanent Link to 悲凉和无奈">悲凉和无奈</a>
+<span>
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+</span></h2>
+	
+			<div class="postmetadata"><p>Posted on June 11th, 2011 under <a href="http://liuxuan.info/category/life/" title="View all posts in Life" rel="category tag">Life</a></p></div>
+				
+			<div class="entry">
+				<p> 今天一下子看完了两本我认为非常好的书，一本是时寒冰老师的《经济大棋局，我们怎么办》，另一本是彼得.海斯勒（中文名：何伟）的《寻路中国》。</p>
+<p>读完这两本书，我的心情就是悲凉中参杂着无奈，无奈中渗透着悲凉。时寒冰老师用10年的时间写成的这本书来告诉我们中国人，现在的中国已经走到了什么地步。他用通俗易懂的语言告诉我们老百姓世界经济的走势和规律。时老师还在苦口婆心的给政府提建议，可是效果有多少呢？正如时老师的预言，因果报应将在不久的将来真正到来。</p>
+<p>《寻路中国》又是另一个风格，讲述的是作者在中国的生活故事和见闻，作者何伟以他一个美国人的角度审视着中国，特别是2002年以后经济发展迅速的中国。在书中可以看到作者对中国的了解和研究之深足以让很多中国专家汗颜。那是整个中国的缩影，而在作者的眼中是那么的奇怪。</p>
+<p>最近还在看另一本书《春秋大义》，再结合上面两本书，我突然发现一切是那么的自然。</p>
+				
+				Tags: <a href="http://liuxuan.info/tag/reading/" rel="tag">Reading</a>, <a href="http://liuxuan.info/tag/sad/" rel="tag">Sad</a>			</div>
+
+			</div>
+	
+						
+	<div class="post" id="post-147">
+	<h2><a href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/" rel="bookmark" title="Permanent Link to Comparison of NoSQL databases">Comparison of NoSQL databases</a>
+<span>
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+</span></h2>
+	
+			<div class="postmetadata"><p>Posted on June 1st, 2011 under <a href="http://liuxuan.info/category/nosql/" title="View all posts in NoSQL" rel="category tag">NoSQL</a></p></div>
+				
+			<div class="entry">
+				<p>随着Web2.0时代的来临以及宽带技术的迅猛发展，许多Web应用都感受到了来自高并发以及高数据量的挑战。而大多数情况下这种挑战来自于数据库，即二维关系型数据库的缺陷导致了RDBMS成为了高并发和高数据量下的瓶颈。正是为了消除这种瓶颈，才诞生了NoSQL。NoSQL是当下最热的技术话题，而且越来越多的公司开始选择NoSQL产品来提高Web应用的性能及伸缩性，我们完全可以想象在不远的将来NoSQL取代现在的关系型数据库，成为数据存储的第一选择。</p>
+<p>NoSQL按存储方式主要分为四类：<br />
+1. Key-values Stores<br />
+主要的想法是用hash表，里面包括一个unique key和指向特定数据的指针。Key-value 模型是最简单和最容易实现的. 但是它对查询和更新部分数据时效率不高。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Key 指向 Value 的键值对，通常用hash table来实现</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">查找速度快</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">数据无结构化，通常只被当作字符串或者二进制数据</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2. Document Databases<br />
+这个模型是包含 key-value 集合的文档，并且这个文档被标记过版本的。这些半结构文档是以类似于JSON的形式存储。Document databases基本上是更高级的Key-value形式，允许每个key的value可以多级嵌套。Document databases 支持更有效的查询。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">CouchDB, MongoDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容）</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">Key-Value对应的键值对，Value为结构化数据</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">查询性能不高，而且缺乏统一的查询语法。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3. Column Family Stores<br />
+这类NoSQL主要是用来存储和处理大容量分布式数据。仍然有key，但指向的是多列，并且列是由column family来组织。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Cassandra, HBase</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">分布式的文件系统</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">以列簇式存储，将同一列数据存在一起</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">查找速度快，可扩展性强，更容易进行分布式扩展</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">功能相对局限</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>4. Graph Databases<br />
+这类NoSQL的结构不是一般的二维表结构，而是更有弹性的图形模型。并且需要指定数据模型来查询这类数据库。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Neo4J, InfoGrid, Infinite Graph</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">社交网络，推荐系统等。专注于构建关系图谱</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">图结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">利用图结构相关算法。比如最短路径寻址，N度关系查找等</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群方案。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>什么时候使用NoSQL</strong>: </p>
+<ul>
+<li>Real-time stats/analytics</li>
+<li>Logging/Archiving</li>
+<li>Social Computing Insight</li>
+<li>External Data Feed Integration</li>
+<li>Front-end order processing systems</li>
+<li>Enterprise Content Management Service</li>
+</ul>
+<p><strong>RDBMS和NoSQL的选择</strong>: </p>
+<table border="0" style="border-collapse: collapse; background: none repeat scroll 0% 0% rgb(218, 238, 243);">
+<colgroup>
+<col style="width: 84px;">
+</col>
+<col style="width: 557px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="height: 88px;">
+<td style="padding-left: 9px; padding-right: 9px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">NoSQL</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage should be able to deal with very high load</span></li>
+<li><span style="color: black; font-family: Arial;">You do many write operations on the storage </span></li>
+<li><span style="color: black; font-family: Arial;">You want storage that is horizontally scalable </span></li>
+<li><span style="color: black; font-family: Arial;">Simplicity is good, as in a very simple query language (without joins)</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 95px;">
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="color: black; font-family: Arial;">RDBMS</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage is expected to be high-load, too, but it mainly consists of read operations</span></li>
+<li><span style="color: black; font-family: Arial;">You want performance over a more sophisticated data structure </span></li>
+<li><span style="color: black; font-family: Arial;">You need powerful SQL query language</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MongoDB versus Redis</strong>:<br />
+<strong>MongoDB</strong><br />
+    * Written in: C++<br />
+    * Main point: Retains some friendly properties of SQL. (Query, index)<br />
+    * License: AGPL (Drivers: Apache)<br />
+    * Protocol: Custom, binary (BSON)<br />
+    * Master/slave replication<br />
+    * Queries are javascript expressions<br />
+    * Run arbitrary javascript functions server-side<br />
+    * Better update-in-place than CouchDB<br />
+    * Sharding built-in<br />
+    * Uses memory mapped files for data storage<br />
+    * Performance over features<br />
+    * After crash, it needs to repair tables<br />
+    * Better durablity coming in V1.8 </p>
+<p><strong>Best used</strong>: If you need dynamic queries. If you prefer to define indexes, not map/reduce functions. If you need good performance on a big DB. If you wanted CouchDB, but your data changes too much, filling up disks.</p>
+<p><strong>For example</strong>: For all things that you would do with MySQL or PostgreSQL, but having predefined columns really holds you back. </p>
+<p><strong>Redis</strong><br />
+    * Written in: C/C++<br />
+    * Main point: Blazing fast<br />
+    * License: BSD<br />
+    * Protocol: Telnet-like<br />
+    * Disk-backed in-memory database,<br />
+    * but since 2.0, it can swap to disk.<br />
+    * Master-slave replication<br />
+    * Simple keys and values,<br />
+    * but complex operations like ZREVRANGEBYSCORE<br />
+    * INCR &#038; co (good for rate limiting or statistics)<br />
+    * Has sets (also union/diff/inter)<br />
+    * Has lists (also a queue; blocking pop)<br />
+    * Has hashes (objects of multiple fields)<br />
+    * Of all these databases, only Redis does transactions (!)<br />
+    * Values can be set to expire (as in a cache)<br />
+    * Sorted sets (high score table, good for range queries)<br />
+    * Pub/Sub and WATCH on data changes (!) </p>
+<p><strong>Best used</strong>: For rapidly changing data with a foreseeable database size (should fit mostly in memory).</p>
+<p><strong>For example</strong>: Stock prices. Analytics. Real-time data collection. Real-time communication. </p>
+<p><strong>References</strong>:<br />
+1.http://blog.monitis.com/index.php/2011/05/22/picking-the-right-nosql-database-tool<br />
+2.http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis<br />
+3.http://blog.nosqlfan.com/html/1727.html</p>
+				
+				Tags: <a href="http://liuxuan.info/tag/mongodb/" rel="tag">MongoDB</a>, <a href="http://liuxuan.info/tag/nosql/" rel="tag">NoSQL</a>, <a href="http://liuxuan.info/tag/redis/" rel="tag">Redis</a>			</div>
+
+			</div>
+	
+						
+	<div class="post" id="post-143">
+	<h2><a href="http://liuxuan.info/2011/06/01/guide-to-open-source-licenses/" rel="bookmark" title="Permanent Link to Guide to open source licenses">Guide to open source licenses</a>
+<span>
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+</span></h2>
+	
+			<div class="postmetadata"><p>Posted on June 1st, 2011 under <a href="http://liuxuan.info/category/opensource/" title="View all posts in Opensource" rel="category tag">Opensource</a></p></div>
+				
+			<div class="entry">
+				<p> 原文地址：http://kkovacs.eu/businessmens-guide-to-open-source-licenses</p>
+<div>
+<style>
+.notok { color: red; }
+.usually { color: #CC9900; }
+.ok { color: green; }
+table#licensecomparison {
+	font-size: 12px;
+}
+table#licensecomparison td,th {
+	border: 1px solid #ccc;
+	padding: 0px 4px;
+}
+</style>
+<h1>&#8220;Is it OK to take program code under the ______ license, add our own functionality, and then ______?&#8221;</h1>
+<p>Here is your answer:</p>
+</p>
+<table width="100%" id="licensecomparison">
+<thead>
+<th>License (in order of friendliness)</th>
+<th>&#8230;sell (license) it as a product?</th>
+<th>&#8230;provide it as software-as-a-service?</th>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.freebsd.org/copyright/freebsd-license.html">BSD</a> / <a href="http://dev.jquery.com/browser/trunk/jquery/MIT-LICENSE.txt">MIT</a> License</td>
+<td class="ok">OK</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache</a> License</td>
+<td class="ok">OK</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.mozilla.org/MPL/MPL-1.1.html">MPL</a> (Mozilla Public License)</td>
+<td class="usually">If done right *</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/lgpl.txt">LGPL</a> (Lesser GNU Public License)</td>
+<td class="usually">As a larger work **</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/gpl.txt">GPL</a> (GNU Public License)</td>
+<td class="notok">your code must be given away for free</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/agpl.txt">AGPL</a> (Affero GNU Public License)</td>
+<td class="notok">your code must be given away for free</td>
+<td class="notok">anyone has to be able to download and use freely</td>
+</tr>
+</tbody>
+</table>
+<h2>Notes:</h2>
+<p>(*) MPL covers only the original files, and new ones that contain code from the originals. <em>Your new files are yours</em>, and yours only.</p>
+<p>(**) It&#8217;s okay if your product is NOT the modified version of the original code, but a program that just uses (&#8220;links&#8221;) the code under the LGPL.</p>
+<p><strong>TIP:</strong> Interestingly, you can also legally modify any code under any of these licenses (even AGPL), and use it <em>internally</em> in your organization, <em>without</em> having to give your modifications to anybody.</p>
+<p><strong>TIP 2:</strong> For all these licenses, it&#8217;s legal to contract for software development work on an open-source software for a client, who then will use the resulting product internally.</p>
+<h2>There are some things to watch out for&#8230;</h2>
+<p>GPL cares about where the code runs. Even if you provide something as SaaS over the Internet, some parts of your software (JavaScript) <em>actually is</em> distributed to your costumers. Just as an example, <a href="http://www.extjs.com/">ExtJS</a> is under GPL, but you MUST NOT base your SaaS on it, since the code gets transferred to the visitor and then run there, requiring you to distribute your code for free under the GPL too.</p>
+<p>GPL and AGPL are picky about what kind of code gets linked to it. Not even all open-source licenses qualify.</p>
+<p>In what exact way parts of your code interact with each other can be important. For example, you can make GPL and non-GPL code communicate through a database, web services, or APIs. But the moment you call GPL code directly, your code must be put under the GPL.</p>
+<p>Some of these licenses may require you to include notices, source code of the original, or other things to include with your product distribution.</p>
+<p>Make your project manager and lawyer talk to each other!</p>
+<p><strong>IMPORTANT:</strong> You may be providing a service over the Internet now, but also think about the time when you might want to sell your assets to another company; either because you are selling the service to somebody, or because you&#8217;re redistributing your assets. I&#8217;m just saying, think ahead!</p>
+<h2>What about GPL v2 versus GPL v3?</h2>
+<p>Earlier, when GPL was v2, there was talk of putting an anti-SaaS clause into v3, but later the Affero GPL was created for that purpose. (This causes lots of confusion.)</p>
+<p>Actually, the differences between GPL v2 and v3 are not really important to you, unless:</p>
+<p>- you own related trademarks,<br />
+<br />- you are developing something that enforces DMCA,<br />
+<br />- you are disallowing modified code to run on your hardware.</p>
+<h2>The financial benefits of giving code back for free</h2>
+<p>Besides being a socially responsible businessman, you should also know that giving the code you have had developed to the open source community for free <em>can</em> also be the right thing to do financially. If you are not profiting directly from that code, it&#8217;s rarely smart to hang onto it.</p>
+<p>The community will go forward with the development anyway. Their next release will have nice new features, bug fixes, and better security. If you have kept your code secret, <em>you</em> will be the one who pays (in money or in time) for the integration of that secret code into their new releases. Or integrating their security fixes into your code. Both get messy quick, even with the help of state-of-the-art version control systems (that you should be using for <em>every project</em>, but that&#8217;s another article.)</p>
+<h2>Useful links</h2>
+<p><a href="http://www.gnu.org/licenses/gpl-faq.html">Gnu Public License FAQ</a><br />
+<br /><a href="http://www.mozilla.org/MPL/mpl-faq.html">Mozilla Public License FAQ</a><br />
+<br /><a href="http://www.apache.org/foundation/licence-FAQ.html">Apache License FAQ</a></p>
+<h2>Disclaimer</h2>
+<p>I&#8217;m not a lawyer and this article should NOT be considered legal advice. Always consult your own lawyer before betting the company on somebody else&#8217;s licensing terms (this applies both for open-source and non-open-source licenses).</p>
+<p>Don&#8217;t take legal, medical, or financial advice from strangers on the Internet, ok? <img src='http://liuxuan.info/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>
+				
+				Tags: <a href="http://liuxuan.info/tag/license/" rel="tag">License</a>, <a href="http://liuxuan.info/tag/opensource/" rel="tag">Opensource</a>			</div>
+
+			</div>
+	
+						
+	<div class="post" id="post-128">
+	<h2><a href="http://liuxuan.info/2011/05/19/block-advertising-on-youku-and-tudou/" rel="bookmark" title="Permanent Link to 屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a>
+<span>
+<!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+</span></h2>
+	
+			<div class="postmetadata"><p>Posted on May 19th, 2011 under <a href="http://liuxuan.info/category/cool/" title="View all posts in Cool" rel="category tag">Cool</a></p></div>
+				
+			<div class="entry">
+				<p>Windows: C:\WINDOWS\system32\drivers\etc\hosts<br />
+Linux: /etc/hosts</p>
+<p>根据你所用的操作系统，用文本编辑工具打开上面的文件，然后添加下面的代码：</p>
+<p>#优酷<br />
+127.0.0.1 atm.youku.com<br />
+127.0.0.1 Fvid.atm.youku.com<br />
+127.0.0.1 html.atm.youku.com<br />
+127.0.0.1 valb.atm.youku.com<br />
+127.0.0.1 valf.atm.youku.com<br />
+127.0.0.1 valo.atm.youku.com<br />
+127.0.0.1 valp.atm.youku.com<br />
+127.0.0.1 lstat.youku.com<br />
+127.0.0.1 speed.lstat.youku.com<br />
+127.0.0.1 urchin.lstat.youku.com<br />
+127.0.0.1 stat.youku.com<br />
+127.0.0.1 static.lstat.youku.com<br />
+127.0.0.1 valc.atm.youku.com<br />
+127.0.0.1 vid.atm.youku.com<br />
+127.0.0.1 walp.atm.youku.com</p>
+<p>#土豆<br />
+127.0.0.1 adextensioncontrol.tudou.com<br />
+127.0.0.1 iwstat.tudou.com<br />
+127.0.0.1 nstat.tudou.com<br />
+127.0.0.1 stats.tudou.com<br />
+127.0.0.1 *.p2v.tudou.com*<br />
+127.0.0.1 at-img1.tdimg.com<br />
+127.0.0.1 at-img2.tdimg.com<br />
+127.0.0.1 at-img3.tdimg.com<br />
+127.0.0.1 adplay.tudou.com<br />
+127.0.0.1 adcontrol.tudou.com<br />
+127.0.0.1 stat.tudou.com</p>
+				
+				Tags: <a href="http://liuxuan.info/tag/cool/" rel="tag">Cool</a>			</div>
+
+			</div>
+	
+				
+					<div class="navigation">
+				<div class='wp-pagenavi'>
+<span class='pages'>Page 1 of 4</span><span class='current'>1</span><a href='http://liuxuan.info/page/2/' class='page larger'>2</a><a href='http://liuxuan.info/page/3/' class='page larger'>3</a><a href='http://liuxuan.info/page/4/' class='page larger'>4</a><a href="http://liuxuan.info/page/2/" class="nextpostslink">»</a>
+</div>			</div>
+		
+
+		
+			
+</div>
+
+
+<div id="sidebar">
+<ul>
+<h2>Search</h2><form method="get" id="searchform" action="http://liuxuan.info/">
+
+<table cellpadding="0" cellspacing="0" style="width:200px; height:32px;"><tbody><tr id="WLSearchBoxPlaceholder"><td style="width:100%; border:solid 1px #cccccc; border-right-style:none;  padding-right:10px; vertical-align:middle;"><input id="WLSearchBoxInput" type="text"  style="background-image:url(http://www.bing.com/siteowner/s/siteowner/searchbox_background_k.png); background-position:right; background-repeat:no-repeat; font-family:Arial; font-size:14px; color:#000000; width:100%; border:none 0 transparent;" autocomplete="off" maxlength="200"></td><td style="border:solid 1px #cccccc; border-left-style:none; padding-left:0px; padding-right:3px;"><input id="WLSearchBoxButton" type="image" src="http://www.bing.com/siteowner/s/siteowner/searchbutton_normal_k.gif" style="border:none 0 transparent; height:24px; width:24px; vertical-align:top;"></td></tr></tbody></table>
+</form>				<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/06/11/comparison-of-raid/" title="常用磁盘阵列比较">常用磁盘阵列比较</a></li>
+				<li><a href="http://liuxuan.info/2011/06/11/nothing-but-sad/" title="悲凉和无奈">悲凉和无奈</a></li>
+				<li><a href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/" title="Comparison of NoSQL databases">Comparison of NoSQL databases</a></li>
+				<li><a href="http://liuxuan.info/2011/06/01/guide-to-open-source-licenses/" title="Guide to open source licenses">Guide to open source licenses</a></li>
+				<li><a href="http://liuxuan.info/2011/05/19/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/14/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/10/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/initialization-on-demand-holder-idiom/" title="Initialization on demand holder idiom">Initialization on demand holder idiom</a></li>
+				<li><a href="http://liuxuan.info/2011/05/04/http-definitive-guide-notes/" title="《Http Definitive Guide》读书笔记">《Http Definitive Guide》读书笔记</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (2)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://liuxuan.info/category/http/" title="View all posts filed under Http">Http</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (3)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a>&nbsp;(4)</li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+
+</ul>
+
+</div>
+
+<div id="footer">
+
+<!-- To help keep our themes 100% free, please consider leaving our credit links intact. Thanks! -->
+
+<p>&copy; 2011 Zhixingheyi | Powered by <a href="http://wordpress.org/">WordPress</a> | Theme by <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a></p>
+
+</div> <!-- end footer -->
+
+</div> <!-- end container -->
+
+<div align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">知识共享署名-非商业性使用-相同方式共享 3.0 Unported许可协议</a>进行许可。
+<div>
+</body>
+</html>
+<!-- Dynamic page generated in 0.574 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-06-11 13:43:38 -->
+<!-- super cache -->

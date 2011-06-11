@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Java bytecode : invokeinterface , invokespecial , invokestatic & invokevirtual 的含义和区别 — Zhixingheyi</title>
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/uncomplicated/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+
+
+
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<link rel='start' title='为什么Java匿名内部类中的方法参数必须定义为final' href='http://liuxuan.info/2011/03/07/java-anonymous-class/' />
+<link rel='prev' title='JVM内存管理' href='http://liuxuan.info/2011/03/08/java-memory-management/' />
+<link rel='next' title='《Http Definitive Guide》读书笔记' href='http://liuxuan.info/2011/05/04/http-definitive-guide-notes/' />
+<meta name="generator" content="WordPress 3.1.2" />
+<link rel='shortlink' href='http://liuxuan.info/?p=64' />
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[307,436] -->
+<meta name="description" content="Java bytecode : invokeinterface , invokespecial , invokestatic & invokevirtual 的含义和区别" />
+<meta name="keywords" content="invokeinterface,invokespecial,invokestatic,invokevirtual,java" />
+<link rel="canonical" href="http://liuxuan.info/2011/04/13/learn-invokeinterface-invokespecial-invokestatic-invokevirtual/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 3.243 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1306480002 119.132.100.145';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="container">
+
+
+<div id="header">
+	<h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+		<div class="border"></div>
+	<h2>Where the truth distortion is.</h2>
+</div>
+	
+
+<div id="menuholder">
+		<div class="menu">
+			<div class="page-navi"><ul><li ><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+		</div>
+
+		
+</div>
+	<div id="content">
+
+	
+		<div class="post-64 post type-post status-publish format-standard hentry category-java tag-invokeinterface tag-invokespecial tag-invokestatic tag-invokevirtual tag-java" id="post-64">
+			<h2><a href="http://liuxuan.info/2011/04/13/learn-invokeinterface-invokespecial-invokestatic-invokevirtual/" rel="bookmark" title="Permanent Link: Java bytecode : invokeinterface , invokespecial , invokestatic &amp; invokevirtual 的含义和区别">Java bytecode : invokeinterface , invokespecial , invokestatic &#038; invokevirtual 的含义和区别</a></h2>
+			<div class="postmetadata"><p>Posted on April 13th, 2011 under <a href="http://liuxuan.info/category/java/" title="View all posts in Java" rel="category tag">Java</a></p></div>
+	
+			<div class="entry">
+				<p>首先有个准备工作，JVM中的两个数据结构需要理解一下：Frames(栈帧) 和 Operand Stack(操作数栈)。</p>
+<p><strong>(1)Frames</strong></p>
+<p>在JVM中，栈帧是用来保存数据和部分结果，执行动态链接，返回方法调用的结果，分发异常。</p>
+<p>每一次当一个方法被调用时就会创建一个新的栈帧，并且栈帧会在方法调用完毕后(无论方法是否正常执行结束或者因未捕获的异常而终止)消亡。</p>
+<p>栈帧是由JVM中创建栈帧的线程分配的。每个栈帧里含有：他自己的本地变量(基本数据类型或引用类型)的数组，他自己的操作数栈和一个当前方法所在类的常量池的引用。</p>
+<p>本地变量数组和操作数栈的大小在编译的时候就已经决定了，并且一直提供给和栈帧关联的方法使用。因此，栈帧的大小只跟JVM的实现以及方法被调用时这些数据结构同时在内存中被分配的大小决定。</p>
+<p>在一个线程执行过程中，任何时候只有一个栈帧(也就是正在执行的方法的栈帧)处于活动状态。这个栈帧就被认为是当前栈帧，并且他包含的方法就是当前正在执行的方法。当前方法所在的类称为当前类。在本地变量和操作数栈上的操作都含有当前栈帧的引用。</p>
+<p>当栈帧的方法调用另外的方法或者他的方法完成了，那么当前栈帧就会停止。当一个方法被调用的时候，会创建一个新的栈帧，并且当新的方法获得CPU控制权时这个新创建的栈帧会变成当前栈帧，当方法返回的时候，当前栈帧传回他的方法调用的结果，如果这个结果有的话将被传递给前一个栈帧。当之前的一个栈帧变成当前栈帧的时候，当前栈帧就会被丢弃。</p>
+<p><strong>(2)Operand Stack</strong></p>
+<p>每个栈帧都有一个last-in-first-out(LIFO)的栈，这个栈就被称为操作数栈。操作数栈的最大深度在编译时就已经确定，并且供与这个栈帧相关联的方法使用。</p>
+<p>当栈帧被创建时，操作数栈是空的。JVM发出指令装载本地变量中的常量和值到操作数栈中去。另外的指令是从操作数栈中取数，运算完成后把结果再放入操作数栈中。操作数栈还被用来保存方法的参数和方法的返回值。</p>
+<p>操作数栈中的值都是一个Java基本类型或者引用类型。操作数栈中的值必须在适合他们的类型的方式下操作。一小部分JVM指令(dup，swap)执行时不考虑值的类型，这些指令不能修改和分开单个的值，这些操作数栈的限制通过类文件检查时强制执行。</p>
+<p>long和double类型在操作数栈有2个单元长度，其他类型都是1个单元长度。</p>
+<p><strong>一.invokeinterface</strong></p>
+<p>当调用接口中的方法的时候，就会使用invokeinterface指令。</p>
+<p>Operand Stack<br />
+    &#8230;, objectref, [arg1, [arg2 ...]]  &#8230;</p>
+<p>实际被调用的方法将会遵循下面的查找步骤：</p>
+<p>(1)如果objectref这个类中含有和将要被调用的方法有相同的方法名和参数的方法，那么objectref这个类中的方法将会被调用，并且查找过程结束。</p>
+<p>(2)如果经过(1)后没有找到合适的方法，并且如果objectref有父类的话，那么就会在他的父类里迭代执行。</p>
+<p>(3)如果(1)，(2)后都没有找到，则会抛出AbstractMethodError。</p>
+<p><strong>二.invokespecial</strong></p>
+<p>当调用类的任何构造方法时，就会使用invokespecial指令。</p>
+<p>Operand Stack<br />
+    &#8230;, objectref, [arg1, [arg2 ...]]  &#8230;</p>
+<p>如果将要被调用的构造方法是“protected”的，并且要么是当前类的成员，要么是当前类父类的成员，那么objectref必须要么是当前类，要么是当前类的子类。</p>
+<p>当下面的条件都为“true”时，才会调用方法：</p>
+<p>(1)当前类已经设置好ACC_SUPER标志位。</p>
+<p>(2)要调用构造方法所在的类是当前类的父类。</p>
+<p>(3)要调用的构造方法所在的类还没有被实例化。</p>
+<p>当上面的条件都为“true”时，实际将要被调用的方法将会遵循下面的查找步骤。(假定C是当前类的直接父类):</p>
+<p>(1)如果C中有声明过相同的方法(包括方法签名和参数)，那么这个方法将会被调用，并且查找过程结束。</p>
+<p>(2)如果(1)不满足，并且C有父类，那么会在C的父类中迭代(1)，实际被调用的方法就是这个迭代查找过程的结果，并且查找过程结束。</p>
+<p>(3)如果(1),(2)都不满足，将会抛出AbstractMethodError。</p>
+<p><strong>三.invokestatic</strong></p>
+<p>当调用类的静态方法时，就会使用invokestatic指令。</p>
+<p>Operand Stack<br />
+    &#8230;, [arg1, [arg2 ...]]  &#8230;</p>
+<p>被调用的方法必须是静态方法，而且不能是抽象方法，并且如果要使用类的属性的话，那么类的属性也必须是静态的。</p>
+<p>如果这个静态方法是synchronized的，那么需要获得与这个类相关的monitor。</p>
+<p>如果这个被调用的方法不是native的话，操作数栈里保存的参数将会被弹出，并且为这个方法创建一个新的栈帧，弹出的参数按顺序赋值给新创建的栈帧的本地变量。如果弹出的参数是浮点类型的值的话，那么在保存为新栈帧的本地变量之前将会被类型转型(转换为最接近这个浮点类型值的类型)。</p>
+<p><strong>四.invokevirtual</strong></p>
+<p>当调用类的实例方法时，就会使用invokevirtual指令。</p>
+<p>值得注意的是，Java中的所有实例方法默认都是virtual的。</p>
+<p>Operand Stack<br />
+    &#8230;, objectref, [arg1, [arg2 ...]]  &#8230;</p>
+<p>如果被调用的方法是protected，并且他要么是当前类的成员，要么是当前类的父类里的成员，那么objectref必须要么是当前类，要么是当前类的子类。</p>
+<p>实际被调用的方法将会遵循以下查找过程：</p>
+<p>(1)如果objectref中有相同方法签名和参数的方法，并且这个方法可以从objectref中访问到，那么这个方法就会被调用，并且查找过程结束。</p>
+<p>(2)如果(1)不满足，并且objectref有一个父类，那么会在父类中迭代(1)，实际被调用的方法就是这个迭代查找过程的结果，并且查找过程结束。</p>
+<p>(3)如果(1),(2)都不满足，将会抛出AbstractMethodError 。</p>
+<p><strong>References:</strong><br />
+1.http://java.sun.com/docs/books/jvms/second_edition/html/Instructions2.doc6.html<br />
+2.http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html</p>
+			</div>
+		
+		</div>
+
+	
+<!-- You can start editing here. -->
+<div id="commentssection">
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+
+
+</div>
+	
+	</div>
+
+<div id="sidebar">
+<ul>
+<h2>Search</h2><form method="get" id="searchform" action="http://liuxuan.info/">
+
+<table cellpadding="0" cellspacing="0" style="width:200px; height:32px;"><tbody><tr id="WLSearchBoxPlaceholder"><td style="width:100%; border:solid 1px #cccccc; border-right-style:none;  padding-right:10px; vertical-align:middle;"><input id="WLSearchBoxInput" type="text"  style="background-image:url(http://www.bing.com/siteowner/s/siteowner/searchbox_background_k.png); background-position:right; background-repeat:no-repeat; font-family:Arial; font-size:14px; color:#000000; width:100%; border:none 0 transparent;" autocomplete="off" maxlength="200"></td><td style="border:solid 1px #cccccc; border-left-style:none; padding-left:0px; padding-right:3px;"><input id="WLSearchBoxButton" type="image" src="http://www.bing.com/siteowner/s/siteowner/searchbutton_normal_k.gif" style="border:none 0 transparent; height:24px; width:24px; vertical-align:top;"></td></tr></tbody></table>
+</form>				<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/05/19/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/14/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/10/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/initialization-on-demand-holder-idiom/" title="Initialization on demand holder idiom">Initialization on demand holder idiom</a></li>
+				<li><a href="http://liuxuan.info/2011/05/04/http-definitive-guide-notes/" title="《Http Definitive Guide》读书笔记">《Http Definitive Guide》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/04/13/learn-invokeinterface-invokespecial-invokestatic-invokevirtual/" title="Java bytecode : invokeinterface , invokespecial , invokestatic &amp; invokevirtual 的含义和区别">Java bytecode : invokeinterface , invokespecial , invokestatic &#038; invokevirtual 的含义和区别</a></li>
+				<li><a href="http://liuxuan.info/2011/03/08/java-memory-management/" title="JVM内存管理">JVM内存管理</a></li>
+				<li><a href="http://liuxuan.info/2011/03/07/optimize-myeclipse/" title="MyEclipse优化实例">MyEclipse优化实例</a></li>
+				<li><a href="http://liuxuan.info/2011/03/07/java-doubt-and-traps/" title="Java常见疑惑和陷阱">Java常见疑惑和陷阱</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (1)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://liuxuan.info/category/http/" title="View all posts filed under Http">Http</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+
+</ul>
+
+</div>
+
+<div id="footer">
+
+<!-- To help keep our themes 100% free, please consider leaving our credit links intact. Thanks! -->
+
+<p>&copy; 2011 Zhixingheyi | Powered by <a href="http://wordpress.org/">WordPress</a> | Theme by <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a></p>
+
+</div> <!-- end footer -->
+
+</div> <!-- end container -->
+
+<div align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />本站作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">知识共享署名-相同方式共享 3.0 Unported许可协议</a>进行许可。
+<div>
+</body>
+</html>
+<!-- Dynamic page generated in 0.365 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-05-27 07:06:42 -->
+<!-- super cache -->

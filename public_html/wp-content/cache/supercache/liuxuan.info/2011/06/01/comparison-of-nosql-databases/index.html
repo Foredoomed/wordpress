@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Comparison of NoSQL databases — Zhixingheyi</title>
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/uncomplicated/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Zhixingheyi &raquo; Comparison of NoSQL databases Comments Feed" href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/feed/" />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<link rel='start' title='为什么Java匿名内部类中的方法参数必须定义为final' href='http://liuxuan.info/2011/03/07/java-anonymous-class/' />
+<link rel='prev' title='Guide to open source licenses' href='http://liuxuan.info/2011/06/01/guide-to-open-source-licenses/' />
+<meta name="generator" content="WordPress 3.1.3" />
+<link rel='shortlink' href='http://liuxuan.info/?p=147' />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[307,364] -->
+<meta name="description" content="Comparison of NoSQL databases" />
+<meta name="keywords" content="nosql,mongodb,redis" />
+<link rel="canonical" href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 12.684 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1307777745 208.76.244.202';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="container">
+
+
+<div id="header">
+	<h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+		<div class="border"></div>
+	<h2>Where the truth distortion is.</h2>
+</div>
+	
+
+<div id="menuholder">
+		<div class="menu">
+			<div class="page-navi"><ul><li ><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+		</div>
+
+		
+</div>
+	<div id="content">
+
+	
+		<div class="post-147 post type-post status-publish format-standard hentry category-nosql tag-mongodb tag-nosql tag-redis" id="post-147">
+			<h2><a href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/" rel="bookmark" title="Permanent Link: Comparison of NoSQL databases">Comparison of NoSQL databases</a></h2>
+			<div class="postmetadata"><p>Posted on June 1st, 2011 under <a href="http://liuxuan.info/category/nosql/" title="View all posts in NoSQL" rel="category tag">NoSQL</a></p></div>
+	
+			<div class="entry">
+				<p>随着Web2.0时代的来临以及宽带技术的迅猛发展，许多Web应用都感受到了来自高并发以及高数据量的挑战。而大多数情况下这种挑战来自于数据库，即二维关系型数据库的缺陷导致了RDBMS成为了高并发和高数据量下的瓶颈。正是为了消除这种瓶颈，才诞生了NoSQL。NoSQL是当下最热的技术话题，而且越来越多的公司开始选择NoSQL产品来提高Web应用的性能及伸缩性，我们完全可以想象在不远的将来NoSQL取代现在的关系型数据库，成为数据存储的第一选择。</p>
+<p>NoSQL按存储方式主要分为四类：<br />
+1. Key-values Stores<br />
+主要的想法是用hash表，里面包括一个unique key和指向特定数据的指针。Key-value 模型是最简单和最容易实现的. 但是它对查询和更新部分数据时效率不高。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Key 指向 Value 的键值对，通常用hash table来实现</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">查找速度快</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">数据无结构化，通常只被当作字符串或者二进制数据</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2. Document Databases<br />
+这个模型是包含 key-value 集合的文档，并且这个文档被标记过版本的。这些半结构文档是以类似于JSON的形式存储。Document databases基本上是更高级的Key-value形式，允许每个key的value可以多级嵌套。Document databases 支持更有效的查询。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">CouchDB, MongoDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容）</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">Key-Value对应的键值对，Value为结构化数据</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">查询性能不高，而且缺乏统一的查询语法。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3. Column Family Stores<br />
+这类NoSQL主要是用来存储和处理大容量分布式数据。仍然有key，但指向的是多列，并且列是由column family来组织。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Cassandra, HBase</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">分布式的文件系统</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">以列簇式存储，将同一列数据存在一起</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">查找速度快，可扩展性强，更容易进行分布式扩展</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">功能相对局限</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>4. Graph Databases<br />
+这类NoSQL的结构不是一般的二维表结构，而是更有弹性的图形模型。并且需要指定数据模型来查询这类数据库。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;">
+</col>
+<col style="width: 491px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">Neo4J, InfoGrid, Infinite Graph</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">社交网络，推荐系统等。专注于构建关系图谱</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="font-family: Arial;">图结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">利用图结构相关算法。比如最短路径寻址，N度关系查找等</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;"><span style="color: black; font-family: Arial;">很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群方案。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>什么时候使用NoSQL</strong>: </p>
+<ul>
+<li>Real-time stats/analytics</li>
+<li>Logging/Archiving</li>
+<li>Social Computing Insight</li>
+<li>External Data Feed Integration</li>
+<li>Front-end order processing systems</li>
+<li>Enterprise Content Management Service</li>
+</ul>
+<p><strong>RDBMS和NoSQL的选择</strong>: </p>
+<table border="0" style="border-collapse: collapse; background: none repeat scroll 0% 0% rgb(218, 238, 243);">
+<colgroup>
+<col style="width: 84px;">
+</col>
+<col style="width: 557px;">
+</col>
+</colgroup>
+<tbody>
+<tr style="height: 88px;">
+<td style="padding-left: 9px; padding-right: 9px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">NoSQL</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black -moz-use-text-color;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage should be able to deal with very high load</span></li>
+<li><span style="color: black; font-family: Arial;">You do many write operations on the storage </span></li>
+<li><span style="color: black; font-family: Arial;">You want storage that is horizontally scalable </span></li>
+<li><span style="color: black; font-family: Arial;">Simplicity is good, as in a very simple query language (without joins)</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 95px;">
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: -moz-use-text-color black black;"><span style="color: black; font-family: Arial;">RDBMS</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: -moz-use-text-color black black -moz-use-text-color;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage is expected to be high-load, too, but it mainly consists of read operations</span></li>
+<li><span style="color: black; font-family: Arial;">You want performance over a more sophisticated data structure </span></li>
+<li><span style="color: black; font-family: Arial;">You need powerful SQL query language</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MongoDB versus Redis</strong>:<br />
+<strong>MongoDB</strong><br />
+    * Written in: C++<br />
+    * Main point: Retains some friendly properties of SQL. (Query, index)<br />
+    * License: AGPL (Drivers: Apache)<br />
+    * Protocol: Custom, binary (BSON)<br />
+    * Master/slave replication<br />
+    * Queries are javascript expressions<br />
+    * Run arbitrary javascript functions server-side<br />
+    * Better update-in-place than CouchDB<br />
+    * Sharding built-in<br />
+    * Uses memory mapped files for data storage<br />
+    * Performance over features<br />
+    * After crash, it needs to repair tables<br />
+    * Better durablity coming in V1.8 </p>
+<p><strong>Best used</strong>: If you need dynamic queries. If you prefer to define indexes, not map/reduce functions. If you need good performance on a big DB. If you wanted CouchDB, but your data changes too much, filling up disks.</p>
+<p><strong>For example</strong>: For all things that you would do with MySQL or PostgreSQL, but having predefined columns really holds you back. </p>
+<p><strong>Redis</strong><br />
+    * Written in: C/C++<br />
+    * Main point: Blazing fast<br />
+    * License: BSD<br />
+    * Protocol: Telnet-like<br />
+    * Disk-backed in-memory database,<br />
+    * but since 2.0, it can swap to disk.<br />
+    * Master-slave replication<br />
+    * Simple keys and values,<br />
+    * but complex operations like ZREVRANGEBYSCORE<br />
+    * INCR &#038; co (good for rate limiting or statistics)<br />
+    * Has sets (also union/diff/inter)<br />
+    * Has lists (also a queue; blocking pop)<br />
+    * Has hashes (objects of multiple fields)<br />
+    * Of all these databases, only Redis does transactions (!)<br />
+    * Values can be set to expire (as in a cache)<br />
+    * Sorted sets (high score table, good for range queries)<br />
+    * Pub/Sub and WATCH on data changes (!) </p>
+<p><strong>Best used</strong>: For rapidly changing data with a foreseeable database size (should fit mostly in memory).</p>
+<p><strong>For example</strong>: Stock prices. Analytics. Real-time data collection. Real-time communication. </p>
+<p><strong>References</strong>:<br />
+1.http://blog.monitis.com/index.php/2011/05/22/picking-the-right-nosql-database-tool<br />
+2.http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis<br />
+3.http://blog.nosqlfan.com/html/1727.html</p>
+			</div>
+		
+		</div>
+
+	
+<!-- You can start editing here. -->
+<div id="commentssection">
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2011/06/01/comparison-of-nosql-databases/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://liuxuan.info/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre lang=&quot;&quot; line=&quot;&quot; escaped=&quot;&quot;&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="commentbox" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit" />
+<input type='hidden' name='comment_post_ID' value='147' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9db85a24c8" /></p>
+</form>
+
+</div>
+
+
+</div>
+	
+	</div>
+
+<div id="sidebar">
+<ul>
+<h2>Search</h2><form method="get" id="searchform" action="http://liuxuan.info/">
+
+<table cellpadding="0" cellspacing="0" style="width:200px; height:32px;"><tbody><tr id="WLSearchBoxPlaceholder"><td style="width:100%; border:solid 1px #cccccc; border-right-style:none;  padding-right:10px; vertical-align:middle;"><input id="WLSearchBoxInput" type="text"  style="background-image:url(http://www.bing.com/siteowner/s/siteowner/searchbox_background_k.png); background-position:right; background-repeat:no-repeat; font-family:Arial; font-size:14px; color:#000000; width:100%; border:none 0 transparent;" autocomplete="off" maxlength="200"></td><td style="border:solid 1px #cccccc; border-left-style:none; padding-left:0px; padding-right:3px;"><input id="WLSearchBoxButton" type="image" src="http://www.bing.com/siteowner/s/siteowner/searchbutton_normal_k.gif" style="border:none 0 transparent; height:24px; width:24px; vertical-align:top;"></td></tr></tbody></table>
+</form>				<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/06/01/comparison-of-nosql-databases/" title="Comparison of NoSQL databases">Comparison of NoSQL databases</a></li>
+				<li><a href="http://liuxuan.info/2011/06/01/guide-to-open-source-licenses/" title="Guide to open source licenses">Guide to open source licenses</a></li>
+				<li><a href="http://liuxuan.info/2011/05/19/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/14/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/10/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/05/08/initialization-on-demand-holder-idiom/" title="Initialization on demand holder idiom">Initialization on demand holder idiom</a></li>
+				<li><a href="http://liuxuan.info/2011/05/04/http-definitive-guide-notes/" title="《Http Definitive Guide》读书笔记">《Http Definitive Guide》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/04/13/learn-invokeinterface-invokespecial-invokestatic-invokevirtual/" title="Java bytecode : invokeinterface , invokespecial , invokestatic &amp; invokevirtual 的含义和区别">Java bytecode : invokeinterface , invokespecial , invokestatic &#038; invokevirtual 的含义和区别</a></li>
+				<li><a href="http://liuxuan.info/2011/03/08/java-memory-management/" title="JVM内存管理">JVM内存管理</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (1)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://liuxuan.info/category/http/" title="View all posts filed under Http">Http</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (2)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a>&nbsp;(2)</li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+
+</ul>
+
+</div>
+
+<div id="footer">
+
+<!-- To help keep our themes 100% free, please consider leaving our credit links intact. Thanks! -->
+
+<p>&copy; 2011 Zhixingheyi | Powered by <a href="http://wordpress.org/">WordPress</a> | Theme by <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a></p>
+
+</div> <!-- end footer -->
+
+</div> <!-- end container -->
+
+<div align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">知识共享署名-非商业性使用-相同方式共享 3.0 Unported许可协议</a>进行许可。
+<div>
+</body>
+</html>
+<!-- Dynamic page generated in 0.342 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-06-11 07:35:46 -->
+<!-- super cache -->
