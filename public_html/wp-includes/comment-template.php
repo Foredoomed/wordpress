@@ -817,7 +817,7 @@ function wp_comment_form_unfiltered_html_nonce() {
 		$post_id = $post->ID;
 
 	if ( current_user_can('unfiltered_html') )
-		wp_nonce_field('unfiltered-html-comment_' . $post_id, '_wp_unfiltered_html_comment', false);
+		wp_nonce_field('unfiltered-html-comment_' . $post_id, 'wp_unfiltered_html_comment', false);
 }
 
 /**

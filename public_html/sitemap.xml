@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.1.3" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.4" -->
-<!-- generated-on="June 11, 2011 13:51" -->
+<!-- generated-on="June 11, 2011 15:57" -->
 <!-- Debug: Total comment count: 3 -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
 		<loc>http://liuxuan.info/</loc>
-		<lastmod>2011-06-11T13:50:45+00:00</lastmod>
+		<lastmod>2011-06-11T15:56:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 <!-- Debug: Start Postings -->
+<!-- Debug: Priority report of postID 170: Comments: 0 of 3 = 0 points -->
+	<url>
+		<loc>http://liuxuan.info/2011/06/11/a-brief-introduction-to-jmeter/</loc>
+		<lastmod>2011-06-11T15:56:09+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
 <!-- Debug: Priority report of postID 166: Comments: 0 of 3 = 0 points -->
 	<url>
 		<loc>http://liuxuan.info/2011/06/11/comparison-of-raid/</loc>

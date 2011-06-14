@@ -61,7 +61,7 @@ if ( $user->ID ) {
 	$comment_author_email = $wpdb->escape($user->user_email);
 	$comment_author_url   = $wpdb->escape($user->user_url);
 	if ( current_user_can('unfiltered_html') ) {
-		if ( wp_create_nonce('unfiltered-html-comment_' . $comment_post_ID) != $_POST['_wp_unfiltered_html_comment'] ) {
+		if ( wp_create_nonce('unfiltered-html-comment_' . $comment_post_ID) != $_POST['wp_unfiltered_html_comment'] ) {
 			kses_remove_filters(); // start with a clean slate
 			kses_init_filters(); // set up the filters
 		}
