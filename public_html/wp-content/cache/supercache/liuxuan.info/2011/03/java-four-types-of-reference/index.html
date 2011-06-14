@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Java的四种引用类型 — Zhixingheyi</title>
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/uncomplicated/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+
+
+
+
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<link rel='start' title='为什么Java匿名内部类中的方法参数必须定义为final' href='http://liuxuan.info/2011/03/java-anonymous-class/' />
+<link rel='prev' title='Objective-C学习笔记' href='http://liuxuan.info/2011/03/objective-c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0/' />
+<link rel='next' title='Java常见疑惑和陷阱' href='http://liuxuan.info/2011/03/java-doubt-and-traps/' />
+<meta name="generator" content="WordPress 3.1.3" />
+<link rel='shortlink' href='http://liuxuan.info/?p=39' />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[307,360] -->
+<meta name="description" content="Java的四种引用类型,包括：Strong Reference(强引用)，Soft Reference(软引用)，Weak Reference(弱引用)，Strong Reference(幻影引用)" />
+<meta name="keywords" content="java,reference types" />
+<link rel="canonical" href="http://liuxuan.info/2011/03/java-four-types-of-reference/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 5.318 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1307973816 109.230.221.183';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="container">
+
+
+<div id="header">
+	<h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+		<div class="border"></div>
+	<h2>Where the truth distortion is.</h2>
+</div>
+	
+
+<div id="menuholder">
+		<div class="menu">
+			<div class="page-navi"><ul><li ><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+		</div>
+
+		
+</div>
+	<div id="content">
+
+	
+		<div class="post-39 post type-post status-publish format-standard hentry category-java tag-java tag-reference-types" id="post-39">
+			<h2><a href="http://liuxuan.info/2011/03/java-four-types-of-reference/" rel="bookmark" title="Permanent Link: Java的四种引用类型">Java的四种引用类型</a></h2>
+			<div class="postmetadata"><p>Posted on March 7th, 2011 under <a href="http://liuxuan.info/category/java/" title="View all posts in Java" rel="category tag">Java</a></p></div>
+	
+			<div class="entry">
+				<p>在Java中有四种引用类型，他们是：<strong>Strong Reference</strong>，<strong>Soft Reference</strong>，<strong>Weak Reference</strong>	 and <strong>Phantom Reference</strong>。</p>
+<p>四种引用类型的解释：</p>
+<ul>
+<li>The JVM holds onto regular Objects until they are no longer reachable by either clients or any container. In other words Objects are garbage collected when there are no more live references to them. Dead references don’t count.</li>
+<li>Soft references can be deleted from a container if the clients are no longer referencing them and memory is tight. Mostly often used to implement memory-sensitive caches. No constraints on GC time, but will be cleared before OOM.
+</li>
+<li>Weak references are automatically deleted from a container as soon clients stop referencing them.An object referenced only by weak references is considered unreachable (or &#8220;weakly reachable&#8221;) and so may be collected at any time and will be discarded at the next GC cycle.</li>
+<li>Phantom references point to objects that are already dead and have been finalised. An object is phantomly referenced after it has been finalized, but before its allocated memory has been reclaimed</li>
+</ul>
+<p>四种引用类型的比较：</p>
+<table>
+<thead>
+<tr>
+<th colspan="5">Strong vs Soft vs Weak vs Phantom References</th>
+</tr>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+<th>Use</th>
+<th>When GCed</th>
+<th>Implementing Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strong Reference</td>
+<td>An ordinary reference. Keeps objects alive as long as they are referenced.</td>
+<td>normal reference.</td>
+<td>Any object not pointed to can be reclaimed.</td>
+<td>default</td>
+</tr>
+<tr>
+<td>Soft Reference</td>
+<td>Keeps objects alive provided there’s enough memory.</td>
+<td>to keep objects alive even after clients have removed their references (memory-sensitive<br />
+caches), in case clients start asking for them again by key.</td>
+<td>After a first gc pass, the JVM decides it still needs to reclaim more space.</td>
+<td>java.lang.ref.SoftReference</td>
+</tr>
+<tr>
+<td>Weak Reference</td>
+<td>Keeps objects alive only while they’re in use (reachable) by clients.</td>
+<td>Containers that automatically delete objects no longer in use.</td>
+<td>After gc determines the object is only weakly reachable</td>
+<td>java.lang.ref.WeakReference<br />
+<br />
+java.util.WeakHashMap</td>
+</tr>
+<tr>
+<td>Phantom Reference</td>
+<td>Lets you clean up after finalization but before the space is reclaimed (replaces<br />
+or augments the use of finalize())</td>
+<td>Special clean up processing</td>
+<td>After finalization.</td>
+<td>java.lang.ref.PhantomReference</td>
+</tr>
+</tbody>
+</table>
+			</div>
+		
+		</div>
+
+	
+<!-- You can start editing here. -->
+<div id="commentssection">
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+
+
+</div>
+	
+	</div>
+
+<div id="sidebar">
+<ul>
+<h2>Search</h2><form method="get" id="searchform" action="http://liuxuan.info/">
+
+<table cellpadding="0" cellspacing="0" style="width:200px; height:32px;"><tbody><tr id="WLSearchBoxPlaceholder"><td style="width:100%; border:solid 1px #cccccc; border-right-style:none;  padding-right:10px; vertical-align:middle;"><input id="WLSearchBoxInput" type="text"  style="background-image:url(http://www.bing.com/siteowner/s/siteowner/searchbox_background_k.png); background-position:right; background-repeat:no-repeat; font-family:Arial; font-size:14px; color:#000000; width:100%; border:none 0 transparent;" autocomplete="off" maxlength="200"></td><td style="border:solid 1px #cccccc; border-left-style:none; padding-left:0px; padding-right:3px;"><input id="WLSearchBoxButton" type="image" src="http://www.bing.com/siteowner/s/siteowner/searchbutton_normal_k.gif" style="border:none 0 transparent; height:24px; width:24px; vertical-align:top;"></td></tr></tbody></table>
+</form>				<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/" title="A Brief Introduction to JMeter">A Brief Introduction to JMeter</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-raid/" title="常用磁盘阵列比较">常用磁盘阵列比较</a></li>
+				<li><a href="http://liuxuan.info/2011/06/nothing-but-sad/" title="悲凉和无奈">悲凉和无奈</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-nosql-databases/" title="Comparison of NoSQL databases">Comparison of NoSQL databases</a></li>
+				<li><a href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/" title="Guide to open source licenses">Guide to open source licenses</a></li>
+				<li><a href="http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/05/initialization-on-demand-holder-idiom/" title="Initialization on demand holder idiom">Initialization on demand holder idiom</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (2)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://liuxuan.info/category/http/" title="View all posts filed under Http">Http</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (3)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a> (2)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a>&nbsp;(5)</li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+
+</ul>
+
+</div>
+
+<div id="footer">
+
+<p>&copy; 2011 Zhixingheyi | Powered by <a href="http://wordpress.org/">WordPress</a> | Theme by <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a></p>
+
+</div> 
+<!-- end footer -->
+
+</div>
+ <!-- end container -->
+
+<div align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/cn/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">Creative Commons Attribution-ShareAlike 2.5 China Mainland License</a>.
+
+<div>
+</body>
+</html>
+<!-- Dynamic page generated in 0.402 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-06-13 14:03:36 -->
+<!-- super cache -->

@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Guide to open source licenses — Zhixingheyi</title>
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/uncomplicated/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Zhixingheyi &raquo; Guide to open source licenses Comments Feed" href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/feed/" />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://liuxuan.info/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<link rel='start' title='为什么Java匿名内部类中的方法参数必须定义为final' href='http://liuxuan.info/2011/03/java-anonymous-class/' />
+<link rel='prev' title='屏蔽优酷和土豆网的广告方法' href='http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/' />
+<link rel='next' title='Comparison of NoSQL databases' href='http://liuxuan.info/2011/06/comparison-of-nosql-databases/' />
+<meta name="generator" content="WordPress 3.1.3" />
+<link rel='shortlink' href='http://liuxuan.info/?p=143' />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[307,364] -->
+<meta name="description" content="Guide to open source licenses" />
+<meta name="keywords" content="opensource, licenses,license" />
+<link rel="canonical" href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 4.461 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1307969249 58.35.96.20';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="container">
+
+
+<div id="header">
+	<h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+		<div class="border"></div>
+	<h2>Where the truth distortion is.</h2>
+</div>
+	
+
+<div id="menuholder">
+		<div class="menu">
+			<div class="page-navi"><ul><li ><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+		</div>
+
+		
+</div>
+	<div id="content">
+
+	
+		<div class="post-143 post type-post status-publish format-standard hentry category-opensource tag-license tag-opensource" id="post-143">
+			<h2><a href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/" rel="bookmark" title="Permanent Link: Guide to open source licenses">Guide to open source licenses</a></h2>
+			<div class="postmetadata"><p>Posted on June 1st, 2011 under <a href="http://liuxuan.info/category/opensource/" title="View all posts in Opensource" rel="category tag">Opensource</a></p></div>
+	
+			<div class="entry">
+				<p> 原文地址：http://kkovacs.eu/businessmens-guide-to-open-source-licenses</p>
+<div>
+<style>
+.notok { color: red; }
+.usually { color: #CC9900; }
+.ok { color: green; }
+table#licensecomparison {
+	font-size: 12px;
+}
+table#licensecomparison td,th {
+	border: 1px solid #ccc;
+	padding: 0px 4px;
+}
+</style>
+<h1>&#8220;Is it OK to take program code under the ______ license, add our own functionality, and then ______?&#8221;</h1>
+<p>Here is your answer:</p>
+</p>
+<table width="100%" id="licensecomparison">
+<thead>
+<th>License (in order of friendliness)</th>
+<th>&#8230;sell (license) it as a product?</th>
+<th>&#8230;provide it as software-as-a-service?</th>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.freebsd.org/copyright/freebsd-license.html">BSD</a> / <a href="http://dev.jquery.com/browser/trunk/jquery/MIT-LICENSE.txt">MIT</a> License</td>
+<td class="ok">OK</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache</a> License</td>
+<td class="ok">OK</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.mozilla.org/MPL/MPL-1.1.html">MPL</a> (Mozilla Public License)</td>
+<td class="usually">If done right *</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/lgpl.txt">LGPL</a> (Lesser GNU Public License)</td>
+<td class="usually">As a larger work **</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/gpl.txt">GPL</a> (GNU Public License)</td>
+<td class="notok">your code must be given away for free</td>
+<td class="ok">OK</td>
+</tr>
+<tr>
+<td><a href="http://www.gnu.org/licenses/agpl.txt">AGPL</a> (Affero GNU Public License)</td>
+<td class="notok">your code must be given away for free</td>
+<td class="notok">anyone has to be able to download and use freely</td>
+</tr>
+</tbody>
+</table>
+<h2>Notes:</h2>
+<p>(*) MPL covers only the original files, and new ones that contain code from the originals. <em>Your new files are yours</em>, and yours only.</p>
+<p>(**) It&#8217;s okay if your product is NOT the modified version of the original code, but a program that just uses (&#8220;links&#8221;) the code under the LGPL.</p>
+<p><strong>TIP:</strong> Interestingly, you can also legally modify any code under any of these licenses (even AGPL), and use it <em>internally</em> in your organization, <em>without</em> having to give your modifications to anybody.</p>
+<p><strong>TIP 2:</strong> For all these licenses, it&#8217;s legal to contract for software development work on an open-source software for a client, who then will use the resulting product internally.</p>
+<h2>There are some things to watch out for&#8230;</h2>
+<p>GPL cares about where the code runs. Even if you provide something as SaaS over the Internet, some parts of your software (JavaScript) <em>actually is</em> distributed to your costumers. Just as an example, <a href="http://www.extjs.com/">ExtJS</a> is under GPL, but you MUST NOT base your SaaS on it, since the code gets transferred to the visitor and then run there, requiring you to distribute your code for free under the GPL too.</p>
+<p>GPL and AGPL are picky about what kind of code gets linked to it. Not even all open-source licenses qualify.</p>
+<p>In what exact way parts of your code interact with each other can be important. For example, you can make GPL and non-GPL code communicate through a database, web services, or APIs. But the moment you call GPL code directly, your code must be put under the GPL.</p>
+<p>Some of these licenses may require you to include notices, source code of the original, or other things to include with your product distribution.</p>
+<p>Make your project manager and lawyer talk to each other!</p>
+<p><strong>IMPORTANT:</strong> You may be providing a service over the Internet now, but also think about the time when you might want to sell your assets to another company; either because you are selling the service to somebody, or because you&#8217;re redistributing your assets. I&#8217;m just saying, think ahead!</p>
+<h2>What about GPL v2 versus GPL v3?</h2>
+<p>Earlier, when GPL was v2, there was talk of putting an anti-SaaS clause into v3, but later the Affero GPL was created for that purpose. (This causes lots of confusion.)</p>
+<p>Actually, the differences between GPL v2 and v3 are not really important to you, unless:</p>
+<p>- you own related trademarks,<br />
+<br />- you are developing something that enforces DMCA,<br />
+<br />- you are disallowing modified code to run on your hardware.</p>
+<h2>The financial benefits of giving code back for free</h2>
+<p>Besides being a socially responsible businessman, you should also know that giving the code you have had developed to the open source community for free <em>can</em> also be the right thing to do financially. If you are not profiting directly from that code, it&#8217;s rarely smart to hang onto it.</p>
+<p>The community will go forward with the development anyway. Their next release will have nice new features, bug fixes, and better security. If you have kept your code secret, <em>you</em> will be the one who pays (in money or in time) for the integration of that secret code into their new releases. Or integrating their security fixes into your code. Both get messy quick, even with the help of state-of-the-art version control systems (that you should be using for <em>every project</em>, but that&#8217;s another article.)</p>
+<h2>Useful links</h2>
+<p><a href="http://www.gnu.org/licenses/gpl-faq.html">Gnu Public License FAQ</a><br />
+<br /><a href="http://www.mozilla.org/MPL/mpl-faq.html">Mozilla Public License FAQ</a><br />
+<br /><a href="http://www.apache.org/foundation/licence-FAQ.html">Apache License FAQ</a></p>
+<h2>Disclaimer</h2>
+<p>I&#8217;m not a lawyer and this article should NOT be considered legal advice. Always consult your own lawyer before betting the company on somebody else&#8217;s licensing terms (this applies both for open-source and non-open-source licenses).</p>
+<p>Don&#8217;t take legal, medical, or financial advice from strangers on the Internet, ok? <img src='http://liuxuan.info/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>
+			</div>
+		
+		</div>
+
+	
+<!-- You can start editing here. -->
+<div id="commentssection">
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2011/06/guide-to-open-source-licenses/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://liuxuan.info/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre lang=&quot;&quot; line=&quot;&quot; escaped=&quot;&quot;&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="commentbox" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type='hidden' name='comment_post_ID' value='143' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b3bffdbad7" /></p>
+</form>
+
+</div>
+
+
+</div>
+	
+	</div>
+
+<div id="sidebar">
+<ul>
+<h2>Search</h2><form method="get" id="searchform" action="http://liuxuan.info/">
+
+<table cellpadding="0" cellspacing="0" style="width:200px; height:32px;"><tbody><tr id="WLSearchBoxPlaceholder"><td style="width:100%; border:solid 1px #cccccc; border-right-style:none;  padding-right:10px; vertical-align:middle;"><input id="WLSearchBoxInput" type="text"  style="background-image:url(http://www.bing.com/siteowner/s/siteowner/searchbox_background_k.png); background-position:right; background-repeat:no-repeat; font-family:Arial; font-size:14px; color:#000000; width:100%; border:none 0 transparent;" autocomplete="off" maxlength="200"></td><td style="border:solid 1px #cccccc; border-left-style:none; padding-left:0px; padding-right:3px;"><input id="WLSearchBoxButton" type="image" src="http://www.bing.com/siteowner/s/siteowner/searchbutton_normal_k.gif" style="border:none 0 transparent; height:24px; width:24px; vertical-align:top;"></td></tr></tbody></table>
+</form>				<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/" title="A Brief Introduction to JMeter">A Brief Introduction to JMeter</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-raid/" title="常用磁盘阵列比较">常用磁盘阵列比较</a></li>
+				<li><a href="http://liuxuan.info/2011/06/nothing-but-sad/" title="悲凉和无奈">悲凉和无奈</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-nosql-databases/" title="Comparison of NoSQL databases">Comparison of NoSQL databases</a></li>
+				<li><a href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/" title="Guide to open source licenses">Guide to open source licenses</a></li>
+				<li><a href="http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				<li><a href="http://liuxuan.info/2011/05/initialization-on-demand-holder-idiom/" title="Initialization on demand holder idiom">Initialization on demand holder idiom</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (2)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://liuxuan.info/category/http/" title="View all posts filed under Http">Http</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (3)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a> (2)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a>&nbsp;(5)</li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+
+</ul>
+
+</div>
+
+<div id="footer">
+
+<p>&copy; 2011 Zhixingheyi | Powered by <a href="http://wordpress.org/">WordPress</a> | Theme by <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a></p>
+
+</div> 
+<!-- end footer -->
+
+</div>
+ <!-- end container -->
+
+<div align="center">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/cn/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">Creative Commons Attribution-ShareAlike 2.5 China Mainland License</a>.
+
+<div>
+</body>
+</html>
+<!-- Dynamic page generated in 0.307 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-06-13 12:47:29 -->
+<!-- super cache -->
