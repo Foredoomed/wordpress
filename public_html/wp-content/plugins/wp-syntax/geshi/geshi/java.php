@@ -925,20 +925,20 @@ $language_data = array (
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'color: #000000; font-weight: bold;',
-            2 => 'color: #000066; font-weight: bold;',
-            3 => 'color: #003399;',
-            4 => 'color: #000066; font-weight: bold;'
+            1 => 'color: #2B91AF;',
+            2 => 'color: #800000;',
+            3 => 'color: #800000;',
+            4 => 'color: #00008B;'
             ),
         'COMMENTS' => array(
             1 => 'color: #666666; font-style: italic;',
             2 => 'color: #006699;',
-            3 => 'color: #008000; font-style: italic; font-weight: bold;',
-            3 => 'color: #008000; font-style: italic; font-weight: bold;',
+            3 => 'color: #008000; font-style: italic;',
+            3 => 'color: #008000; font-style: italic;',
             'MULTI' => 'color: #666666; font-style: italic;'
             ),
         'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
+            0 => 'color: #000099;'
             ),
         'BRACKETS' => array(
             0 => 'color: #009900;'
