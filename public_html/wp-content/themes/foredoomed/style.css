@@ -126,7 +126,6 @@ a:hover{
 }
 
 .menu {	
-	font: normal 14px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
 	background: #FFFFFF;
 	width:633px; 
 	float: left;
@@ -139,6 +138,7 @@ a:hover{
 }
 
 .menu ul li {
+	border : 1px dotted #CCCCCC;
 	list-style-type: none;
 	float: left;
 	padding: 2px 0 0 0;
@@ -149,18 +149,19 @@ a:hover{
 	margin: 0 1px 1px 0;
 	text-decoration: none;
 	color: #999;
-	font-weight:300;
+	font-size: 1.1em;
 	display: block;
 
 }
 
 .menu ul li a:hover {
-	background: url(images/menu.jpg) repeat-x;
+	background: #EEEEEE;
+	color: #000000;
 }
 
 .menu li.current_page_item a{
-	background: url(images/menu.jpg); 
-	font-weight:bold; 
+	background: #EEEEEE;
+	color: #000000; 
 }
 
 
@@ -171,7 +172,6 @@ a:hover{
 	float: left;
 	width: 630px;
 	overflow: hidden;
-	background: url(images/content.png) top right no-repeat;
 	margin: 1px 0 1px 1px;
 }
 	
@@ -530,7 +530,6 @@ cite a{
 	padding: 2px;
 	margin: 2px 0 0 0;
 	border: 1px solid #F0F0F0;
-	background: #FFFFFF url(images/search.jpg);
 	width: 82px;
 	text-transform: uppercase;
 }
@@ -566,7 +565,6 @@ That's why this is available. */
 	padding: 2px;
 	margin: 2px 0 0 0;
 	border: 1px solid #F0F0F0;
-	background: #FFFFFF url(images/search.jpg);
 	width: 82px;
 	text-transform: uppercase;
 }
