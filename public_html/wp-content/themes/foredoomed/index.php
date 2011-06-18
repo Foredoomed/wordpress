@@ -18,7 +18,7 @@ get_header();
             <div class="postmetadata"><p>Posted on <?php the_time('F jS, Y') ?> under <?php the_category(', ') ?></p></div>
             <div class="entry">
                 <?php the_content('Continue reading &raquo;'); ?>
-                <?php if (function_exists('the_tags')) { the_tags('Tags: ', ', ', ''); } ?>
+             <span class="tag"><?php if (function_exists('the_tags')) {the_tags('Tags: ', ', ', ''); }  ?></span>
 	    </div>
         </div>
      <?php endwhile; ?>

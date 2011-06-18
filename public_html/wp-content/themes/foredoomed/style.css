@@ -14,11 +14,12 @@ Tags: two-column, white, right-column
 
 *{margin:0; padding:0;}
 
-body {
-	background: #F6F6F6;
-	font: 14px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
-	color:#777;
+body {	
+	font-family: "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	font-size: 72.5%;
+	color: #000000;
 	line-height: 1.5;
+
 }
 
 
@@ -47,26 +48,26 @@ img.right{
 }
 
 blockquote{
-	border-left:1px solid #A5ABAB;
-	margin:15px;
-	padding:0 12px 0 12px;
+	border-left: 1px solid #A5ABAB;
+	margin: 15px;
+	padding: 0 12px 0 12px;
 }
 
 code{
-	font-family:"Courier New", Courier, monospace;
+	font-family: "Courier New",Courier,monospace;
 }
 
 
 /* links */
 
 a{
-	color:#0066CC;
-	text-decoration:none;
+	color: #0066CC;
+	text-decoration: none;
 	border: none;
 }
 
 a:hover{
-	color:#CC0000; 
+	color: #CC0000; 
         text-decoration: none; 
         border: none;
 }
@@ -78,44 +79,38 @@ a:hover{
 	width: 900px;
 	margin: 0 auto;
 	padding: 0;
-	background:#fff url(images/right.png);
-	color:#333;
-	border-left: 1px solid #F0F0F0;
-	border-right: 1px solid #F0F0F0;
+	
 }
 
 	
 /* header */
 
 #header {
-	
-	border-color: #470101;
-	background: #AD0404 url(images/header.gif) repeat-x scroll 0 0;//bottom right;//repeat-x scroll 0 0;	
 	height: 140px;
+	border-color: #470101;
+	background: #AD0404 url(images/header.gif) repeat-x scroll 0 0;
 }
 
 #header h1{
 	font-family: georgia, arial, times;
 	font-size: 34px;
-	font-weight: 300;
-	margin: 0;	
-	padding: 28px 10px 10px 10px;	
+	font-weight: 300;	
+	padding: 10px 28px 1px 10px;	
 	text-align: left;
 }
 	
 #header h1 a{
-	color: #fff; 
 	text-decoration: none; 
 	font-weight: bold;
+	color: #FFFFEE
 }
 
-
 #header h2{
-	font-family: DejaVu Serif, Bitstream Vera Serif, Georgia, serif;
+	font-family: "Trebuchet MS",Arial,"Bitstream Vera Sans",sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	font-style: oblique;
-	color: #fff;	
+	font-style: italic;
+	color: #FFFFDD;
 	padding: 0 0 0 10px;	
 	text-align: left;	
 }
@@ -124,7 +119,7 @@ a:hover{
 
 #menuholder{
 	width: 100%; 
-	background: #fff; 
+	background: #FFFFFF; 
 	border-bottom: 1px solid #F0F0F0; 
 	border-top: 1px solid #F0F0F0; 
 	overflow: hidden;
@@ -132,23 +127,20 @@ a:hover{
 
 .menu {	
 	font: normal 14px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
-	background: #fff;
+	background: #FFFFFF;
 	width:633px; 
 	float: left;
-
 }
 
 
 .menu ul {
 	margin: 0 0 0 1px;
-	padding: 0;
 	text-align: left;
 }
 
 .menu ul li {
 	list-style-type: none;
 	float: left;
-	margin: 0;
 	padding: 2px 0 0 0;
 }
 
@@ -164,13 +156,11 @@ a:hover{
 
 .menu ul li a:hover {
 	background: url(images/menu.jpg) repeat-x;
-	color:#333;
 }
 
 .menu li.current_page_item a{
 	background: url(images/menu.jpg); 
 	font-weight:bold; 
-	color: #333;
 }
 
 
@@ -185,42 +175,38 @@ a:hover{
 	margin: 1px 0 1px 1px;
 }
 	
-#content h3{
-	color: #333;
-}
+
 
 .archivetitle{
-	color: #333;
 	padding: 24px 0 0 30px;
 }
 
 .search{
-	color: #333;
 	padding: 24px 0 0 30px;
 }
 	
 .notfound{
-	color: #333;
 	padding: 24px 0 0 30px;
 }
 
 .post {
 	margin:0 30px 30px 30px;
-	padding:20px 0 0 0;
-	line-height: 160%;	
-	border-bottom: 1px solid #f0f0f0;
+	padding: 20px 0 0 0;
+	line-height: 1.5;	
+	border-bottom: 1px solid #F0F0F0;
 }
 	
 .post h2{
-	font: normal 20px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
-	color: #333;
 	font-weight: bold;
+	font-size: 20px;
+	
 }
 	
 .post h2 a{
-	color: #333;
-	text-decoration: none;
+	color: #000000;
 	font-weight: bold;
+	text-decoration: none;
+	
 }
 	
 .post h2 a:hover{
@@ -233,8 +219,9 @@ a:hover{
 }
 
 .post .entry p{
+	font-size: 1.2em;
 	margin: 12px 0; 
-	line-height: 20px;
+	line-height: 1.5;
 }
 
 .post ul {
@@ -242,66 +229,67 @@ a:hover{
 	padding: 0 0 0 20px;
 }
 
-.post li {	
+.post li {
+	font-size: 1.2em;	
 	padding: 0 0 0 24px;
-	padding-left: 20px;
+	padding-left: 15px;
 	list-style-position: inside;
 }
 
 .postborder{
-        background: #f1f1f1; 
+        background: #F1F1F1; 
         height: 1px; 
         padding: 0;
         margin: 0;
 }
 
 .postmetadata{
-	padding:0;
-	margin:12px 0 0 0;
-	border-top:1px solid #f0f0f0;
-	font-size: 10px;
-	color: #999;
-	font: normal normal normal 15px/21px Arial, Georgia, Times, "Times New Roman", serif;
+	font-family: Arial, Georgia, Times, "Times New Roman", serif;
+	font-size: 1.4em;
+	padding: 0;
+	margin: 12px 0 0 0;
+	border-top: 1px solid #F0F0F0;
+	
 }
 	
 .postmetadata p{
-	padding:6px 0 0 0;
+	padding: 6px 0 0 0;
 	margin: 0;
 }	
 	
 .postmetadata span{
-	padding:8px 14px 0 0px;
+	padding: 8px 14px 0 0px;
 	margin: 0 12px 0 0;
 }
 	
 .postmetadata span.commborder{
-	padding:8px 14px 0 0px;
+	padding: 8px 14px 0 0px;
 	margin: 0 12px 0 0;
-	border-right:1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
 }
 	
 .postmetadata span a{
-	padding:0;
+	padding: 0;
 	margin: 0;
 }
 	
 .postmetadata span img{
-	padding:0 4px 0 0;
+	padding: 0 4px 0 0;
 	margin: 0;
 	display: inline;
 }
+
+.tag{
+	font-size: 1.2em;
+
+}
 	
 .navigation {
-	font-size:10px;
-	float:left;
-	width:100%;
-	background: #FAFAFA;
-	border-top:1px solid #f1f1f1;
-	letter-spacing: 1px;
-	margin: 10px 0 0 0;
-	padding:0;
-	bottom:0;
-	font: normal normal normal 15px/21px Arial, Georgia, Times, "Times New Roman", serif;
+	font-family: Arial,Georgia,Times,"Times New Roman",serif;
+	font-size: 1.2em;
+	float: left;
+	width: 100%;
+	letter-spacing: 1px;	
 }
 	
 .navigation a{
@@ -309,12 +297,12 @@ a:hover{
 }
 	
 .alignleft{
-        float:left; 
+        float: left; 
         margin: 8px 8px 8px 30px;
 }
 
 .alignright{
-        float:right;
+        float: right;
         margin: 8px 30px 8px 8px;
 }
 
@@ -322,111 +310,74 @@ a:hover{
 /* sidebar */
 
 #sidebar {
-	font-size: 1em;
-	width: 265px;
 	float: right;
+	font-size: 1.4em;
+	text-align: right;
+	width: 265px;	
 	margin: 12px 0 24px 0;
-	padding: 0;
+
 }
 
 #sidebar h2{
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	font-weight: bold; 
-	font-size: 1.2em; 
-	text-align: left;
-	margin: 0 0 8px 0;
-	padding: 0 0 8px 0;
-	border-bottom: 1px solid #F0F0F0;
+	font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight: normal;
+	letter-spacing: -1px;
+
 }
 
-#sidebar p{
-	margin:0; 
-	padding: 0 0 0 12px;
-	
-}
-
-#sidebar img{
-	padding: 0; 
-	margin: 0;
-}
 
 #sidebar ul {
-	margin:12px;
-	padding:0;
+	margin: 12px;
 	list-style-type: none;
 }
 
 #sidebar ul li {
-	margin: 0;
-	padding: 0;
 	line-height: 1.5;
 	list-style-type: none;
 }
 
 #sidebar ul ul {
 	margin: 16px 0;
-	padding: 0;
 }
 
 #sidebar ul ul li {
-	padding: 0 0 0 0;
 	list-style-type: none;
 	padding: 0 0 7px 0;
 }
 	
-#sidebar ul ul ul{
-	margin: 0;
-	padding: 0;
-}
-
 #sidebar ul ul ul li{
 	padding: 0 0 0 15px;
 	list-style-type: square;
 	color: #898989;
 }
 
-#sidebar ul ul li a{
-	padding:0;
-}
-
-
 
 /* comments */
 
 #commentssection{
+	font-size: 1.2em;
 	clear: both;
-	margin:30px;
-	padding:14px 30px;
+	margin: 30px;
+	padding: 14px 30px;
 	margin: 0;
-	color: #666;
 }
 	
 #commentssection h3{
-	font-family: 14px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
-	font-weight: 300;
-	font-style: normal;
-	color: #000;
-	margin:20px 0;
+	margin: 20px 0;
 }
 
 #commentform{
-	background: #FCFCFC;
 	margin: 20px 0;
-	padding:10px 20px 20px 20px;
 }
 	
 #commentform label{
 	font-family:georgia, arial;
 }
 	
-#commentform p{
-	color: #000;
-	padding:0;
-	margin:0;
-}
+
 	
 #respond{
-	margin:60px 0 0 0;
+	margin: 60px 0 0 0;
 }
 	
 #commentform a{
@@ -437,18 +388,19 @@ a:hover{
 }
 	
 #commentform h3{
-	font: normal 18px georgia, sylfaen, baskerville, times, serif;
-	color: #333;
+	font-family: georgia, sylfaen, baskerville, times, serif;
+	font-weight: normal;
+	font-size: 18px;
 }
 	
 #commentbox{
-	width:516px;
-	margin:5px 0;
+	width: 516px;
+	margin: 5px 0;
 }
 
-#author, #email, #url, #commentbox, #submit{
-	background: #fff;	
-	margin:5px 5px 0 0;
+#author, #email, #url, #commentbox{
+	background: #FFFFFF;	
+	margin: 5px 5px 0 0;
 	border: none; 
 	padding: 6px;
 	border-top: 1px solid #F1F1F1;
@@ -457,21 +409,8 @@ a:hover{
 	border-bottom: 1px solid #E8E8E8;
 }
 
-#submit{
-	background: #666;
-	border: 1px solid #777;
-	color: #CCC;
-	margin-top: 5px;
-	padding: 5px;
-	font-size: 1em;
-	width: 170px;
-}
-  
-
-
 	
 ol.commentlist {
-	color: #333;
 	font-size: 0.9em;
 	list-style-type: none;
 }
@@ -482,18 +421,18 @@ ol.commentlist li {
 }
 
 ol.commentlist li.alt {
-        background: #fff; 
+        background: #FFFFFF; 
         border-top: none;
 }
 
 
 
 ol.commentlist a {
-        color:#328599;
+        color: #328599;
 }
 
 cite {
-	font-family: arial, verdana, tahoma;
+	font-family: arial,verdana,tahoma;
 	font-size: 9px;
 	font-weight: bold;
 	font-style: normal;
@@ -507,58 +446,53 @@ cite a{
 
 
 .commentmetadata{
-	padding:0;
-	margin:0 0 8px 0;
-	overflow:hidden;
+	padding: 0;
+	margin: 0 0 8px 0;
+	overflow: hidden;
 }
 	
 .commentmetadata p{
-	padding:6px 0 0 0;
+	padding: 6px 0 0 0;
 	margin: 0;
 }	
 	
 .commentmetadata span{
-	padding:8px 14px 0 0px;
+	padding: 8px 14px 0 0px;
 	margin: 0 12px 0 0;
 }
 	
 .commentmetadata span.noborder{
-	padding:8px 0 0 0px;
+	padding: 8px 0 0 0px;
 	margin: 0 12px 0 0;
-	border-right:none;
+	border-right: none;
 }
 	
 .commentmetadata span.reborder{
-	padding:8px 0 0 12px;
-	margin:0;
-	border-left:1px solid #f0f0f0;
-	border-right:none;
+	padding: 8px 0 0 12px;
+	margin: 0;
+	border-left: 1px solid #F0F0F0;
+	border-right: none;
 }
 	
 .commentmetadata span a{
-	padding:0;
+	padding: 0;
 	margin: 0;
 }
 	
-* html .commentmetadata span a{
-	padding:-4px 0;
-	margin: 0;
-}
 	
 .commentmetadata span img{
-	padding:0 6px 0 0;
+	padding: 0 6px 0 0;
 	margin: 0;
 	display: inline;
 }
 	
 .commentmetadata span.commborder{
-	padding:8px 0px 0 4px;
+	padding: 8px 0px 0 4px;
 	margin: 0 12px 0 4px;
-	border-left:1px solid #f0f0f0;
-	border-right:none;
-	width:10px;
+	border-left: 1px solid #F0F0F0;
+	border-right: none;
+	width: 10px;
 }
-	
 	
 .avatar{
 	float: left;
@@ -572,6 +506,7 @@ cite a{
 
 /* search */
 
+
 #searchform{
 	font-family: verdana, arial, times;
 	padding: 10px 20px 10px 0;
@@ -584,7 +519,6 @@ cite a{
 	padding: 2px;
 	margin: 2px 0;
 	border: 1px solid #F0F0F0;
-	color: #999;
 	width: 141px;
 	text-transform: uppercase;
 }
@@ -596,14 +530,13 @@ cite a{
 	padding: 2px;
 	margin: 2px 0 0 0;
 	border: 1px solid #F0F0F0;
-	background: #fff url(images/search.jpg);
-	color: #333;
+	background: #FFFFFF url(images/search.jpg);
 	width: 82px;
 	text-transform: uppercase;
 }
 	
 #searchform input#searchsubmit:hover{
-	background: #fff;
+	background: #FFFFFF;
 }
 
 /* the alternative search form is to allow you to float 
@@ -622,7 +555,6 @@ That's why this is available. */
 	padding: 2px;
 	margin: 2px 0;
 	border: 1px solid #F0F0F0;
-	color: #999;
 	width: 141px;
 	text-transform: uppercase;
 }
@@ -634,62 +566,53 @@ That's why this is available. */
 	padding: 2px;
 	margin: 2px 0 0 0;
 	border: 1px solid #F0F0F0;
-	background: #fff url(images/search.jpg);
-	color: #333;
+	background: #FFFFFF url(images/search.jpg);
 	width: 82px;
 	text-transform: uppercase;
 }
 	
 #altsearchform input#searchsubmit:hover{
-	background: #fff;
+	background: #FFFFFF;
 }
 	
 /* wp page navi */
 
 .wp-pagenavi{
-	margin:14px 30px;
+	margin: 14px 30px;
 }
 
 .wp-pagenavi a, .wp-pagenavi a:link {
-	border: 1px solid #989898 !important;
-	color: #fff !important;
-	background-color: #989898 !important;	
-}
-.wp-pagenavi a:visited {
-	border: 1px solid #989898 !important;
-	color: #989898 !important;
-	background-color: #f7f7f7 !important;	
-}
-.wp-pagenavi a:hover {	
-	border: 1px solid #989898 !important;
-	color: #fff !important;
-	background-color: #989898 !important;
-}
-.wp-pagenavi a:active {
-	border: 1px solid #989898 !important;
-	color: #989898 !important;
-	background:none !important;	
-}
-.wp-pagenavi span.pages {
-	padding: 2px 12px 2px 0px !important; 
-	margin:0 !important;
-	color: #989898 !important;
-	border: none !important;
-	background:none !important;
-}
-.wp-pagenavi span.current {
-	font-weight: 300 !important;
-	border: 1px solid #989898 !important;
-	color: #fff !important;
-	background-color:#989898 !important;
-	text-align:right;
-}
-.wp-pagenavi span.extend {
-	border: 1px solid #989898 !important;
-	color: #989898 !important;
-	background-color: none !important;
+	border: 1px solid #0066CC;
+	color: #0066CC;
+	background-color: #FFFFFF;	
 }
 
+.wp-pagenavi a:visited {
+	border: 1px solid #0066CC;
+	color: #0066CC;
+	background-color: #FFFFFF;	
+}
+
+.wp-pagenavi a:active {
+	border: 1px solid;
+	background-color: #FFFFFF;	
+}
+
+.wp-pagenavi span.pages {
+	padding: 2px 12px 2px 0px; 	
+}
+
+.wp-pagenavi span.current {
+	font-weight: 300;
+	border: 1px solid;
+	color: #FFFFFF;
+	background-color: #0066CD;
+	text-align: right;
+}
+
+.wp-pagenavi span.extend {
+	border: 1px solid;
+}
 
 /* Captions */
 
@@ -705,10 +628,6 @@ That's why this is available. */
 	background-color: #f3f3f3;
 	padding-top: 4px;
 	margin: 10px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
 }
 
 .wp-caption img {
@@ -723,7 +642,6 @@ That's why this is available. */
 	padding: 0 4px 5px;
 	margin: 0;
 }
-
 /* End captions */
 
 
@@ -732,21 +650,19 @@ That's why this is available. */
 /* footer */
 
 #footer {
-        font: normal 14px "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica,sans-serif;
 	clear: both;
 	width: 100%;
 	overflow: hidden;
 	border-top:double #F1F1F1;
-	
-	background: #fff;
 }
 	
 #footer p{
-        padding:22px 0;
+	font-size: 1.1em;
+	color: #666;
+        padding: 10px 0;
         margin: 0; 
-        color: #666; 
-        text-align:center; 
-        word-spacing:1px;
+        text-align: center; 
+        word-spacing: 1px;
 }
 
 #footer a{

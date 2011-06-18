@@ -10,7 +10,7 @@
 .wp_syntax {
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: expression(this.scrollWidth > this.offsetWidth ? 15 : 0);
+  padding-bottom: 10px;
   width: 100%;
 }
 
