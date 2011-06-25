@@ -76,3 +76,4 @@
 [17-Jun-2011 13:12:12] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/liuxuan/public_html/wp-content/themes/foredoomed/functions.php:16) in /home/liuxuan/public_html/wp-includes/pluggable.php on line 695
 [17-Jun-2011 13:12:12] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/liuxuan/public_html/wp-content/themes/foredoomed/functions.php:16) in /home/liuxuan/public_html/wp-includes/pluggable.php on line 897
 [17-Jun-2011 14:12:46] PHP Parse error:  syntax error, unexpected '<' in /home/liuxuan/public_html/wp-content/themes/foredoomed/index.php on line 21
+[20-Jun-2011 12:10:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/liuxuan/public_html/wp-content/plugins/all-in-one-seo-pack/aioseop.class.php:221) in /home/liuxuan/public_html/wp-content/themes/foredoomed/sidebar.php on line 10
