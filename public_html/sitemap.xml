@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.1.3" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.4" -->
-<!-- generated-on="June 20, 2011 13:09" -->
+<!-- generated-on="June 26, 2011 16:22" -->
 <!-- Debug: Total comment count: 3 -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
 		<loc>http://liuxuan.info/</loc>
-		<lastmod>2011-06-20T13:00:10+00:00</lastmod>
+		<lastmod>2011-06-26T15:41:26+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 <!-- Debug: Start Postings -->
+<!-- Debug: Priority report of postID 203: Comments: 0 of 3 = 0 points -->
+	<url>
+		<loc>http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/</loc>
+		<lastmod>2011-06-26T15:41:26+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/about/</loc>
+		<lastmod>2011-06-26T15:14:00+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 170: Comments: 0 of 3 = 0 points -->
+	<url>
+		<loc>http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/</loc>
+		<lastmod>2011-06-25T08:50:46+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
 <!-- Debug: Priority report of postID 163: Comments: 0 of 3 = 0 points -->
 	<url>
 		<loc>http://liuxuan.info/2011/06/nothing-but-sad/</loc>
@@ -20,13 +40,6 @@
 	<url>
 		<loc>http://liuxuan.info/2011/06/comparison-of-nosql-databases/</loc>
 		<lastmod>2011-06-20T09:52:45+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 170: Comments: 0 of 3 = 0 points -->
-	<url>
-		<loc>http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/</loc>
-		<lastmod>2011-06-16T09:49:17+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
@@ -71,12 +84,6 @@
 		<lastmod>2011-05-31T15:11:43+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/about/</loc>
-		<lastmod>2011-05-31T13:16:48+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
 	</url>
 <!-- Debug: Priority report of postID 128: Comments: 3 of 3 = 1 points -->
 	<url>
