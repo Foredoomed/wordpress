@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title>Zhixingheyi</title>
+    <link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/foredoomed/style.css" type="text/css" media="screen"></link>
+    <link rel="pingback" href="http://liuxuan.info/xmlrpc.php"></link>
+        <link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<meta name="generator" content="WordPress 3.1.3" />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[313,332] -->
+<meta name="description" content="Focus on {Web,Java,RoR,MySQL,OpenSource,Linux}" />
+<meta name="keywords" content="Web,Java,RoR,MySQL,OpenSource,Linux" />
+<link rel="canonical" href="http://liuxuan.info/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 3.487 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1309176210 58.35.198.6';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+
+<body>
+    <div id="container">
+    <div id="header">
+        <h1><a href="http://liuxuan.info/">Zhixingheyi</a></h1>
+	<div class="border"></div>
+	<h2>Where the truth distortion happens.</h2>
+    </div>
+    <div id="menuholder">
+        <div class="menu">
+            <div class="page-navi"><ul><li class="current_page_item"><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+	</div>
+    </div>
+
+<div id="content">
+                <div class="post" id="post-203">
+	    <h2>
+                <a href="http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/" rel="bookmark" title="Permanent Link to Ubuntu下编译安装Vim">Ubuntu下编译安装Vim</a>
+            </h2>
+            <div class="postmetadata"><p>Posted on June 25th, 2011 under <a href="http://liuxuan.info/category/ide/" title="View all posts in IDE" rel="category tag">IDE</a></p></div>
+            <div class="entry">
+                <p><strong>一.编译安装最新版本Vim</strong><br />
+我们都知道在Ubuntu下如果直接在终端中用命令安装Vim，那么安装的都不是最新版本。如果要想安装最新版本只有下载最新版源代码包，然后再编译安装。</p>
+<p>首先，Vim最新版源代码包可以在<a href="http://www.vim.org/">官网</a>下载，<br />
+下载源代码包到本地Ubuntu主机后，解压缩，进入该目录，进行配置，编译和安装：</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #c20cb9; font-weight: bold;">tar</span> xzvf vim-<span style="color: #000000;">7.3</span>.tar.bz2
+&nbsp;
+<span style="color: #7a0874; font-weight: bold;">cd</span> vim73
+&nbsp;
+.<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">vim</span> <span style="color: #660033;">--enable-rubyinterp</span> <span style="color: #660033;">--enable-multibyte</span> <span style="color: #660033;">--enable-gui</span>=gnome2 <span style="color: #660033;">--enable-xim</span> <span style="color: #660033;">--enable-fontset</span> <span style="color: #660033;">--with-features</span>=huge
+&nbsp;
+<span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre></div></div>
+
+<p>什么，亲？安装出现错误？有可能是目录的权限问题，试试下面的命令吧，亲！</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #c20cb9; font-weight: bold;">sudo</span> <span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #000000;">777</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>bin
+&nbsp;
+<span style="color: #c20cb9; font-weight: bold;">sudo</span> <span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #000000;">777</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span></pre></div></div>
+
+<p> 好了，如果不出什么意外的话，Vim应该已经安装好了，接下来就是要安装和配置插件了。首先，要在主目录里新建<strong>.vimrc</strong>文件，然后在这个文件里配置Vim。<br />
+什么，亲？怎么配置？那就参考<a href="https://github.com/panweizeng/env">这里</a>吧，亲！<br />
+什么，亲？运行出错？是不是<strong>(gvim:6667): Gtk-WARNING **: Invalid input string</strong>这个错？如果是的话，就在主目录里新建<strong>.bashrc</strong>文件，然后在这里文件里添加如下代码：</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LANG</span>=zh_CN.UTF-<span style="color: #000000;">8</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_CTYPE</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_NUMERIC</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_TIME</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_COLLATE</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_MONETARY</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_MESSAGES</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_PAPER</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_NAME</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_ADDRESS</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_TELEPHONE</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_MEASUREMENT</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;
+<span style="color: #7a0874; font-weight: bold;">export</span>  <span style="color: #007800;">LC_IDENTIFICATION</span>=<span style="color: #ff0000;">&quot;zh_CN.UTF-8&quot;</span>;</pre></div></div>
+
+<p><strong>二.配置Vim对Ruby的支持</strong><br />
+我主要用Vim来写Ruby代码，所以比如代码高亮，自动补全等都是必须的。<br />
+1.Ruby一定是要安装的（废话，不安装Ruby怎么弄？），安装Ruby也可以去<a href="http://www.ruby-lang.org/en/">官网</a>上下载最新版本，然后编译安装。<br />
+2.设置环境变量。在<strong>.bashrc</strong>文件里添加如下代码：</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">PATH</span>=<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>ruby<span style="color: #000000; font-weight: bold;">/</span>bin:<span style="color: #007800;">$PATH</span></pre></div></div>
+
+<p>3.下载<a href="http://rubyforge.org/projects/vim-ruby/">vim-ruby</a>插件，解压后复制道Vim安装目录里。现在开始写Ruby代码吧，然后按F5看下运行结果是不是出来了呢。</p>
+<p>最后Show一下我的Vim：<br />
+<a href="http://www.flickr.com/photos/60110479@N08/5868623217/" title="Flickr 上 Foredoomed 的 vim_screenshot"><img src="http://farm6.static.flickr.com/5067/5868623217_70b3bcae76_z.jpg" width="640" height="480" alt="vim_screenshot"/></a></p>
+             <span class="tag">Tags: <a href="http://liuxuan.info/tag/ruby/" rel="tag">Ruby</a>, <a href="http://liuxuan.info/tag/vim/" rel="tag">Vim</a></span>
+	    </div>
+        </div>
+             <div class="post" id="post-170">
+	    <h2>
+                <a href="http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/" rel="bookmark" title="Permanent Link to JMeter的简单介绍">JMeter的简单介绍</a>
+            </h2>
+            <div class="postmetadata"><p>Posted on June 11th, 2011 under <a href="http://liuxuan.info/category/opensource/" title="View all posts in Opensource" rel="category tag">Opensource</a></p></div>
+            <div class="entry">
+                <p>这是在公司内部做的JMeter介绍的PPT。</p>
+<p><object width="425" height="355" type="application/x-shockwave-flash" data="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=apachejmeterabriefintroduction-110611105025-phpapp02&#038;stripped_title=apachejmeterabriefintroduction&#038;userName=Foredoomed"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=apachejmeterabriefintroduction-110611105025-phpapp02&#038;stripped_title=apachejmeterabriefintroduction&#038;userName=Foredoomed" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/></object></p>
+             <span class="tag">Tags: <a href="http://liuxuan.info/tag/jmeter/" rel="tag">JMeter</a></span>
+	    </div>
+        </div>
+             <div class="post" id="post-166">
+	    <h2>
+                <a href="http://liuxuan.info/2011/06/comparison-of-raid/" rel="bookmark" title="Permanent Link to 常用磁盘阵列比较">常用磁盘阵列比较</a>
+            </h2>
+            <div class="postmetadata"><p>Posted on June 11th, 2011 under <a href="http://liuxuan.info/category/architecture/" title="View all posts in Architecture" rel="category tag">Architecture</a></p></div>
+            <div class="entry">
+                <p><strong>• RAID-0 (交错模式-stripe):</strong><br />
+这种模式主要是利用容量相同的磁盘来达成,效能会比较好。 所谓的交错 (stripe) 是因为数据是同步写到不同的磁盘上头去的意思，也就是说，假设我有两颗磁盘设定成 RAID-0，那么当我有 100MB 数据要写入时, 则 100MB 会被拆成两个 50MB 分别写入不同的磁盘上头去。所以，因为每一个磁盘写入的数据量只有一半。因此，读写的效能都会大大的增加；而且越多颗磁盘所组成的 RAID-0 在理论上，性能增加的越明显。 但是这种模式有个最大的问题，那就是，因为一笔数据被拆成几个部分分布在不同的磁盘上面, 因此『任何一颗磁盘的损毁,都会让你的数据救不回来』。另外,如果使用不同容量的磁盘来达成 RAID-0 时，则在储存数据长大到一定程度时， RAID-0 的性能会变差。假设我用了一颗 20GB 两颗 16GB 的硬盘好了，那么当总数据量少于 48GB (16&#215;3) 时,性能是很不错的。 但是当超过 48GB 时,则数据仅能储存在 20GB 那一颗了 (可用容量剩下 4GB )，所以性能就会变差。</p>
+<p><strong>• RAID-1 (镜像模式-mirror):</strong><br />
+这种模式也是需要相同的磁盘容量的，最好是一模一样的磁盘。 如果是不同容量的磁盘组成 RAID-1 时，那么总容量将以最小的那一颗磁盘为主。 这种模式主要是『让同一份数据,完整的保存在两颗磁盘上头』。也就是说，如果我有一个 100MB 的文件,且我仅有两颗磁盘组成 RAID-1 时, 那么这两颗磁盘将会同步写入 100MB 到他们的储存空间去，因此,整体容量几乎少了 50%。由于两颗硬盘内容一模一样，好像镜子映照出来一样，所以我们也称他为 mirror 模式。这种模式最大的优点大概就是在进行备份吧，因为所有的数据都被存放在两个磁盘上面，所以任何一颗磁盘损毁时，所有的数据可都还是保存的好好的。至于性能上面,由于要写入的数据变多了(需要同步写入两颗硬盘嘛)。所以，性能会比单颗磁盘还要差一些。没办法，因为我们都是透过同一个总线在进行数据的通行。 不过，读取的效能还不错,因为数据有两份,如果多进程在读取同一笔数据时，RAID 会自行取得最佳的读取平衡。事实上，为了保有 RAID-1 的储存优点，又想要具有类似 RAID-0 的效能增强。所以，后来也有所谓的 RAID-0+1，亦即同时具有 RAID-0 与 RAID-1 的功能。但是，这样的功能至少需要四颗以上的相同容量的磁盘才行。而且总可用容量会减少一半 (因为 RAID-1)。</p>
+<p><strong>• RAID-5:</strong><br />
+这个类型最有趣，也是目前最常见的一种类型了。 RAID-5 会整合多个磁盘 (通常需要三个以上),然后每个磁盘驱动器上面都会记录少许的其它部磁盘驱动器的信息 ，由于这个动作，因此,实际上可以使用的容量其实是 (N-1)*S ,那个 N 为全部的磁盘驱动器总数,S 则是最小的那个磁盘的容量。 少掉的空间就是用来作为信息记录用的。<br />
+由于这个机制的存在,因此,当那 N 部磁盘驱动器有任何一部出问题时, 他的数据都会被平均记录到其它 N-1 部磁盘驱动器内,所以,只要你将坏掉的那一颗拿掉, 换一颗好的磁盘后,该磁盘原本的内容就会被恢复，这个作用非常重要。除此之外，因应目前所谓的热拔插 RAID 架构,因此,很多的硬件 RAID 在制作这个 RAID-5 的类型时，他会使用 N+1 颗磁盘,其中 N 颗用来作为 RAID-5 之用, 另外那一颗则做为磁盘损坏时的实时处理之用。 所以，假设有10颗磁盘在这样的架构下时，则事实上只有9颗在进行 RAID-5 的存取，一颗作为错误处理。所以总容量应该是 8xS 。而当有任何一颗磁盘出问题时，留作磁盘损坏时错误处理使用的磁盘就派上用场了,他会立刻被重建。因此，您只要将有问题的磁盘拔掉，换上一颗新的就行了。不过需要注意的是，因为 RAID-5 仅能处理一颗硬盘坏掉时的情况，如果同时有两颗以上的磁盘损毁，那么所有的数据还是还是会完蛋的。 所以，特别重要的信息还是得要复制出来才行。至于存取性能，读取的性能几乎可以媲美 RAID-0，但是写入的性能就无法像 RAID-0 那样明显。因为还得要计算分别写入到所有磁盘当中的奇偶校验信息和相对应的数据，所以写入的性能虽然是会增加不少。</p>
+<p><strong>• RAID-10/01:</strong></p>
+<p>RAID-10/01分为：RAID-1+0或RAID-0+1（都至少需要4块以上的磁盘）。</p>
+<p>RAID-1+0是先镜像再分区数据。是将所有硬盘分为两组，视为是RAID-0的最低组合，然后将这两组各自视为RAID-1运作。RAID-1+0有着不错的读取速度，而且拥有比RAID-0更高的数据保护性。</p>
+<p>RAID-0+1则是跟RAID-1+0的程序相反，是先分区再将数据镜射到两组硬盘。它将所有的硬盘分为两组，变成RAID-1的最低组合，而将两组硬盘各自视为RAID-0运作。RAID-0+1比起RAID 1+0有着更快的读写速度，不过也多了一些会让整个硬盘组停止运转的机率；因为只要同一组的硬盘全部损毁，RAID-0+1就会停止运作，而RAID- 1+0则可以在牺牲RAID-0的优势下正常运作。</p>
+<p>RAID-10巧妙的利用了RAID-0的速度以及RAID-1的保护两种特性，不过它的缺点是需要的硬盘数较多，因为至少必须拥有四个以上的偶数硬盘才能使用。</p>
+             <span class="tag">Tags: <a href="http://liuxuan.info/tag/raid/" rel="tag">RAID</a></span>
+	    </div>
+        </div>
+             <div class="post" id="post-163">
+	    <h2>
+                <a href="http://liuxuan.info/2011/06/nothing-but-sad/" rel="bookmark" title="Permanent Link to 悲凉和无奈">悲凉和无奈</a>
+            </h2>
+            <div class="postmetadata"><p>Posted on June 11th, 2011 under <a href="http://liuxuan.info/category/reading/" title="View all posts in Reading" rel="category tag">Reading</a></p></div>
+            <div class="entry">
+                <p> 今天一下子看完了两本我认为非常好的书，一本是时寒冰老师的《经济大棋局，我们怎么办》，另一本是彼得.海斯勒（中文名：何伟）的《寻路中国》。</p>
+<p>读完这两本书，我的心情就是悲凉中参杂着无奈，无奈中渗透着悲凉。时寒冰老师用10年的时间写成的这本书来告诉我们中国人，现在的中国已经走到了什么地步。他用通俗易懂的语言告诉我们老百姓世界经济的走势和规律。时老师还在苦口婆心的给政府提建议，可是效果有多少呢？正如时老师的预言，因果报应将在不久的将来真正到来。</p>
+<p>《寻路中国》又是另一个风格，讲述的是作者在中国的生活故事和见闻，作者何伟以他一个美国人的角度审视着中国，特别是2002年以后经济发展迅速的中国。在书中可以看到作者对中国的了解和研究之深足以让很多中国专家汗颜。那是整个中国的缩影，而在作者的眼中是那么的奇怪。</p>
+<p>最近还在看另一本书《春秋大义》，再结合上面两本书，我突然发现一切是那么的自然。</p>
+             <span class="tag">Tags: <a href="http://liuxuan.info/tag/reading/" rel="tag">Reading</a>, <a href="http://liuxuan.info/tag/sad/" rel="tag">Sad</a></span>
+	    </div>
+        </div>
+             <div class="post" id="post-147">
+	    <h2>
+                <a href="http://liuxuan.info/2011/06/comparison-of-nosql-databases/" rel="bookmark" title="Permanent Link to Comparison of NoSQL databases">Comparison of NoSQL databases</a>
+            </h2>
+            <div class="postmetadata"><p>Posted on June 1st, 2011 under <a href="http://liuxuan.info/category/nosql/" title="View all posts in NoSQL" rel="category tag">NoSQL</a></p></div>
+            <div class="entry">
+                <p>随着Web2.0时代的来临以及宽带技术的迅猛发展，许多Web应用都感受到了来自高并发以及高数据量的挑战。而大多数情况下这种挑战来自于数据库，即二维关系型数据库的缺陷导致了RDBMS成为了高并发和高数据量下的瓶颈。正是为了消除这种瓶颈，才诞生了NoSQL。NoSQL是当下最热的技术话题，而且越来越多的公司开始选择NoSQL产品来提高Web应用的性能及伸缩性，我们完全可以想象在不远的将来NoSQL取代现在的关系型数据库，成为数据存储的第一选择。</p>
+<p>NoSQL按存储方式主要分为四类：<br />
+1. Key-values Stores<br />
+主要的想法是用hash表，里面包括一个unique key和指向特定数据的指针。Key-value 模型是最简单和最容易实现的. 但是它对查询和更新部分数据时效率不高。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;"></col>
+<col style="width: 491px;"></col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; "><span style="color: black; font-family: Arial;">Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid; "><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">内容缓存，主要用于处理大量数据的高访问负载，也用于一些日志系统等等。</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">Key 指向 Value 的键值对，通常用hash table来实现</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">查找速度快</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">数据无结构化，通常只被当作字符串或者二进制数据</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2. Document Databases<br />
+这个模型是包含 key-value 集合的文档，并且这个文档被标记过版本的。这些半结构文档是以类似于JSON的形式存储。Document databases基本上是更高级的Key-value形式，允许每个key的value可以多级嵌套。Document databases 支持更有效的查询。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;"></col>
+<col style="width: 491px;"></col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none;"><span style="color: black; font-family: Arial;">CouchDB, MongoDB</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">Web应用（与Key-Value类似，Value是结构化的，不同的是数据库能够了解Value的内容）</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">Key-Value对应的键值对，Value为结构化数据</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">数据结构要求不严格，表结构可变，不需要像关系型数据库一样需要预先定义表结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">查询性能不高，而且缺乏统一的查询语法。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3. Column Family Stores<br />
+这类NoSQL主要是用来存储和处理大容量分布式数据。仍然有key，但指向的是多列，并且列是由column family来组织。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;"></col>
+<col style="width: 491px;"></col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none;"><span style="color: black; font-family: Arial;">Cassandra, HBase</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">分布式的文件系统</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">以列簇式存储，将同一列数据存在一起</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">查找速度快，可扩展性强，更容易进行分布式扩展</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">功能相对局限</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>4. Graph Databases<br />
+这类NoSQL的结构不是一般的二维表结构，而是更有弹性的图形模型。并且需要指定数据模型来查询这类数据库。</p>
+<div>
+<table border="0" style="border-collapse: collapse;">
+<colgroup>
+<col style="width: 142px;"></col>
+<col style="width: 491px;"></col>
+</colgroup>
+<tbody>
+<tr style="background: none repeat scroll 0% 0% rgb(75, 172, 198);">
+<td style="padding-left: 7px; padding-right: 7px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">Examples</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none;"><span style="color: black; font-family: Arial;">Neo4J, InfoGrid, Infinite Graph</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">典型应用场景</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">社交网络，推荐系统等。专注于构建关系图谱</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">数据模型</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="font-family: Arial;">图结构</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">强项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">利用图结构相关算法。比如最短路径寻址，N度关系查找等</span></td>
+</tr>
+<tr>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="font-family: Arial;">弱项</span></td>
+<td style="padding-left: 7px; padding-right: 7px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;"><span style="color: black; font-family: Arial;">很多时候需要对整个图做计算才能得出需要的信息，而且这种结构不太好做分布式的集群方案。</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>什么时候使用NoSQL</strong>: </p>
+<ul>
+<li>Real-time stats/analytics</li>
+<li>Logging/Archiving</li>
+<li>Social Computing Insight</li>
+<li>External Data Feed Integration</li>
+<li>Front-end order processing systems</li>
+<li>Enterprise Content Management Service</li>
+</ul>
+<p><strong>RDBMS和NoSQL的选择</strong>: </p>
+<table border="0" style="border-collapse: collapse; background: none repeat scroll 0% 0% rgb(218, 238, 243);">
+<colgroup>
+<col style="width: 84px;"></col>
+<col style="width: 557px;"></col>
+</colgroup>
+<tbody>
+<tr style="height: 88px;">
+<td style="padding-left: 9px; padding-right: 9px; border: 1pt solid black;"><span style="color: black; font-family: Arial;">NoSQL</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage should be able to deal with very high load</span></li>
+<li><span style="color: black; font-family: Arial;">You do many write operations on the storage </span></li>
+<li><span style="color: black; font-family: Arial;">You want storage that is horizontally scalable </span></li>
+<li><span style="color: black; font-family: Arial;">Simplicity is good, as in a very simple query language (without joins)</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 95px;">
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt; border-style: none solid solid;"><span style="color: black; font-family: Arial;">RDBMS</span></td>
+<td style="padding-left: 9px; padding-right: 9px; border-width: medium 1pt 1pt medium; border-style: none solid solid none;">
+<ul>
+<li><span style="color: black; font-family: Arial;">Storage is expected to be high-load, too, but it mainly consists of read operations</span></li>
+<li><span style="color: black; font-family: Arial;">You want performance over a more sophisticated data structure </span></li>
+<li><span style="color: black; font-family: Arial;">You need powerful SQL query language</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MongoDB versus Redis</strong>:<br />
+<strong>MongoDB</strong><br />
+    * Written in: C++<br />
+    * Main point: Retains some friendly properties of SQL. (Query, index)<br />
+    * License: AGPL (Drivers: Apache)<br />
+    * Protocol: Custom, binary (BSON)<br />
+    * Master/slave replication<br />
+    * Queries are javascript expressions<br />
+    * Run arbitrary javascript functions server-side<br />
+    * Better update-in-place than CouchDB<br />
+    * Sharding built-in<br />
+    * Uses memory mapped files for data storage<br />
+    * Performance over features<br />
+    * After crash, it needs to repair tables<br />
+    * Better durablity coming in V1.8 </p>
+<p><strong>Best used</strong>: If you need dynamic queries. If you prefer to define indexes, not map/reduce functions. If you need good performance on a big DB. If you wanted CouchDB, but your data changes too much, filling up disks.</p>
+<p><strong>For example</strong>: For all things that you would do with MySQL or PostgreSQL, but having predefined columns really holds you back. </p>
+<p>NOTE:</p>
+<ul>
+<ol>
+MongoDB uses 1 BFGL (big f***ing global lock) for separating reads and writes.</ol>
+<ol>
+MongoDB does not have a statistical query plan optimizer.</ol>
+<ol>
+The Mongos (pronounced “mongo”-”ess”) process is only needed when you do sharding.</ol>
+<ol>
+MongoDB supports Master-Slave replication as well as Replica-Sets.</ol>
+<ol>
+MongoDB supports “slave-delay” in secondary replicas.</ol>
+<ol>
+MongoDB should likely not be run in a 32-bit environment.</ol>
+<ol>
+MongoDB automatically tells you in the log about any query that takes longer than 100ms to run.</ol>
+<ol>
+MongoDB can be setup to do profiling if a query starts taking longer than a certain amount of time.</ol>
+<ol>
+MongoDB doesn’t support multi-master replication. They think this is good because it keeps things logically simple. Also, the system is far simpler as it doesn’t have to worry about write-collisions across multiple masters.</ol>
+<ol>
+In a replicated setup, MongoDB supports something called an Arbiter whose job is to break ties.</ol>
+</ul>
+<p><strong>Redis</strong><br />
+    * Written in: C/C++<br />
+    * Main point: Blazing fast<br />
+    * License: BSD<br />
+    * Protocol: Telnet-like<br />
+    * Disk-backed in-memory database,<br />
+    * but since 2.0, it can swap to disk.<br />
+    * Master-slave replication<br />
+    * Simple keys and values,<br />
+    * but complex operations like ZREVRANGEBYSCORE<br />
+    * INCR &#038; co (good for rate limiting or statistics)<br />
+    * Has sets (also union/diff/inter)<br />
+    * Has lists (also a queue; blocking pop)<br />
+    * Has hashes (objects of multiple fields)<br />
+    * Of all these databases, only Redis does transactions (!)<br />
+    * Values can be set to expire (as in a cache)<br />
+    * Sorted sets (high score table, good for range queries)<br />
+    * Pub/Sub and WATCH on data changes (!) </p>
+<p><strong>Best used</strong>: For rapidly changing data with a foreseeable database size (should fit mostly in memory).</p>
+<p><strong>For example</strong>: Stock prices. Analytics. Real-time data collection. Real-time communication. </p>
+<p><strong>References</strong>:<br />
+1.http://blog.monitis.com/index.php/2011/05/22/picking-the-right-nosql-database-tool<br />
+2.http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis<br />
+3.http://blog.nosqlfan.com/html/1727.html</p>
+             <span class="tag">Tags: <a href="http://liuxuan.info/tag/mongodb/" rel="tag">MongoDB</a>, <a href="http://liuxuan.info/tag/nosql/" rel="tag">NoSQL</a>, <a href="http://liuxuan.info/tag/redis/" rel="tag">Redis</a></span>
+	    </div>
+        </div>
+                   <div class="navigation">
+	     <div class='wp-pagenavi'>
+<span class='pages'>Page 1 of 5</span><span class='current'>1</span><a href='http://liuxuan.info/page/2/' class='page larger'>2</a><a href='http://liuxuan.info/page/3/' class='page larger'>3</a><a href='http://liuxuan.info/page/4/' class='page larger'>4</a><a href='http://liuxuan.info/page/5/' class='page larger'>5</a><a href="http://liuxuan.info/page/2/" class="nextpostslink">»</a>
+</div>	 </div>
+          </div>
+
+<div id="sidebar">
+
+
+
+<h2>Search</h2>
+<br/>
+<form action="http://www.google.com/cse">
+      <div>
+        <input type="hidden" value="partner-pub-6254779591266030:wa6mxc6y8y6" name="cx"></input>
+        <input type="hidden" value="ISO-8859-1" name="ie"></input>
+        <input type="text" size="18" name="q"></input>
+        <input type="submit" value="Search" name="sa"></input>
+      </div>
+</form>
+<br/>
+
+<h2>Weibo</h2>			<div class="textwidget"><iframe width="220" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=220&height=400&fansRow=1&ptype=0&speed=0&skin=1&isTitle=1&noborder=0&isWeibo=1&isFans=1&uid=1928638455&verifier=b92d5ce3"></iframe></div>
+						<h2>Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/" title="Ubuntu下编译安装Vim">Ubuntu下编译安装Vim</a></li>
+				<li><a href="http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/" title="JMeter的简单介绍">JMeter的简单介绍</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-raid/" title="常用磁盘阵列比较">常用磁盘阵列比较</a></li>
+				<li><a href="http://liuxuan.info/2011/06/nothing-but-sad/" title="悲凉和无奈">悲凉和无奈</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-nosql-databases/" title="Comparison of NoSQL databases">Comparison of NoSQL databases</a></li>
+				<li><a href="http://liuxuan.info/2011/06/guide-to-open-source-licenses/" title="Guide to open source licenses">Guide to open source licenses</a></li>
+				<li><a href="http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/" title="屏蔽优酷和土豆网的广告方法">屏蔽优酷和土豆网的广告方法</a></li>
+				<li><a href="http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/" title="世界上最健康的作息时间表">世界上最健康的作息时间表</a></li>
+				<li><a href="http://liuxuan.info/2011/05/facebooks-architecture/" title="Facebook&#8217;s architecture">Facebook&#8217;s architecture</a></li>
+				<li><a href="http://liuxuan.info/2011/05/pragmatic-programmers-practices-of-an-agile-developer-notes/" title="《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记">《Pragmatic Programmers &#8211; Practices of an Agile Developer》读书笔记</a></li>
+				</ul>
+		<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a> (2)
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="http://liuxuan.info/category/http/" title="View all posts filed under HTTP">HTTP</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a> (2)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a> (7)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a> (2)
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a> (2)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a> (1)
+</li>
+	<li class="cat-item cat-item-45"><a href="http://liuxuan.info/category/reading/" title="View all posts filed under Reading">Reading</a> (1)
+</li>
+		</ul>
+<h2>Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a>&nbsp;(1)</li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+		</ul>
+<h2>Subscribe</h2>
+<p><a href="http://feeds2.feedburner.com/zhixingheyi"><img src="http://feeds2.feedburner.com/~fc/zhixingheyi?bg=&amp;fg=&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+			<div class="textwidget"><br/><p><a href="http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/zhixingheyi"><img src="http://buttons.googlesyndication.com/fusion/add.gif" width="104" height="17" style="border:0" alt="Add to Google Reader or Homepage"/></a></p><br/>
+</div>
+		<h2>Miscellaneous</h2>			<div class="textwidget"><p>
+<a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a></p>
+<p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p></div>
+		
+
+
+</div>
+
+<div id="footer"> 
+    <p>&copy; 2011 Zhixingheyi | Powered by 
+        <a href="http://wordpress.org/">WordPress</a> | Theme by 
+        <a href="http://liuxuan.info/" title="WordPress theme by Foredoomed">Foredoomed</a>
+    </p>
+<p>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">
+    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/cn/88x31.png" /></a><br />This work is licensed under a 
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/cn/">Creative Commons Attribution-ShareAlike 2.5 China Mainland License
+    </a>
+</p>
+</div> 
+<!-- end footer -->
+
+</div>
+<!-- end container -->
+
+
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.487 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-06-27 12:03:30 -->
