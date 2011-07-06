@@ -138,7 +138,7 @@ a:hover{
 }
 
 .menu ul li {
-	border : 1px dotted #CCCCCC;
+	//border : 1px dotted #CCCCCC;
 	list-style-type: none;
 	float: left;
 	padding: 2px 0 0 0;

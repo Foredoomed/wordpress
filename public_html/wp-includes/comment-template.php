@@ -817,7 +817,7 @@ function wp_comment_form_unfiltered_html_nonce() {
 		$post_id = $post->ID;
 
 	if ( current_user_can('unfiltered_html') )
-		wp_nonce_field('unfiltered-html-comment_' . $post_id, 'wp_unfiltered_html_comment', false);
+		wp_nonce_field('unfiltered-html-comment_' . $post_id, '_wp_unfiltered_html_comment', false);
 }
 
 /**
@@ -1162,8 +1162,9 @@ function cancel_comment_reply_link($text = '') {
  *
  * @return string Hidden input HTML for replying to comments
  */
-function get_comment_id_fields() {
-	$id = get_the_ID();
+function get_comment_id_fields( $id = 0 ) {
+	if ( empty( $id ) )
+		$id = get_the_ID();
 
 	$replytoid = isset($_GET['replytocom']) ? (int) $_GET['replytocom'] : 0;
 	$result  = "<input type='hidden' name='comment_post_ID' value='$id' id='comment_post_ID' />\n";
@@ -1177,8 +1178,8 @@ function get_comment_id_fields() {
  * @since 2.7.0
  * @see get_comment_id_fields() Echoes result
  */
-function comment_id_fields() {
-	echo get_comment_id_fields();
+function comment_id_fields( $id = 0 ) {
+	echo get_comment_id_fields( $id );
 }
 
 /**
@@ -1573,7 +1574,7 @@ function comment_form( $args = array(), $post_id = null ) {
 						<?php echo $args['comment_notes_after']; ?>
 						<p class="form-submit">
 							<input name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
-							<?php comment_id_fields(); ?>
+							<?php comment_id_fields( $post_id ); ?>
 						</p>
 						<?php do_action( 'comment_form', $post_id ); ?>
 					</form>

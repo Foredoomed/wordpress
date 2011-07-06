@@ -1,0 +1,24 @@
+User-agent: *
+
+Disallow: /index.php
+
+Disallow: /wp-*
+
+Disallow: /category/*
+
+Disallow: /*/feed
+
+Disallow: /tag/
+
+Disallow: /page/
+
+Disallow: /trackback/
+
+Disallow: /category/*/page/*
+
+Allow: /wp-content/uploads/
+
+Sitemap: http://liuxuan.info/sitemap.xml.gz
+
+
+
