@@ -445,7 +445,7 @@ class GeSHi {
      * The overall style for this code block
      * @var string
      */
-    var $overall_style = 'font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;';
+    var $overall_style = 'font-family: Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;';
 
     /**
      *  The style for the actual code
