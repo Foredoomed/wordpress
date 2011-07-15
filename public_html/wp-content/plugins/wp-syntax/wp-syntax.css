@@ -10,7 +10,6 @@
 .wp_syntax {
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 10px;
   width: 100%;
 }
 
@@ -37,7 +36,6 @@
   float: none;
   clear: none;
   overflow: visible;
-  font-size: 1.2em;
   line-height: 1.333;
   white-space: pre;
 }

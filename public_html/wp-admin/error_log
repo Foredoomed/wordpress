@@ -21,3 +21,18 @@
 [06-Jul-2011 13:00:10] PHP Warning:  fopen(/home/liuxuan/public_html/wp-content/cache/.htaccess) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 322
 [06-Jul-2011 13:00:10] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for /home/liuxuan/public_html/wp-content/cache/.htaccess in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
 [06-Jul-2011 13:00:10] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
+[06-Jul-2011 14:35:32] PHP Warning:  fopen(/home/liuxuan/public_html/wp-content/cache/.htaccess) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 322
+[06-Jul-2011 14:35:32] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for /home/liuxuan/public_html/wp-content/cache/.htaccess in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
+[06-Jul-2011 14:35:32] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
+[06-Jul-2011 14:36:32] PHP Warning:  fopen(/home/liuxuan/public_html/wp-content/cache/.htaccess) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 322
+[06-Jul-2011 14:36:32] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for /home/liuxuan/public_html/wp-content/cache/.htaccess in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
+[06-Jul-2011 14:36:32] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/liuxuan/public_html/wp-content/plugins/robots-meta/robots-meta.php on line 323
+[15-Jul-2011 13:22:32] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[15-Jul-2011 13:27:36] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[15-Jul-2011 13:32:42] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[15-Jul-2011 13:38:08] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[15-Jul-2011 13:42:36] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[15-Jul-2011 13:47:50] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 1092
+[15-Jul-2011 13:52:43] PHP Parse error:  syntax error, unexpected $end, expecting '(' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 1207
+[15-Jul-2011 13:55:18] PHP Parse error:  syntax error, unexpected '}' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 4732
+[15-Jul-2011 13:55:47] PHP Parse error:  syntax error, unexpected '}' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 4732
