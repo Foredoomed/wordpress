@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.2.1" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.4" -->
-<!-- generated-on="July 15, 2011 3:20 pm" -->
+<!-- generated-on="July 16, 2011 3:56 pm" -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
-		<loc>http://liuxuan.info/home/</loc>
-		<lastmod>2011-07-15T15:18:55+00:00</lastmod>
+		<loc>http://liuxuan.info/2011/07/quoras-technology-examined/</loc>
+		<lastmod>2011-07-16T15:54:53+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/programmer-competency-matrix/</loc>
+		<lastmod>2011-07-16T11:23:29+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
@@ -101,12 +107,6 @@
 		<loc>http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/</loc>
 		<lastmod>2011-05-19T16:15:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/programmer-competency-matrix/</loc>
-		<lastmod>2011-05-19T16:02:57+00:00</lastmod>
-		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>

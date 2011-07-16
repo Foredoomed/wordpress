@@ -30,8 +30,8 @@
 
 	</div><!--#primary-->
 	
-<?php if (!is_page('Programmer Competency Matrix')) {
-//new added for display 'Programmer Competency Matrix'
+
+<?php if (!is_page('programmer-competency-matrix') ) {
     get_sidebar();
 } ?>
 

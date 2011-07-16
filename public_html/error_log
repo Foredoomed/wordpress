@@ -81,3 +81,4 @@
 [15-Jul-2011 13:30:56] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
 [15-Jul-2011 13:33:42] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
 [15-Jul-2011 13:44:53] PHP Fatal error:  fatal flex scanner internal error--end of buffer missed in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 190
+[16-Jul-2011 04:18:26] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81

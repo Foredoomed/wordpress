@@ -64,6 +64,9 @@ function pp_breadcrubs() {
 
 }
 
+/**
+ * Prevent wp from decoding.
+ */
 remove_filter('the_content', 'wptexturize'); 
 
 /**

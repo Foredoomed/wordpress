@@ -36,3 +36,16 @@
 [15-Jul-2011 13:52:43] PHP Parse error:  syntax error, unexpected $end, expecting '(' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 1207
 [15-Jul-2011 13:55:18] PHP Parse error:  syntax error, unexpected '}' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 4732
 [15-Jul-2011 13:55:47] PHP Parse error:  syntax error, unexpected '}' in /home/liuxuan/public_html/wp-content/plugins/wp-syntax/geshi/geshi.php on line 4732
+[16-Jul-2011 04:16:34] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:16:47] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:16:49] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:16:52] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:01] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:04] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:13] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:13] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:19] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:24] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:28] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:17:30] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
+[16-Jul-2011 04:18:39] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/liuxuan/public_html/wp-content/themes/primepress/functions.php on line 81
