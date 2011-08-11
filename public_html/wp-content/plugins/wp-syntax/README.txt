@@ -3,8 +3,8 @@ Contributors: shazahm1@hotmail.com, rmm5t
 Donate link: http://connections-pro.com
 Tags: syntax highlighting, syntax, highlight, code, formatting
 Requires at least: 3.0
-Tested up to: 3.1.3
-Stable tag: 0.9.10
+Tested up to: 3.2.1
+Stable tag: 0.9.12
 
 WP-Syntax provides clean syntax highlighting for embedding source code within pages or posts.
 
@@ -167,8 +167,11 @@ review the [GeSHi Documentation](http://qbnz.com/highlighter/geshi-doc.html).
 
 == Changelog ==
 
-**0.9.10** : Fix for security vulnerability when register_globals in php is
-  enabled;
+**0.9.12** : Fixed a range bug in the new highlight feature. 
+
+**0.9.11** : Added line highlighting support. User submitted patch. [Thanks Flynsarmy && Chimo](http://www.flynsarmy.com/2011/06/how-to-add-line-highlight-support-to-wp-syntax/)
+
+**0.9.10** : Fix for security vulnerability when register_globals in php is enabled.
 
 **0.9.9** : Fix to support child theme's. WP-Syntax now requires WP >= 3.0.
   Credit to [OddOneOut](http://wordpress.org/support/topic/wp-syntax-css-with-twenty-ten-child-theme)

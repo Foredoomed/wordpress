@@ -925,9 +925,9 @@ $language_data = array (
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'color: #2B91AF; font-weight: bold;',
-            2 => 'color: #800000; font-weight: bold;',
-            3 => 'color: #800000;',
+            1 => 'color: #00008B; font-weight: bold;',
+            2 => 'color: #00008B; font-weight: bold;',
+            3 => 'color: #2B91AF;',
             4 => 'color: #00008B; font-weight: bold;'
             ),
         'COMMENTS' => array(

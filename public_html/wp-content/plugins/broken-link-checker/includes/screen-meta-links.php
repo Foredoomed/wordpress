@@ -2,18 +2,25 @@
 
 /**
  * @author Janis Elsts
- * @copyright 2010
+ * @copyright 2011
  */
 
 
-if ( !class_exists('wsScreenMetaLinks10') ):
+if ( !class_exists('wsScreenMetaLinks11') ):
 
 //Load JSON functions for PHP < 5.2
-if (!function_exists('json_encode') && !class_exists('Services_JSON')){
-	require ABSPATH . WPINC . '/class-json.php';
+if ( !(function_exists('json_encode') && function_exists('json_decode')) && !(class_exists('Services_JSON') || class_exists('Moxiecode_JSON')) ){
+	$class_json_path = ABSPATH.WPINC.'/class-json.php';
+	$class_moxiecode_json_path = ABSPATH.WPINC.'/js/tinymce/plugins/spellchecker/classes/utils/JSON.php';
+	if ( file_exists($class_json_path) ){
+		require $class_json_path;
+		
+	} elseif ( file_exists($class_moxiecode_json_path) ) {
+		require $class_moxiecode_json_path;
+	}
 }
  
-class wsScreenMetaLinks10 {
+class wsScreenMetaLinks11 {
 	var $registered_links; //List of meta links registered for each page. 
 	
 	/**
@@ -21,7 +28,7 @@ class wsScreenMetaLinks10 {
 	 * 
 	 * @return void
 	 */
-	function wsScreenMetaLinks10(){
+	function wsScreenMetaLinks11(){
 		$this->registered_links = array();
 		
 		add_action('admin_notices', array(&$this, 'append_meta_links'));
@@ -93,7 +100,7 @@ class wsScreenMetaLinks10 {
 						$('<div/>')
 							.attr({
 								'id' : links[i].id + '-wrap',
-								'class' : 'hide-if-no-js screen-meta-toggle custom-screen-meta-link-wrap'
+								'class' : 'hide-if-no-js custom-screen-meta-link-wrap'
 							})
 							.append( $('<a/>', links[i]) )
 					);
@@ -146,21 +153,32 @@ class wsScreenMetaLinks10 {
 			float: right;
 			height: 22px;
 			padding: 0;
-			margin: 0 6px 0 0;
-			font-family: "Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif;
-			background: #e3e3e3;
-			
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 3px;
+			margin: 0 0 0 6px;
+			font-family: sans-serif;
 			-moz-border-radius-bottomleft: 3px;
 			-moz-border-radius-bottomright: 3px;
 			-webkit-border-bottom-left-radius: 3px;
 			-webkit-border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+			
+			background: #e3e3e3;
+			
+			border-right: 1px solid transparent;
+			border-left: 1px solid transparent;
+			border-bottom: 1px solid transparent;
+			background-image: -ms-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* IE10 */
+			background-image: -moz-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* Firefox */
+			background-image: -o-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* Opera */
+			background-image: -webkit-gradient(linear, left bottom, left top, from(#dfdfdf), to(#f1f1f1)); /* old Webkit */
+			background-image: -webkit-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* new Webkit */
+			background-image: linear-gradient(bottom, #dfdfdf, #f1f1f1); /* proposed W3C Markup */
 		}
 		
 		#screen-meta .custom-screen-meta-link-wrap a.custom-screen-meta-link {
 			background-image: none;
 			padding-right: 6px;
+			color: #777;
 		}
 		</style>
 		<?php
@@ -197,11 +215,18 @@ class wsScreenMetaLinks10 {
 	 */
 	function json_encode($data){
 		if ( function_exists('json_encode') ){
-			return json_encode($data);
-		} else {
-			$json = new Services_JSON();
+    		return json_encode($data);
+    	}
+    	if ( class_exists('Services_JSON') ){
+    		$json = new Services_JSON();
         	return( $json->encodeUnsafe($data) );
-		}
+    	} elseif ( class_exists('Moxiecode_JSON') ){
+    		$json = new Moxiecode_JSON();
+    		return $json->encode($data);
+    	} else {
+    		trigger_error('No JSON parser available', E_USER_ERROR);
+		    return null;
+   		}
 	}
 	
 }
@@ -210,7 +235,7 @@ global $ws_screen_meta_links_versions;
 if ( !isset($ws_screen_meta_links_versions) ){
 	$ws_screen_meta_links_versions = array();
 } 
-$ws_screen_meta_links_versions['1.0'] = 'wsScreenMetaLinks10';
+$ws_screen_meta_links_versions['1.1'] = 'wsScreenMetaLinks11';
 
 endif;
 

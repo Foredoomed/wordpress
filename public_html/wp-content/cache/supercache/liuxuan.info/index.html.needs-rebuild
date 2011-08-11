@@ -1,0 +1,1353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>  Zhixingheyi</title>
+
+	<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/primepress/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://liuxuan.info/wp-content/themes/primepress/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 6]>	<link rel="stylesheet" type="text/css" href="http://liuxuan.info/wp-content/themes/primepress/library/ie6.css" /><![endif]-->
+	<link rel="pingback" href="http://liuxuan.info/xmlrpc.php" />
+	
+	
+	<link rel="alternate" type="application/rss+xml" title="Zhixingheyi &raquo; Feed" href="http://liuxuan.info/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Zhixingheyi &raquo; Comments Feed" href="http://liuxuan.info/comments/feed/" />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://liuxuan.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://liuxuan.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://liuxuan.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Zhixingheyi' href='http://liuxuan.info/' />
+<meta name="generator" content="WordPress 3.2.1" />
+
+<!-- All in One SEO Pack 1.6.13.3 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description" content="Java,RoR,MySQL,Linux,OpenSource" />
+<meta name="keywords" content="Java,RoR,MySQL,Linux,OpenSource" />
+<link rel="canonical" href="http://liuxuan.info/" />
+<!-- /all in one seo pack -->
+
+<!-- Bad Behavior 2.0.43 run time: 22.897 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1313046162 220.181.141.69';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		<!-- Meta tags added by Robots Meta: http://yoast.com/wordpress/meta-robots-wordpress-plugin/ -->
+<meta name="robots" content="noodp,noydir" />
+
+<link rel="stylesheet" href="http://liuxuan.info/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style></head>
+<body class="home blog custom">
+<div id="page" class="hfeed content-620px">
+
+	<div id="header">
+		<div id="branding">
+						<h1 class="homelink"><a href="http://liuxuan.info" title="Zhixingheyi">Zhixingheyi</a></h1>
+						<p class="description">Where the truth distortion happens.</p>
+		</div>
+		
+		<div id="skip"><a title="Skip to content" href="#primary" accesskey="S">Skip to Content &darr;</a></div>
+		
+		<div class="menu"><ul><li class="current_page_item"><a href="http://liuxuan.info/" title="Home">Home</a></li><li class="page_item page-item-41"><a href="http://liuxuan.info/about/" title="About">About</a></li><li class="page_item page-item-110"><a href="http://liuxuan.info/programmer-competency-matrix/" title="Programmer Competency Matrix">Programmer Competency Matrix</a></li></ul></div>
+	</div><!--#header-->
+<div id="container">
+	<div id="rotating">
+		<img src="http://liuxuan.info/wp-content/themes/primepress/rotating.php?image=55" 
+width="920" alt="Zhixingheyi Rotating Header Image" title="Zhixingheyi Random Header Image" />	</div>	
+	<div id="primary" class="looped">
+		
+				
+				
+		<div id="post-426" class="post-426 post type-post status-publish format-standard hentry category-java tag-java tag-puzzle tag-trap entry">
+			
+			<h2 class="entry-title"><a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-three/" rel="bookmark" title="Permalink to Java常见疑惑和陷阱(三)">Java常见疑惑和陷阱(三)</a></h2>
+			
+			<div class="entry-byline">
+				<a class="entry-date" rel="bookmark" title="2011-08-11T14:07:25+0000" href="http://liuxuan.info/2011/08/java-puzzles-and-traps-three/"><abbr class="updated" title="2011-08-11T14:07:25+0000">Aug 11th, 2011</abbr></a>
+				<address class="author vcard">by <a class="url fn" href="">Foredoomed</a>. </address>
+				<a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-three/#respond" class="comments-link"  rel="nofollow" title="Comment on Java常见疑惑和陷阱(三)">No comments yet</a>							</div>
+			
+			<div class="entry-content">
+				<a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-three/" title="Java常见疑惑和陷阱(三)"></a>				<p><strong>29.令人混淆的构造器案例</strong><br />
+下面的程序会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Confusing <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> Confusing<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Object</span> o<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Object&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">private</span> Confusing<span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">double</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> dArray<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;double array&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">new</span> Confusing<span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>如果运行该程序，你会发现打印的是“double array“。这是因为：Java的重载解析过程是以两阶段运行的。第一阶段选取所有可获得并且可应用的方法或构造器。第二阶段在第一阶段选取的方法或构造器中选取最精确的一个。<strong>如果一个方法或构造器可以接受传递给另一个方法或构造器的任何参数,那么我们就说第一个方法比第二个方法缺乏精确性。</strong></p>
+<p>如果想要调用Confusing(Object)构造方法,你需要这样改写代码:new Confusing((Object)null)。这可以确保只有Confusing(Object)是可应用的。更一般地讲,要想强制要求编译器选择一个精确的重载版本,需要将实际的参数转型为形式参数所声明的类型。</p>
+<p><strong>30.我所得到的都是静态的</strong><br />
+下面的程序将打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">class</span> Dog <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> bark<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">print</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;woof&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">class</span> Dog1 <span style="color: #00008B; font-weight: bold;">extends</span> Dog <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> bark<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Bark <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span> args<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    Dog woofer <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Dog<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    Dog nipper <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Basenji<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    woofer.<span style="color: #006633;">bark</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    nipper.<span style="color: #006633;">bark</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>好像该程序应该只打印一个woof，毕竟Dog1继承自Dog,并且它的bark方法定义了什么也不做。main方法调用了bark方法,第一次是在Dog类型的woofer上调用,第二次是在Dog1类型的nipper上调用。但是如果你运行该程序,就会发现它打印的是 “woof woof“。</p>
+<p>问题在于bark是一个静态方法,而对静态方法的调用不存在任何动态的分派机制。当一个程序调用了一个静态方法时,要被调用的方法都是在编译时刻被选定的,而这种选定是基于修饰符的编译期类型而做出的,修饰符的编译期类型就是我们给出的方法调用表达式中圆点左边部分的名字。在本例中,两个方法调用的修饰符分别是变量woofer 和nipper,它们都被声明为Dog类型。因为它们具有相同的编译期类型,所以编译器使得它们调用的是相同的方法:Dog.bark。</p>
+<p><strong>31.比年龄小</strong><br />
+如果运行下面的程序会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Age <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> Age INSTANCE <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Age<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">int</span> age<span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">int</span> CURRENT_YEAR<span style="color: #339933;">=</span><span style="color: #2B91AF;">Calendar</span>.<span style="color: #006633;">getInstance</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #006633;">get</span><span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Calendar</span>.<span style="color: #006633;">YEAR</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">private</span> Age<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    age <span style="color: #339933;">=</span> CURRENT_YEAR <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1985</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">int</span> getAge<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">return</span> age<span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;My age is &quot;</span> <span style="color: #339933;">+</span> INSTANCE.<span style="color: #006633;">getAge</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #0000ff;">&quot; years old.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>这个程序是在计算当前的年份减去1985的值。如果它是正确的,那么在2011年,该程序将打印出&#8221;My age is 26 years old&#8221;。但是如果你尝试着去运行该程序,该程序将打印出&#8221;My age is -1985 years old&#8221;。</p>
+<p>该程序所遇到的问题是由类初始化顺序中的循环而引起的。让我们来看看其细节。首先,其静态域被设置为缺省值,其中INSTANCE被设置为null,CURRENT_YEAR被设置为0。接下来,静态域初始器按照其出现的顺序执行。第一个静态域是INSTANCE,它的值是通过调用 Age()构造器而计算出来的。这个构造器会用一个涉及静态域CURRENT_YEAR的表达式来初始化age。通常,读取一个静态域是会引起一个类被初始化的事件之一,但是我们已经在初始化Age类了，所以递归的初始化尝试会直接被忽略掉。因此,CURRENT_YEAR 的值仍旧是其缺省值0。这就是为什么我的年龄变成了-1985的原因。最后,从构造器返回以完成Age类的初始化,假设我们是在2011年运行该程序,那么我们就将静态域 CURRENT_YEAR初始化成了2011。但是已经太晚了，age的值已经是-1985了。这正是后续所有对Age.INSTANCE.getAge()的调用将返回的值。</p>
+<p>该程序表明,在final类型的静态域被初始化之前,存在着读取它的值的可能,而此时该静态域包含的还只是其所属类型的缺省值。这是与直觉相违背的,因为我们通常会将final类型的域看作是常量。final类型的域只有在其初始化表达式是常量表达式时才是常量。</p>
+<p>要想修正这个程序,需要重新对静态域的初始化进行排序,使得每一个初始化都出现在任何依赖于它的其他的初始化之前。</p>
+<p><strong>32.不是你的类型</strong><br />
+下面的三个程序每一个都会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Type1 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">String</span> s <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>s <span style="color: #00008B; font-weight: bold;">instanceof</span> <span style="color: #2B91AF;">String</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Type2 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">new</span> Type2<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">instanceof</span> <span style="color: #2B91AF;">String</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Type3 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span> args<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    Type3 t3 <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>Type3<span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">Object</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>第一个程序,Type1展示了instanceof操作符应用于一个空对象引用时的行为。尽管null对于每一个引用类型来说都是其子类型,但是instanceof操作符被定义为在其左操作数为null时返回false。因此,Type1将打印false。这被证明是实践中非常有用的行为。如果instanceof告诉你一个对象引用是某个特定类型的实例,那么你就可以将其转型为该类型,并调用该类型的方法,而不用担心会抛出ClassCastException或NullPointerException。</p>
+<p>第二个程序,Type2展示了instanceof操作符在测试一个类的实例,以查看它是否是某个不相关的类的实例时所表现出来的行为。你可能会期望该程序打印出false。毕竟,Type2的实例不是String的实例,因此该测试应该失败。遗憾是,instanceof 测试在编译时刻就失败了,我们只能得到下面这样的出错消息:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;">Type2.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">3</span><span style="color: #339933;">:</span> inconvertible types
+found<span style="color: #339933;">:</span> Type2, required<span style="color: #339933;">:</span> java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">String</span>
+       <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">new</span> Type2<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">instanceof</span> <span style="color: #2B91AF;">String</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre></div></div>
+
+<p>该程序编译失败是因为instanceof操作符有这样的要求:<strong>如果两个操作数的类型都是类,其中一个必须是另一个的子类型</strong>。Type2和String彼此都不是对方的子类型,所以instanceof测试将导致编译期错误。</p>
+<p>第三个程序,Type3展示了当要被转型的表达式的静态类型是转型类型的超类时转型操作符的行为:如果在一个转型操作中的两种类型都是类,那么其中一个必须是另一个的子类型。尽管对我们来说,这个转型很显然会失败,但是类型系统还没有强大到能够洞悉表达式new Object()的运行期类型不可能是Type3的一个子类型。因此,该程序将在运行期抛出ClassCastException。</p>
+<p><strong>33.特创论</strong><br />
+下面的程序会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Creator <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">int</span> i <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">100</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span>
+      Creature creature <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>Creature.<span style="color: #006633;">numCreated</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">class</span> Creature <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">long</span> numCreated <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">public</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      numCreated<span style="color: #339933;">++;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">long</span> numCreated<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">return</span> numCreated<span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>该程序看起来似乎应该打印100,但是它没有打印任何东西,因为它根本就不能编译。如果你尝试着去编译它,你就会发现编译器的诊断信息基本没什么用处。下面就是javac打印的东西:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;">Creator.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">4</span><span style="color: #339933;">:</span> not a statement
+Creature creature <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #339933;">^</span>
+Creator.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">4</span><span style="color: #339933;">:</span> <span style="color: #0000ff;">';'</span> expected
+Creature creature <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #339933;">^</span></pre></div></div>
+
+<p>一个本地变量声明看起来像是一条语句,但是从技术上说,它不是;它应该是一个本地变量声明语句(local variable declaration statement)。Java语言规范不允许一个本地变量声明语句作为一条语句在for、while或do循环中重复执行。一个本地变量声明作为一条语句只能直接出现在一个语句块中。(一个语句块是由一对花括号以及包含在这对花括展中的语句和声明构成的)。</p>
+<p>有两种方式可以修正这个问题。最显而易见的方式是将这个声明至于一个语句块<br />
+中:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">int</span> i <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">100</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  Creature creature <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>然而,请注意,该程序没有使用本地变量creature。因此,将该声明用一个无任何修饰的构造器调用来替代将更具实际意义,这样可以强调对新创建对象的引用正在被丢弃:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">int</span> i <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">100</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span>
+  <span style="color: #00008B; font-weight: bold;">new</span> Creature<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre></div></div>
+
+							</div>
+			
+			<p class="entry-meta"><span class="entry-categories">Posted in: <a href="http://liuxuan.info/category/java/" title="View all posts in Java" rel="category tag">Java</a>.</span><br />
+							<span class="entry-tags">Tagged: <a href="http://liuxuan.info/tag/java/" rel="nofollow tag">Java</a> &middot; <a href="http://liuxuan.info/tag/puzzle/" rel="nofollow tag">Puzzle</a> &middot; <a href="http://liuxuan.info/tag/trap/" rel="nofollow tag">Trap</a><br /></span>
+			</p>
+		</div><!--.entry-->
+		
+				
+		<div id="post-327" class="post-327 post type-post status-publish format-standard hentry category-java tag-java tag-puzzle tag-trap entry">
+			
+			<h2 class="entry-title"><a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-two/" rel="bookmark" title="Permalink to Java常见疑惑和陷阱(二)">Java常见疑惑和陷阱(二)</a></h2>
+			
+			<div class="entry-byline">
+				<a class="entry-date" rel="bookmark" title="2011-08-07T23:05:28+0000" href="http://liuxuan.info/2011/08/java-puzzles-and-traps-two/"><abbr class="updated" title="2011-08-07T23:05:28+0000">Aug 7th, 2011</abbr></a>
+				<address class="author vcard">by <a class="url fn" href="">Foredoomed</a>. </address>
+				<a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-two/#respond" class="comments-link"  rel="nofollow" title="Comment on Java常见疑惑和陷阱(二)">No comments yet</a>							</div>
+			
+			<div class="entry-content">
+				<a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-two/" title="Java常见疑惑和陷阱(二)"></a>				<p><strong>16.循环者的鬼魂</strong><br />
+请提供一个对i的声明,将下面的循环转变为一个无限循环:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">while</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  i <span style="color: #339933;">&gt;&gt;&gt;=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>对于无符号右移操作，0被从左移入到由移位操作而空出来的位上,即使被移位的负数也是如此。这个循环比前面三个循环要稍微复杂一点,因为其循环体非空。在其循环题中,i的值由它右移一位之后的值所替代。为了使移位合法,i必须是一个整数类型(byte、char、short、int或long)。无符号右移操作符把0从左边移入,因此看起来这个循环执行迭代的次数与最大的整数类型所占据的位数相同,即64次。如果你在循环的前面放置如下的声明,那么这确实就是将要发生的事情:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">long</span> i <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">// -1L has all 64 bits set</span></pre></div></div>
+
+<p>你怎样才能将它转变为一个无限循环呢?解决本谜题的关键在于无符号右移是一个复合赋值操作符。有关混合操作符的一个不幸的事实是,它们可能会自动地执行窄化原始类型转换,这种转换把一种数字类型转换成了另一种更缺乏表示能力的类型。窄化原始类型转换可能会丢失级数的信息,或者是数值的精度。</p>
+<p>让我们更具体一些,假设你在循环的前面放置了下面的声明:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">short</span> i <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></pre></div></div>
+
+<p>因为i的初始值((short)0xffff)是非0的,所以循环体会被执行。在执行移位操作时,第一步是将i提升为int类型。所有算数操作都会对short、byte和char类型的操作数执行这样的提升。这种提升是一个拓宽原始类型转换,因此没有任何信息会丢失。这种提升执行的是符号扩展,因此所产生的int数值是0xffffffff。然后,这个数值右移1位,但不使用符号扩展,因此产生了int数值0x7fffffff。最后,这个数值被存回到i 中。为了将int数值存入short类型的变量,Java执行的是可怕的窄化原始类型转换,它直接将高16位截掉。这样就只剩下(short)oxffff了,我们又回到了开始处。循环的第二次以及后续的迭代行为都是一样的,因此循环将永远不会终止。</p>
+<p>如果你将i声明为一个short或byte变量,并且初始化为任何负数,那么这种行为也会发生。如果你声明i为一个char,那么你将无法得到无限循环,因为char是无符号的,所以发生在移位之前的拓宽原始类型转换不会执行符号扩展。</p>
+<p>总之,不要在short、byte或char类型的变量之上使用复合赋值操作符。因为这样的表达式执行的是混合类型算术运算,它容易造成混乱。更糟的是,它们执行将隐式地执行会丢失信息的窄化转型,其结果是灾难性的。</p>
+<p><strong>17.循环者的诅咒</strong><br />
+请提供一个对i的声明,将下面的循环转变为一个无限循环:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">while</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">&lt;</span> <span style="color: #339933;">=</span> j <span style="color: #339933;">&amp;&amp;</span> j <span style="color: #339933;">&lt;=</span> i <span style="color: #339933;">&amp;&amp;</span> i <span style="color: #339933;">!=</span> j<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>嘿,不要再给我看起来不可能的循环了！如果满足前2个条件，i不是肯定等于j吗?这一属性对实数肯定有效。事实上,它是如此地重要,以至于它有这样的定义:实数上的小于等于关系是反对称的，且在5.0版之前是反对称的,但是这从5.0版之后就不再是了。</p>
+<p>直到5.0版之前,Java的数字比较操作符要求它们的两个操作数都是原始数字类型的(byte、char、short、int、long、float 和 double)。但是在5.0版中,规范作出了修改,新规范描述道:每一个操作数的类型必须可以转换成原始数字类型。问题难就难在这里了，在5.0版中,自动包装和自动反包装被添加到了Java语言中。小于等于操作符在原始数字类型集上仍然是反对称的,但是现在它还被应用到了被包装的数字类型上。(被包装的数字类型有:Byte、Character、Short、Integer、Long、Float和Double)。</p>
+<p>让我们更具体一些,下面的声明会使表达式的值为true,从而将这个循环变成了一个无限循环：</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #2B91AF;">Integer</span> i <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">Integer</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #2B91AF;">Integer</span> j <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">Integer</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre></div></div>
+
+<p>前两个子表达式在i和j上执行解包转换,并且在数字上比较所产生的int数值。i和j都表示0,所以这两个子表达式都被计算为true。第三个子表达式(i!=j)在对象引用i和j上执行标识比较,因为它们都初始化为一个新的Integer实例,因此,第三个子表达式同样也被计算为true,循环也就永远地环绕下去了。</p>
+<p><strong>18.循环者遇到了狼人</strong><br />
+请提供一个对i的声明,将下面的循环转变为一个无限循环。这个循环不需要使用任何 5.0版的特性:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">while</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">0</span> <span style="color: #339933;">&amp;&amp;</span> i <span style="color: #339933;">==</span> <span style="color: #339933;">-</span>i<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>这仍然是一个循环。在上面的条件表达式中,一元减号操作符作用于i,这意味着它的类型必须是数字型的:一元减号操作符作用于一个非数字型操作数是非法的。因此,我们要寻找一个非0的数字型数值,它等于它自己的负值。NaN不能满足这个属性,因为它不等于任何数值,因此,i必须表示一个实际的数字。肯定没有任何数字满足这样的属性吗?</p>
+<p>除了0之外,没有任何浮点数等于其符号位反转之后的值,因此i的类型必然是整数。有符号的整数类型使用的是2的补码算术运算:为了对一个数值取其负值,你要反转其每一位,然后加1,从而得到结果。2的补码算术运算的一个很大的优势是,0具有唯一的示形式。如果你要对int数值0取负值,你将得到0xffffffff+1,它仍然是0。</p>
+<p>但是,这也有一个相应的不利之处,总共存在偶数个int数值（准确地说有232个）其中一个用来表示0,这样就剩下奇数个int数值来表示正整数和负整数,这意味着正的和负的int数值的数量必然不相等。这暗示着至少有一个int数值,其负值不能正确地表示成为一个int数值。</p>
+<p>事实上,恰恰就有一个这样的int数值,它就是Integer.MIN_VALUE,即-231。它的十六进制表示是0&#215;80000000，其符号位为1,其余都是0。如果取个值的负数0x7fffffff+1=0&#215;80000000=Integer.MIN_VALUE。换句话说,Integer.MIN_VALUE是它自己的负值,Long.MIN_VALUE也是一样。对这两个值取负值将会产生溢出,但是Java在整数计算中忽略了溢出。</p>
+<p>总之,Java使用2的补码的算术运算,它是非对称的。对于每一种有符号的整数类型 (int、long、byte 和 short),负的数值总是比正的数值多一个,这个对多出来的值总是这种类型所能表示的最小数值。Integer.MIN_VALUE取负值得到的还是它没有改变过的值,Long.MIN_VALUE也是如此。对Short.MIN_VALUE取负值并将所产生的int数值转型回short,返回的同样是最初的值(Short.MIN_VALUE)。对于Byte.MIN_VALUE来说,也会产生相似的结果。更一般地讲,千万要当心溢出:就像狼人一样,它是个杀手。</p>
+<p><strong>19.被计数击倒了</strong><br />
+下面的程序有一个单重的循环,它记录迭代的次数,并在循环终止时打印这个数。那么,这个程序会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Count <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">int</span> START <span style="color: #339933;">=</span> <span style="color: #cc66cc;">2000000000</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">int</span> count <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">float</span> f <span style="color: #339933;">=</span> START<span style="color: #339933;">;</span> f <span style="color: #339933;">&lt;</span> START <span style="color: #339933;">+</span> <span style="color: #cc66cc;">50</span><span style="color: #339933;">;</span> f<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+      count<span style="color: #339933;">++;</span>
+    <span style="color: #009900;">&#125;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>count<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>表面的分析也许会认为这个程序将打印50,然而,这种分析遗漏了关键的一点:循环变量是float类型的,而非int类型的。F的初始值接近于Integer.MAX_VALUE,因此它需要用31位来精确表示,而float类型只能提供24位的精度（整数部分24位，小数部分8位）。对如此巨大的一个float数值进行增量操作将不会改变其值。因此,这个程序看起来应该无限地循环下去,因为f永远也不可能解决其终止值。但是,如果你运行该程序,就会发现它并没有无限循环下去,事实上,它立即就终止了,并打印出0。怎么回事呢?</p>
+<p>问题在于终止条件测试失败了,其方式与增量操作失败的方式非常相似。这个循环只有在循环索引f比(float)(START+50)小的情况下才运行。在将一个int与一个float进行比较时,会自动执行从int到float的转换。遗憾的是,这种转换是会导致精度丢失的三种类型转换的一种(另外两个是从long到float和从long到double)。</p>
+<p>f的初始值太大了,以至于在对其加上50,然后将结果转型为float时,所产生的值等于直接将f转换成float的值，即(float)2000000000==(float)2000000050,因此在循环体第一次执行之前就是false,所以,循环体也就永远的不到机会去运行。注意到2000000000有10个因子都是2:它是一个2乘以9个10,而每个10都是5×2，这意味着2000000000的二进制表示是以10个0结尾的。50的二进制表示只需要6位,所以将50加到2000000000上不会对右边6位之外的其他为产生影响。特别是,从右边数过来的第7位和第8位仍旧是0。提升这个31位的int到具有24位精度的float会在第 7位和第8位之间四舍五入,从而直接丢弃最右边的7位，因此它们的float表示是相同的。</p>
+<p>这个谜题的教训是：不要使用浮点数作为循环索引,因为它会导致无法预测的行为。如果你在循环体内需要一个浮点数,那么请使用int或long循环索引,并将其转换为float或double。在将一个int或long转换成一个float或double时,你可能会丢失精度,但是至少它不会影响到循环本身。当你使用浮点数时,要使用double而不是 float,除非你肯定float提供了足够的精度,并且存在强制性的性能需求迫使你使用 float。适合使用float而不是double的时刻是非常非常少的。</p>
+<p><strong>20.一分钟又一分钟</strong><br />
+下面这段程序将打印分钟计数器，那么它会打印出什么呢?
+</pre>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Clock <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">int</span> minutes <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">int</span> ms <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> ms <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">1000</span><span style="color: #339933;">;</span> ms<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>ms <span style="color: #339933;">%</span> <span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">1000</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#125;</span>
+    minutes<span style="color: #339933;">++;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>minutes<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>你可能期望程序打印出60,毕竟,这就是一小时所包含的分钟数。但是,它打印的却是 60000。为什么它会如此频繁地对minutes执行了增量操作呢?</p>
+<p>问题就出在(ms % 60*1000 == 0)。你可能会认为这个表达式等价于(ms % 60000 == 0),但是其实它们并不等价。取余和乘法操作符具有相同的优先级,因此表达式ms % 60*1000等价于(ms % 60)*1000。</p>
+<p>订正该程序的最简单的方式就是在布尔表达式中插入一对括号,以强制规定计算的正确顺序:
+</pre>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>ms <span style="color: #339933;">%</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">60</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">1000</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+  minutes<span style="color: #339933;">++;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>然而,有一个更好的方法可以订正该程序。用被恰当命名的常量来替代所有的魔幻数字:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Clock <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">int</span> MS_PER_HOUR <span style="color: #339933;">=</span> <span style="color: #cc66cc;">60</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">60</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">1000</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">int</span> MS_PER_MINUTE <span style="color: #339933;">=</span> <span style="color: #cc66cc;">60</span> <span style="color: #339933;">*</span> <span style="color: #cc66cc;">1000</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">int</span> minutes <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">int</span> ms <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> ms <span style="color: #339933;">&lt;</span> MS_PER_HOUR<span style="color: #339933;">;</span> ms<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>ms <span style="color: #339933;">%</span> MS_PER_MINUTE <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+        minutes<span style="color: #339933;">++;</span>
+      <span style="color: #009900;">&#125;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>minutes<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p><strong>21.极端不可思议</strong><br />
+下面的三个程序每一个都会打印些什么?不要假设它们都可以通过编译:
+</pre>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">import</span> <span style="color: #006699;">java.io.IOException</span><span style="color: #339933;">;</span>
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Arcane1 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Hello world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span><span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">IOException</span> e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;I've never seen println fail!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Arcane2 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #666666; font-style: italic;">// If you have nothing nice to say, say nothing</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span><span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Exception</span> e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;This can't happen&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">interface</span> Type1 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">void</span> f<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">CloneNotSupportedException</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">interface</span> Type2 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">void</span> f<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">InterruptedException</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">interface</span> Type3 <span style="color: #00008B; font-weight: bold;">extends</span> Type1, Type2 <span style="color: #009900;">&#123;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Arcane3 <span style="color: #00008B; font-weight: bold;">implements</span> Type3 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">void</span> f<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Hello world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    Type3 t3 <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Arcane3<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    t3.<span style="color: #006633;">f</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>第一个程序Arcane1,展示了已检查异常的一个基本原则。它看起来应该是可以编译的:try子句执行 I/O,并且catch子句捕获IOException异常。但是这个程序不能编译。因为println方法没有声明会抛出任何被检查异常,而IOException却正是一个被检查异常。语言规范中描述道:如果一个catch子句要捕获一个类型为E的被检查异常,而其相对应的try子句不能抛出E的某种子类型的异常,那么这就是一个编译期错误。</p>
+<p>基于同样的理由,第二个程序Arcane2看起来应该是不可以编译的，但是它却可以。它之所以可以编译,是因为它唯一的catch子句检查了Exception。尽管Java语言规范在这一点上十分含混不清,但是捕获Exception或Throwble的catch子句是合法的,不管与其相对应的try子句的内容为何。</p>
+<p>第三个程序Arcane3,看起来它也不能编译，实际上却可以。为什么呢?上述分析的缺陷在于对“Type3.f可以抛出在Type1.f上声明的异常和在Type2.f 上声明的异常”所做的假设。但是这并不正确,因为每一个接口都限制了方法f可以抛出的被检查异常集合。一个方法可以抛出的被检查异常集合是它所适用的所有类型声明要抛出的被检查异常集合的交集,而不是合集。因此,静态类型为Type3的对象上的f方法根本就不能抛出任何被检查异常。因此,Arcane3可以毫无错误地通过编译。</p>
+<p><strong>22.不受欢迎的宾客</strong><br />
+将尝试着从其环境中读取一个用户ID,如果这种尝试失败了,则缺省地认为它是一个来宾用户。该程序的作者将面对有一个静态域的初始化表达式可能会抛出异常的情况。那么,下面的程序会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> UnwelcomeGuest <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">long</span> GUEST_USER_ID <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">long</span> USER_ID<span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      USER_ID <span style="color: #339933;">=</span> getUserIdFromEnvironment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span>IdUnavailableException e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      USER_ID <span style="color: #339933;">=</span> GUEST_USER_ID<span style="color: #339933;">;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Logging in as guest&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">long</span> getUserIdFromEnvironment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+  <span style="color: #00008B; font-weight: bold;">throws</span> IdUnavailableException <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #00008B; font-weight: bold;">new</span> IdUnavailableException<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;User ID: &quot;</span> <span style="color: #339933;">+</span> USER_ID<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">class</span> IdUnavailableException <span style="color: #00008B; font-weight: bold;">extends</span> <span style="color: #2B91AF;">Exception</span> <span style="color: #009900;">&#123;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>该程序看起来很直观：getUserIdFromEnvironment方法将抛出一个异常,然后将GUEST_USER_ID(-1L)赋值给USER_ID,并打印“Loggin in as guest“,然后main方法执行,使程序打印“User ID: -1“。表象再次欺骗了我们,该程序并不能编译。如果你尝试着去编译它,你将看到和下面内容类似的一条错误信息:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;">UnwelcomeGuest.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">10</span><span style="color: #339933;">:</span>
+variable USER_ID might already have been assigned
+USER_ID <span style="color: #339933;">=</span> GUEST_USER_ID<span style="color: #339933;">;</span></pre></div></div>
+
+<p>问题出在哪里了?USER_ID是一个空final(blank final),它是一个在声明中没有进行初始化操作的final值。很明显,只有在对USER_ID赋值失败时,才会在try语句块中抛出异常,因此,在catch语句块中赋值是相当安全的。不管怎样执行静态初始化操作语句块,只会对USER_ID赋值一次,这正是空final所要求的。为什么编译器不知道这些呢?</p>
+<p>要确定一个程序是否可以不止一次地对一个空final进行赋值是一个很困难的问题。事实上,这是不可能的。这等价于经典的停机问题,它通常被认为是不可能解决的。为了能够编写出一个编译器,语言规范在这一点上采用了保守的方式。在程序中,一个空 final域只有在它是明确未赋过值的地方才可以被赋值。</p>
+<p>解决这类问题的最好方式就是将这个烦人的域从空final类型改变为普通的final类型,用一个静态域的初始化操作替换掉静态的初始化语句块。实现这一点的最佳方式是重构静态语句块中的代码为一个助手方法:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> UnwelcomeGuest <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">long</span> GUEST_USER_ID <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">final</span> <span style="color: #00008B; font-weight: bold;">long</span> USER_ID <span style="color: #339933;">=</span> getUserIdOrGuest<span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">long</span> getUserIdOrGuest <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">return</span> getUserIdFromEnvironment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span>IdUnavailableException e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Logging in as guest&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      <span style="color: #00008B; font-weight: bold;">return</span> GUEST_USER_ID<span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+  ...<span style="color: #666666; font-style: italic;">// The rest of the program is unchanged</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p><strong>23.您好,再见!</strong><br />
+下面的程序在寻常的Hello world程序中添加了一段不寻常的曲折操作。那么,它将会打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> HelloGoodbye <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Hello world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">exit</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Goodbye world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>执行程序你会发现它永远不会说再见:它只打印了Hello world。我们已经知道不论 try语句块的执行是正常地还是意外地结束,finally语句块确实都会执行。然而在这个程序中,try语句块根本就没有结束其执行过程。System.exit方法将停止当前线程和所有其他当场死亡的线程。finally子句的出现并不能给予线程继续去执行的特殊权限。</p>
+<p>当System.exit方法被调用时,虚拟机在关闭前要执行两项清理工作。首先,它执行所有的关闭挂钩操作,这些挂钩已经注册到了Runtime.addShutdownHook上。这对于释放JVM以外的资源将很有帮助。务必要为那些必须在JVM退出之前发生的行为关闭挂钩。下面的程序版本示范了这种技术,它可以如我们所期望地打印出Hello world 和Goodbye world:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> HelloGoodbye1 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Hello world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #2B91AF;">Runtime</span>.<span style="color: #006633;">getRuntime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #006633;">addShutdownHook</span><span style="color: #009900;">&#40;</span><span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">Thread</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">void</span> run<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Goodbye world&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      <span style="color: #009900;">&#125;</span>
+    <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">exit</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>JVM在System.exit方法被调用时执行的第二个清理任务与终结器有关。如果System.runFinalizerOnExit或Runtime.runFinalizersOnExit被调用了,那么JVM将在所有还未终结的对象上面调用终结器。这些方法很久以前就已经过时了,无论什么原因,永远不要调用System.runFinalizersOnExit和 Runtime.runFinalizersOnExit:它们属于Java类库中最危险的方法之一。调用这些方法导致的结果是,终结器会在那些其他线程正在并发操作的对象上面运行,从而导致不确定的行为或导致死锁。</p>
+<p>总之,System.exit将立即停止所有的程序线程,它并不会使finally语句块得到调用,但是它在停止JVM之前会执行关闭挂钩操作。当JVM被关闭时,请使用关闭挂钩来终止外部资源。通过调用System.halt可以在不执行关闭挂钩的情况下停止JVM,但是这个方法很少使用。</p>
+<p><strong>24.不情愿的构造器</strong><br />
+尽管在一个方法声明中看到一个throws子句是很常见的,但是在构造器的声明中看到一个throws子句就很少见了。下面的程序就有这样的一个声明。那么,它将打印出什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Reluctant <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> Reluctant internalInstance <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Reluctant<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> Reluctant<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">Exception</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">Exception</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;I'm not coming out&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      Reluctant b <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Reluctant<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Surprise!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Exception</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;I told you so&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>你可能期望catch子句能够捕获这个异常,并且打印“I told you so“。但是当你尝试着去运行它时,它却抛出StackOverflowError异常,为什么呢?</p>
+<p>与大多数抛出StackOverflowError异常的程序一样,本程序也包含了一个无限递归。当你调用一个构造器时,实例变量的初始化操作将先于构造器的程序体而运行。在本谜题中,internalInstance变量的初始化操作递归调用了构造器,而该构造器通过再次调用Reluctant构造器而初始化该变量自己的internalInstance,如此无限递归下去就会抛出StackOverflowError异常。因为StackOverflowError是 Error的子类型而不是Exception的子类型,所以catch子句无法捕获它。</p>
+<p>总之,实例初始化操作是先于构造器的程序体而运行的。实例初始化操作抛出的任何异常都会传播给构造器。如果初始化操作抛出的是被检查异常,那么构造器必须声明也会抛出这些异常,但是应该避免这样做,因为它会造成混乱。</p>
+<p><strong>25.域和流</strong><br />
+下面的方法将一个文件拷贝到另一个文件,并且被设计为要关闭它所创建的每一个流,即使它碰到I/O错误也要如此。遗憾的是,它并非总是能够做到这一点。为什么不能呢,你如何才能订正它呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> copy<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span> src, <span style="color: #2B91AF;">String</span> dest<span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">IOException</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #2B91AF;">InputStream</span> in <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+  <span style="color: #2B91AF;">OutputStream</span> out <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+    in <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">FileInputStream</span><span style="color: #009900;">&#40;</span>src<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    out <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">FileOutputStream</span><span style="color: #009900;">&#40;</span>dest<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">byte</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> buf <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #00008B; font-weight: bold;">byte</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1024</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">int</span> n<span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">while</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#40;</span>n <span style="color: #339933;">=</span> in.<span style="color: #006633;">read</span><span style="color: #009900;">&#40;</span>buf<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span>
+    out.<span style="color: #006633;">write</span><span style="color: #009900;">&#40;</span>buf, <span style="color: #cc66cc;">0</span>, n<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>in <span style="color: #339933;">!=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> in.<span style="color: #006633;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>out <span style="color: #339933;">!=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> out.<span style="color: #006633;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>问题出在finally语句块自身中，close方法也可能会抛出IOException。如果这正好发生在in.close被调用之时,那么这个异常就会阻止out.close被调用,从而使输出流仍保持在开放状态。</p>
+<p>解决方式是将每一个close都包装在一个嵌套的try语句块中。下面的finally语句块的版本可以保证在两个流上都会调用close:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>in <span style="color: #339933;">!=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+    in.<span style="color: #006633;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">IOException</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #666666; font-style: italic;">// There is nothing we can do if close fails</span>
+  <span style="color: #009900;">&#125;</span>
+  <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>out <span style="color: #339933;">!=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span>
+  <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+    out.<span style="color: #006633;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">IOException</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #666666; font-style: italic;">// There is nothing we can do if close fails</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">//从5.0版本开始,你可以利用Closeable接口对代码进行重构:</span>
+<span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+  closeIgnoringException<span style="color: #009900;">&#40;</span>in<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  closeIgnoringEcception<span style="color: #009900;">&#40;</span>out<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> closeIgnoringException<span style="color: #009900;">&#40;</span>Closeable c<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>c <span style="color: #339933;">!=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+    c.<span style="color: #006633;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">IOException</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #666666; font-style: italic;">// There is nothing we can do if close fails</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>总之,当你在finally语句块中调用close方法时,要用一个嵌套的try-catch语句来保护它,以防止IOException的传播。更一般地讲,对于任何在finally语句块中可能会抛出的被检查异常都要进行处理,而不是任其传播。</p>
+<p><strong>26.异常地危险</strong><br />
+在JDK1.2中,Thread.stop、Thread.suspend以及其他许多线程相关的方法都因为它们不安全而不推荐使用了。下面的方法展示了你用Thread.stop可以实现的可怕事情之一:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #666666; font-style: italic;">// Don’t do this - circumvents exception checking!</span>
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> sneakyThrow<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Throwable</span> t<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #2B91AF;">Thread</span>.<span style="color: #006633;">currentThread</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #006633;">stop</span><span style="color: #009900;">&#40;</span>t<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">// Deprecated</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>这个讨厌的小方法所做的事情正是throw语句要做的事情,但是它绕过了编译器的所有异常检查操作。你可以(卑鄙地)在你的代码的任意一点上抛出任何受检查的或不受检查的异常,而编译器对此连眉头都不会皱一下。</p>
+<p>不使用任何不推荐的方法,你也可以编写出在功能上等价于sneakyThrow的方法。事实上,至少有两种方式可以这么实现这一点,其中一种只能在5.0或更新的版本中运行。你能够编写出这样的方法吗?它必须是用Java 而不是用JVM字节码编写的,你不能在其客户对它编译完之后再去修改它。你的方法不必是完美无瑕的:如果它不能抛出一两个Exception的子类,也是可以接受的。</p>
+<p>本谜题的一种解决之道是利用Class.newInstance方法中的设计缺陷,该方法通过反射来对一个类进行实例化。引用有关该方法的文档中的话:“请注意,该方法将传播从空的(就是无参数的)构造器所抛出的任何异常,包括受检查的异常。使用这个方法可以有效地绕开在其他情况下都会执行的编译期异常检查。”一旦你了解了这一点,编写一个sneakyThrow的等价方法就不是太难了。</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Thrower <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #2B91AF;">Throwable</span> t<span style="color: #339933;">;</span>
+  <span style="color: #00008B; font-weight: bold;">private</span> Thrower<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">Throwable</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">throw</span> t<span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">synchronized</span> <span style="color: #00008B; font-weight: bold;">void</span> sneakyThrow<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Throwable</span> t<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    Thrower.<span style="color: #006633;">t</span> <span style="color: #339933;">=</span> t<span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      Thrower.<span style="color: #00008B; font-weight: bold;">class</span>.<span style="color: #006633;">newInstance</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">InstantiationException</span> e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">IllegalArgumentException</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">IllegalAccessException</span> e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #00008B; font-weight: bold;">new</span> <span style="color: #2B91AF;">IllegalArgumentException</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+      Thrower.<span style="color: #006633;">t</span> <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">null</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">// Avoid memory leak</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>在这个解决方案中将会发生许多微妙的事情。我们想要在构造器执行期间所抛出的异常不能作为一个参数传递给该构造器,因为Class.newInstance调用的是一个类的无参数构造器。因此,sneakyThrow方法将这个异常藏匿于一个静态变量中。为了使该方法是线程安全的,它必须被同步,这使得对其的并发调用将顺序地使用静态域t。要注意的是,t这个域在从finally语句块中出来时是被赋为空的:这只是因为该方法虽然是卑鄙的,但这并不意味着它还应该是内存泄漏的。如果t不被赋为空,那么它阻止该异常被垃圾回收。注意,如果你让该方法抛出一个InstantiationException或IllegalAccessException异常,它将以抛出IllegalArgumentException,这是这项技术的一个内在限制。</p>
+<p>Class.newInstance的文档继续描述道：“Constructor.newInstance方法通过将构造器抛出的任何异常都包装在(已检查的)InvocationTargetException异常中而避免了这个问题”很明显,Class.newInstance应该是做了相同的处理。但是纠正这个缺陷已经为时过晚,因为这么做将引入源代码级别的不兼容性，这将使许多依赖于Class.newInstance的程序崩溃。而弃用这个方法也不切实际,因为它太常用了。当你在使用它时,一定要意识到Class.newInstance可以抛出它没有声明过的受检查异常。</p>
+<p>被添加到5.0版本中的“范型”可以为本谜题提供一个完全不同的解决方案。为了实现最大的兼容性,通用类型是通过类型擦除来实现的:通用类型信息是在编译期而非运行期检查的。下面的解决方案就利用了这项技术:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #666666; font-style: italic;">// Don't do this either - circumvents exception checking!</span>
+<span style="color: #00008B; font-weight: bold;">class</span> TigerThrower<span style="color: #339933;">&lt;</span>t <span style="color: #00008B; font-weight: bold;">extends</span> Throwable<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> sneakyThrow<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Throwable</span> t<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">new</span> TigerThrower<span style="color: #339933;">&lt;</span>error<span style="color: #339933;">&gt;</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #006633;">sneakyThrow2</span><span style="color: #009900;">&#40;</span>t<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">void</span> sneakyThrow2<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">Throwable</span> t<span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> T <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #009900;">&#40;</span>T<span style="color: #009900;">&#41;</span> t<span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>这个程序在编译时将产生一条警告信息:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;">TigerThrower.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">7</span><span style="color: #339933;">:</span>warning<span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span>unchecked<span style="color: #009900;">&#93;</span> unchecked cast found
+<span style="color: #339933;">:</span> java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">Throwable</span>, required<span style="color: #339933;">:</span> T
+<span style="color: #00008B; font-weight: bold;">throw</span> <span style="color: #009900;">&#40;</span>T<span style="color: #009900;">&#41;</span> t<span style="color: #339933;">;</span>
+<span style="color: #339933;">^</span></pre></div></div>
+
+<p>警告信息是编译器所采用的一种手段,用来告诉你:你可能正在搬起石头砸自己的脚,而且事实也正是如此。“不受检查的转型”警告告诉你这个有问题的转型将不会在运行时刻受到检查。当你获得了一个不受检查的转型警告时,你应该修改你的程序以消除它,或者你可以确信这个转型不会失败。如果你不这么做,那么某个其他的转型可能会在未来不确定的某个时刻失败,而你也就很难跟踪此错误到其源头了。对于本谜题所示的情况,其情况更糟糕:在运行期抛出的异常可能与方法的签名不一致。sneakyThrow2方法正是利用了这一点。</p>
+<p>总之,Java 的异常检查机制并不是虚拟机强制执行的。它只是一个编译期工具,被设计用来帮助我们更加容易地编写正确的程序,但是在运行期可以绕过它。要想减少你因为这类问题而被曝光的次数,就不要忽视编译器给出的警告信息。</p>
+<p><strong>27.切掉类</strong><br />
+请考虑下面的两个类:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Strange1 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      Missing m <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Missing<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span>java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">NoClassDefFoundError</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Got it!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Strange2 <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    Missing m<span style="color: #339933;">;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      m <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">new</span> Missing<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span>java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">NoClassDefFoundError</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Got it!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #00008B; font-weight: bold;">class</span> Missing <span style="color: #009900;">&#123;</span>
+  Missing<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>如果你编译后并且在运行Strange1和Strange2之前删Missing.class文件,你就会发现这两个程序的行为有所不同。其中一个抛出了NoClassDefFoundError,而另一个却打印出了“Got it!“到底哪一个程序具有哪一种行为,你又如何去解释这种行为上的差异呢?</p>
+<p>Strange1只在其try语句块中提及Missing类型,因此你可能会认为NoClassDefFoundError被捕获并打印“Got it!“。Strange2在try语句块之外声明了一个Missing类型的变量,因此你可能会认为NoClassDefFoundError不会被捕获。如果你试着运行这些程序,就会看到它们的行为正好相反，怎样才能解释这些奇怪的行为呢?</p>
+<p>如果你去查看Java规范以找出应该抛出NoClassDefFoundError的地方,那么你不会得到很多的信息。该规范描述道：这个错误可以“在(直接或间接)使用某个类的程序中的任何地方”抛出。当JVM调用Strange1和Strange2的main方法时,这些程序都间接使用了Missing类,因此,它们都在其权利范围内于这一点上抛出了该错误。于是,本谜题的答案就是这两个程序可以依据其实现而展示出各自不同的行为。但是这并不能解释为什么这些程序在所有我们所知的Java实现上的实际行为,与你所认为的必然行为都正好相反。要查明为什么会是这样,我们需要研究一下由编译器生成的这些程序的字节码。</p>
+<p>如果你去比较Strange1和Strange2的字节码,就会发现几乎是一样的。除了类名之外,唯一的差异就是catch语句块所捕获的参数ex与JVM本地变量之间的映射关系不同。尽管哪一个程序变量被指派给了哪一个JVM变量的具体细节会因编译器的不同而有所差异,但是对于和上述程序一样简单的程序来说,这些细节不太可能会差异很大。下面是通过执行“javap -c Strange1“命令而显示的Strange1.main的字节码:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #cc66cc;">0</span>   <span style="color: #00008B; font-weight: bold;">new</span> info.<span style="color: #006633;">liuxuan</span>.<span style="color: #006633;">test</span>.<span style="color: #006633;">Missing</span> <span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">16</span><span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">3</span>   dup
+<span style="color: #cc66cc;">4</span>   invokespecial info.<span style="color: #006633;">liuxuan</span>.<span style="color: #006633;">test</span>.<span style="color: #006633;">Missing</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">18</span><span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">7</span>   astore_1 <span style="color: #009900;">&#91;</span>m<span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">8</span>   <span style="color: #00008B; font-weight: bold;">goto</span> <span style="color: #cc66cc;">20</span>
+<span style="color: #cc66cc;">11</span>  astore_1 <span style="color: #009900;">&#91;</span>ex<span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">12</span>  getstatic java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span> <span style="color: #339933;">:</span> java.<span style="color: #006633;">io</span>.<span style="color: #2B91AF;">PrintStream</span> <span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">19</span><span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">15</span>  ldc <span style="color: #339933;">&lt;</span>string <span style="color: #0000ff;">&quot;Got it!&quot;</span><span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">25</span><span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">17</span>  invokevirtual java.<span style="color: #006633;">io</span>.<span style="color: #2B91AF;">PrintStream</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span>java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">String</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #00008B; font-weight: bold;">void</span> <span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">27</span><span style="color: #009900;">&#93;</span>
+<span style="color: #cc66cc;">20</span>  <span style="color: #00008B; font-weight: bold;">return</span>
+      <span style="color: #2B91AF;">Exception</span> Table<span style="color: #339933;">:</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">0</span>, pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">8</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">-&gt;</span> <span style="color: #cc66cc;">11</span> when <span style="color: #339933;">:</span> java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">NoClassDefFoundError</span>
+      <span style="color: #2B91AF;">Line</span> numbers<span style="color: #339933;">:</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">0</span>, line<span style="color: #339933;">:</span> <span style="color: #cc66cc;">14</span><span style="color: #009900;">&#93;</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">11</span>, line<span style="color: #339933;">:</span> <span style="color: #cc66cc;">15</span><span style="color: #009900;">&#93;</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">12</span>, line<span style="color: #339933;">:</span> <span style="color: #cc66cc;">16</span><span style="color: #009900;">&#93;</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">20</span>, line<span style="color: #339933;">:</span> <span style="color: #cc66cc;">18</span><span style="color: #009900;">&#93;</span>
+      Local variable table<span style="color: #339933;">:</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">0</span>, pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">21</span><span style="color: #009900;">&#93;</span> local<span style="color: #339933;">:</span> args index<span style="color: #339933;">:</span> <span style="color: #cc66cc;">0</span> type<span style="color: #339933;">:</span> java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">8</span>, pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">11</span><span style="color: #009900;">&#93;</span> local<span style="color: #339933;">:</span> m index<span style="color: #339933;">:</span> <span style="color: #cc66cc;">1</span> type<span style="color: #339933;">:</span> info.<span style="color: #006633;">liuxuan</span>.<span style="color: #006633;">test</span>.<span style="color: #006633;">Missing</span>
+        <span style="color: #009900;">&#91;</span>pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">12</span>, pc<span style="color: #339933;">:</span> <span style="color: #cc66cc;">20</span><span style="color: #009900;">&#93;</span> local<span style="color: #339933;">:</span> ex index<span style="color: #339933;">:</span> <span style="color: #cc66cc;">1</span> type<span style="color: #339933;">:</span> java.<span style="color: #006633;">lang</span>.<span style="color: #2B91AF;">NoClassDefFoundError</span>
+<span style="color: #339933;">&lt;/</span>string<span style="color: #339933;">&gt;</span></pre></div></div>
+
+<p>Strange2.main相对应的字节码与其只有一条指令不同:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #cc66cc;">11</span><span style="color: #339933;">:</span> astore_2</pre></div></div>
+
+<p>这是一条将catch语句块中的捕获异常存储到捕获参数ex中的指令。在Strange1中,这个参数是存储在JVM变量1中的,而在Strange2中,它是存储在JVM变量2中的。这就是两个类之间唯一的差异,但是它所造成的程序行为上的差异是多么地大呀!</p>
+<p>为了运行一个程序,JVM要加载和初始化包含main方法的类。在加载和初始化间,JVM 必须链接类。链接的第一阶段是校验,校验要确保一个类是良构的,并且遵循语言的语法要求。校验非常关键,它维护着可以将像Java这样的安全语言与像C或C++这样的不安全语言区分开的各种承诺。在Strange1和Strange2这两个类中,本地变量m碰巧都被存储在JVM变量1中。两个版本的main都有一个连接点,从两个不同位置而来的控制流汇聚于此。该连接点就是指令20,即从main返回的指令。在正常结束try语句块的情况下,我们执行到指令8,即goto20,从而可以到达指令20;对于在catch语句块中结束的情况,我们将执行指令17,并按顺序执行下去,到达指令20。连接点的存在使得在校验Strange1类时产生异常,而在校验Strange2类时并不会产生异常。当校验执行对Strange1.main的流分析时,由于指令20可以通过两条不同的路径到达,因此校验器必须合并在变量1中的类型。两种类型是通过计算它们的首个公共超类而合并的(两个类的首个公共超类是它们所共有的最详细而精确的超类)。在 Strange1.main方法中,当从指令8到达指令20时,JVM变量1的状态包含了一个 Missing类的实例。当从指令17到达时,它包含了一个NoClassDefFoundError 类的实例。为了计算首个公共超类,校验器必须加载Missing类以确定其超类。因为 Missing.class文件已经被删除了,所以校验器不能加载它,因而抛出了一个NoClassDefFoundError。请注意,这个异常是在校验期间、在类被初始化之前,并且在main方法开始执行之前很早就抛出的。这就解释了为什么没有打印出任何关于这个未被捕获异常的跟踪栈信息。要想编写一个能够探测出某个类是否丢失的程序,请使用反射来引用类而不要使用通常的语言结构。下面展示了用这种技巧重写的程序:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Strange <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #00008B; font-weight: bold;">throws</span> <span style="color: #2B91AF;">Exception</span><span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">Object</span> m <span style="color: #339933;">=</span> <span style="color: #00008B; font-weight: bold;">Class</span>.<span style="color: #006633;">forName</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Missing&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #006633;">newInstance</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">ClassNotFoundException</span> ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">err</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Got it!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>总之,不要对捕获NoClassDefFoundError形成依赖。语言规范非常仔细地描述了类初始化是在何时发生的,但是类被加载的时机却显得更加不可预测。更一般地讲,捕获Error及其子类型几乎是完全不恰当的。这些异常是为那些不能被恢复的错误而保留的。</p>
+<p><strong>28.令人疲惫不堪的测验</strong><br />
+本谜题将测试你对递归的了解程度。下面的程序将做些什么呢?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;"><span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">class</span> Workout <span style="color: #009900;">&#123;</span>
+  <span style="color: #00008B; font-weight: bold;">public</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> main<span style="color: #009900;">&#40;</span><span style="color: #2B91AF;">String</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> args<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    workHard<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #2B91AF;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;It's nap time.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+&nbsp;
+  <span style="color: #00008B; font-weight: bold;">private</span> <span style="color: #00008B; font-weight: bold;">static</span> <span style="color: #00008B; font-weight: bold;">void</span> workHard<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #00008B; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span>
+      workHard<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span> <span style="color: #00008B; font-weight: bold;">finally</span> <span style="color: #009900;">&#123;</span>
+      workHard<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<p>要不是有try-finally语句,该程序的行为将非常明显:workHard方法递归调用它自身,直到StackOverflowError被抛出而终止。但是,try-finally语句把事情搞得复杂了。当它试图抛出StackOverflowError 时,程序将会在finally语句块的workHard方法中终止。这样,它就递归调用了自己。这看起来确实就像是一个无限循环的秘方,但是这个程序真的会无限循环下去吗?如果你运行它,它似乎确实是这么做的,但是要想确认的唯一方式就是分析它的行为。</p>
+<p>Java虚拟机对栈的深度限制到了某个预设的水平。当超过这个水平时,JVM就抛出 StackOverflowError。为了让我们能够更方便地考虑程序的行为,我们假设栈的深度为3,这比它实际的深度要小得多。现在让我们来跟踪其执行过程。main方法调用 workHard,而它又从其try语句块中递归地调用了自己,然后它再一次从其try语句块中调用了自己。在此时,栈的深度是3。当workHard方法试图从其try语句块中再次调用自己时,该调用立即就会以抛出StackOverflowError而失败。这个错误是在最内部的finally语句块中被捕获的,在此处栈的深度已经达到了3。在那里,workHard 方法试图递归地调用它自己,但是该调用却以抛出StackOverflowError而失败。这个错误将在上一级的finally语句块中被捕获,在此处站的深度是2。该finally中的调用与相对应的try语句块具有相同的行为:都会产生一个StackOverflowError。</p>
+<p>所以，一个深度为0的调用(即main中的调用),两个深度为1的调用,四个深度为2的调用,和八个深度为3的调用,总共是15个调用。那八个深度为3的调用每一个都会立即产生StackOverflowError。至少在把栈的深度限制为3的JVM上,该程序不会是一个无限循环:它在15个调用和8个异常之后就会终止。但是对于真实的JVM又会怎样呢?它仍然不会是一个无限循环。其调用图与前面的图相似,只不过要大得多得多而已。那么,究竟大到什么程度呢?许多JVM都将栈的深度限制为1024,因此,调用的数量就是1+2+4+8...+21,024=21,025-1,而抛出的异常的数量是 21,024。假设我们的机器可以在每秒钟内执行1010个调用,并产生1010个异常,按照当前的标准,这个假设的数量已经相当高了。在这样的假设条件下,程序将在大约 1.7×10291年后终止。为了让你对这个时间有直观的概念,我告诉你,我们的太阳的生命周期大约是1010年,所以我们可以很确定,我们中没有任何人能够看到这个程序终止的时刻。尽管它不是一个无限循环,但是它也就算是一个无限循环吧。</p>
+<p>实际上,这个调用是一棵完全二叉树,它的深度就是JVM的栈深度的上限。WorkOut程序的执行过程等于是在先序遍历这棵树。在先序遍历中,程序先访问一个节点,然后递归地访问它的左子树和右子树。对于树中的每一条边,都会产生一个调用,而对于树中的每一个节点,都会抛出一个异常。</p>
+							</div>
+			
+			<p class="entry-meta"><span class="entry-categories">Posted in: <a href="http://liuxuan.info/category/java/" title="View all posts in Java" rel="category tag">Java</a>.</span><br />
+							<span class="entry-tags">Tagged: <a href="http://liuxuan.info/tag/java/" rel="nofollow tag">Java</a> &middot; <a href="http://liuxuan.info/tag/puzzle/" rel="nofollow tag">Puzzle</a> &middot; <a href="http://liuxuan.info/tag/trap/" rel="nofollow tag">Trap</a><br /></span>
+			</p>
+		</div><!--.entry-->
+		
+				
+		<div id="post-335" class="post-335 post type-post status-publish format-standard hentry category-java tag-double tag-float tag-java entry">
+			
+			<h2 class="entry-title"><a href="http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/" rel="bookmark" title="Permalink to 单精度浮点类型的二进制表示格式">单精度浮点类型的二进制表示格式</a></h2>
+			
+			<div class="entry-byline">
+				<a class="entry-date" rel="bookmark" title="2011-08-01T15:35:14+0000" href="http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/"><abbr class="updated" title="2011-08-01T15:35:14+0000">Aug 1st, 2011</abbr></a>
+				<address class="author vcard">by <a class="url fn" href="">Foredoomed</a>. </address>
+				<a href="http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/#respond" class="comments-link"  rel="nofollow" title="Comment on 单精度浮点类型的二进制表示格式">No comments yet</a>							</div>
+			
+			<div class="entry-content">
+				<a href="http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/" title="单精度浮点类型的二进制表示格式"></a>				<p>这两天在StackOverflow上闲逛的时候，发现有个关于Java中单精度浮点数（float）的<a href="http://stackoverflow.com/questions/5849741/what-is-the-maximum-number-in-the-mantissa-part-of-a-java-float" rel="nofollow" >问题</a>。我不得不承认，我被震精了。因为以前只知道float在Java中占4个字节（即32位），并不知道它内部用来表示1个小数的具体格式是什么。我记得我以前刚学Java的时候，最开始要学的就是基本数据类型（当然其他语言也一样），那时候我就对1个小数用二进制来表示产生过疑问，而且，书上对这个也没有详细的解释。难道这个底层的float表示格式不重要吗？我觉得这个很重要，人家不是都有问题出来了么？那么就乘这次把float的底层的二进制表示格式搞清楚吧。</p>
+<p>在Java中，float采用的是<a href="http://en.wikipedia.org/wiki/IEEE_754-2008" rel="nofollow" >IEEE Standard for Floating-Point Arithmetic (IEEE 754)标准</a>。float占4个字节，也就是32位，具体分配如下：</p>
+<ul>
+<li>符号位：<strong>1</strong> 位</li>
+<li>幂底数位：<strong>8</strong> 位</li>
+<li>指数有效位：<strong>23</strong> 位</li>
+</ul>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/e/e8/IEEE_754_Single_Floating_Point_Format.svg" alt="IEEE 754 Single Floating Point Format 单精度浮点类型的二进制表示格式"  title="单精度浮点类型的二进制表示格式" /></p>
+<p>1.符号位是从左边数起的第一位数，0代表正数或零，1代表负数，这个没有什么疑问。</p>
+<p>2.幂底数位是从右边数起的第23位到第30位。我们需要注意的是，这个数是用<a href="http://en.wikipedia.org/wiki/Offset_binary" rel="nofollow" >偏移二进制（offset binary）</a>表示的，并不是用二进制的补码来表示（至于用这个表示法表示的好处可以看<a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/number2.html" rel="nofollow" >这里</a>），并且，这个8位二进制数是没有符号位的。</p>
+<p>这个偏移二进制与二进制补码的对应关系可以查看下面的表格：</p>
+<table style="text-align:center；margin: 1em 1em 1em 0;background: #F9F9F9;border: 1px #AAA solid;border-collapse: collapse;color: black;">
+<tbody>
+<tr>
+<th>Offset Binary code, K=8</th>
+<th>Decimal code</th>
+<th>Twos&#8217; complement Binary</th>
+</tr>
+<tr>
+<td>1111</td>
+<td>7</td>
+<td>0111</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>6</td>
+<td>0110</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>5</td>
+<td>0101</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>4</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>3</td>
+<td>0011</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>2</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>1</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>0111</td>
+<td>−1</td>
+<td>1111</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>−2</td>
+<td>1110</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>−3</td>
+<td>1101</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>−4</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>−5</td>
+<td>1011</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>−6</td>
+<td>1010</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>−7</td>
+<td>1001</td>
+</tr>
+<tr>
+<td>0000</td>
+<td>−8</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以从上面的表格看到，偏移和补码的区别只是最高位的区别（右边数起）。当补码最高为是1的（也就是这个数是负数）时候，偏移表示的最高位是0，反之亦然。好了，既然指数的有效位使用偏移来表示的话，那么它的值就不是实际真正的值，而是要用它来与偏移量相减，从而得到真正的指数有效位值。这个偏移量为2<sup>n−1</sup>−1 ，其中n为所有位数。例如float里是用8位来表示，那么偏移量就是127。</p>
+<p>细心的朋友可能会发现应该减去2<sup>n-1</sup>才是真正的值，但是为什么不减去2<sup>n</sup>，而是减去2<sup>n−1</sup>−1呢？<a href="http://en.wikipedia.org/wiki/Offset_binary" rel="nofollow" >维基</a>上是这么说的：</p>
+<blockquote><p>
+Unusually however, instead of using &#8220;excess 2^(n-1)&#8221; it uses &#8220;excess 2^(n-1)-1&#8243; which means that inverting the leading (high-order) bit of the exponent will not convert the exponent to correct twos&#8217; complement notation.
+</p></blockquote>
+<p>也就是说这是有意这么做的，为了不把指数转换成正确的二进制补码形式。我搞不懂为什么要这样做，所以就在StackOverflow上提了个<a href="http://stackoverflow.com/questions/6871501/offset-binary-format-for-float-in-java" rel="nofollow" >问题</a>，大家可以参考一下。</p>
+<p>这样一来，8位无符号指数的范围是0-255，再减去偏移量127，结果则为-127-128。另外全0和全1作为特殊处理,所以表示范围就变成了-126到127。特殊处理说明参考下表：</p>
+<table style="text-align:center；margin: 1em 1em 1em 0;background: #F9F9F9;border: 1px #AAA solid;border-collapse: collapse;color: black;">
+<tbody>
+<tr>
+<th>Exponent</th>
+<th>Significand zero</th>
+<th>Significand non-zero</th>
+<th>Equation</th>
+</tr>
+<tr>
+<td>00<sub>H</sub></td>
+<td><a href="http://en.wikipedia.org/wiki/0_(number)" rel="nofollow"  title="0 (number)">zero</a>, <a href="http://en.wikipedia.org/wiki/%E2%88%920" rel="nofollow"  title="−0" class="mw-redirect">−0</a></td>
+<td><a href="http://en.wikipedia.org/wiki/Subnormal_numbers" rel="nofollow"  title="Subnormal numbers" class="mw-redirect">subnormal numbers</a></td>
+<td>(−1)<sup>signbits</sup>×2<sup>−126</sup>× 0.significandbits</td>
+</tr>
+<tr>
+<td>01<sub>H</sub>, &#8230;, FE<sub>H</sub></td>
+<td colspan="2">normalized value</td>
+<td>(−1)<sup>signbits</sup>×2<sup>exponentbits−127</sup>× 1.significandbits</td>
+</tr>
+<tr>
+<td>FF<sub>H</sub></td>
+<td>±<a href="http://en.wikipedia.org/wiki/Infinity" rel="nofollow"  title="Infinity">infinity</a></td>
+<td><a href="http://en.wikipedia.org/wiki/NaN" rel="nofollow"  title="NaN">NaN</a> (quiet, signalling)</td>
+</tr>
+</tbody>
+</table>
+<p>3.剩下的23位就是所谓的小数位了。但是注意：如果这23位全部是0的话，最高位将多出1位来，且这位上的值是1。</p>
+<p>好了，这样所有32位都有了，自然可以得到二进制转换成十进制的推导公式为：</p>
+<p><img src="http://upload.wikimedia.org/math/1/d/e/1de9cd706cf2343bf03714ed2d4e4e65.png" alt="1de9cd706cf2343bf03714ed2d4e4e65 单精度浮点类型的二进制表示格式"  title="单精度浮点类型的二进制表示格式" /></p>
+<p>对应到上图的例子为：</p>
+<p><img src="http://upload.wikimedia.org/math/2/5/6/2567776ddd65d7deb6b0a8e63dd82e52.png" alt="2567776ddd65d7deb6b0a8e63dd82e52 单精度浮点类型的二进制表示格式"  title="单精度浮点类型的二进制表示格式" /></p>
+<p>最后，双精度浮点数（double）的64位分配和单精度数差不多，具体情况如下图所示：<br />
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/618px-IEEE_754_Double_Floating_Point_Format.svg.png" alt="618px IEEE 754 Double Floating Point Format.svg 单精度浮点类型的二进制表示格式"  title="单精度浮点类型的二进制表示格式" /></p>
+<p>参考文章：</p>
+<ul>
+<li>http://en.wikipedia.org/wiki/Single_precision_floating-point_format</li>
+<li>http://en.wikipedia.org/wiki/IEEE_754-1985#Exponent_biasing</li>
+</ul>
+							</div>
+			
+			<p class="entry-meta"><span class="entry-categories">Posted in: <a href="http://liuxuan.info/category/java/" title="View all posts in Java" rel="category tag">Java</a>.</span><br />
+							<span class="entry-tags">Tagged: <a href="http://liuxuan.info/tag/double/" rel="nofollow tag">Double</a> &middot; <a href="http://liuxuan.info/tag/float/" rel="nofollow tag">Float</a> &middot; <a href="http://liuxuan.info/tag/java/" rel="nofollow tag">Java</a><br /></span>
+			</p>
+		</div><!--.entry-->
+		
+				
+		<div id="post-255" class="post-255 post type-post status-publish format-standard hentry category-architecture tag-facebook tag-mysql tag-python tag-quora tag-stackoverflow entry">
+			
+			<h2 class="entry-title"><a href="http://liuxuan.info/2011/07/quoras-technology-examined/" rel="bookmark" title="Permalink to Quora使用的技术">Quora使用的技术</a></h2>
+			
+			<div class="entry-byline">
+				<a class="entry-date" rel="bookmark" title="2011-07-16T23:50:24+0000" href="http://liuxuan.info/2011/07/quoras-technology-examined/"><abbr class="updated" title="2011-07-16T23:50:24+0000">Jul 16th, 2011</abbr></a>
+				<address class="author vcard">by <a class="url fn" href="">Foredoomed</a>. </address>
+				<a href="http://liuxuan.info/2011/07/quoras-technology-examined/#respond" class="comments-link"  rel="nofollow" title="Comment on Quora使用的技术">No comments yet</a>							</div>
+			
+			<div class="entry-content">
+				<a href="http://liuxuan.info/2011/07/quoras-technology-examined/" title="Quora使用的技术"></a>				<p>如果提起<a href="http://www.quora.com" rel="nofollow"  title="quora">Quora</a>,国人首先想到的可能会是它在国内的山寨版<a href="http://www.zhihu.com" rel="nofollow"  title="zhihu">知乎</a>。想当初知乎还因为它的条款问题引来网络上的一片骂声，这个事件倒是给我提了个醒，因为我以前基本上不看网站的条款声明，现在看来以后要看明白了再用啊（特别是山寨货），不然怎么死的都不知道。当然我关注的不是山寨货，而是它的本源Quora。<br />
+<a href="http://www.flickr.com/photos/60110479@N08/5943445558/" rel="nofollow"  title="Flickr 上 Foredoomed 的 quora_stackoverflow_zhihu"><img src="http://farm7.static.flickr.com/6001/5943445558_12a1fc3061.jpg" width="500" height="375" alt="5943445558 12a1fc3061 Quora使用的技术"  title="Quora使用的技术" /></a><br />
+Quora由Facebook前CTO亚当·德安杰洛（Adam D&#8217;Angelo）以及Facebook工程技术经理查理·切沃（Charlie Cheever）于2008年创立。2010年初开始内部测试的Quora在3月获得风险投资公司Benchmark Capital 1400万美元投资。据《华尔街日报》报道，估值为8750万美元。但是Quora目前还是执行着邀请制度，这导致它的PV相对于同类型的社交问答网站<a href="http://stackoverflow.com" rel="nofollow"  title="Stack Overflow">StackOverflow</a>要少了很多。但这并不能阻止Quora的火爆，其高质量的回答和优秀的用户体验都是它的优势所在。</p>
+<p>作为我自己来讲，更多的还是关心Quora使用到的技术。它的性能为什么这么棒，它的架构是怎样的，它使用的是哪种语言和框架，它的搜索性能为什么这么好等。那就让我们来看看Quora到底用到了哪些技术。</p>
+<h3>The Search-Box</h3>
+<p>Quora只能搜索问题，主题标签，用户名，和主题标题。没有全文搜索，所以，你无法搜索问题和答案的内容。而搜索中使用前缀搜索方式，比如你输入mi，则Microsoft会马上出来。其搜索还会有一些非常简单的模糊匹配的算法。另外，如果有重复的问题，其中一个问题会自动跳转到另一个问题，但是在搜索中还是会出现。搜索中没有拼写检查。</p>
+<p>一开始，他们使用的是一个开源的搜索服务器，叫<a href="http://sphinxsearch.com/" rel="nofollow" >Sphinx</a>，其支持上述的那些功能。现在他们不用这个服务器了，因为<a href="http://www.quora.com/What-is-the-best-open-source-solution-for-implementing-fast-auto-complete" rel="nofollow" >受到了一些限制</a>。他们做了一个新的解决方案，这个算法由Python实现。</p>
+<blockquote><p>
+<a href="http://www.quora.com/What-libraries-does-Quora-use-for-search" rel="nofollow" ><img width="16" height="16" style="padding-right: 10px;" src="http://www.quora.com/favicon.ico" title="Quora使用的技术" alt="favicon Quora使用的技术" />What libraries does Quora use for search?</a><br />
+<small>Adam D’Angelo, Quora Founder (Nov 13, 2010)</small><br />
+Our search is custom-written. It doesn’t use any libraries aside from Thrift, and Python’s unicode library, which we use for unicode normalization.
+</p></blockquote>
+<h3>Speedy Queries</h3>
+<p>Quora的查询是非常高速的，其查询请求是通过AJAX的GET请求发送的，结果返回用的是JSON数据格式，但他们解析JSON是在服务器端，而不是通过浏览器的javascript。这么做的原因可能是他们想高亮搜索关键词，似乎使用Client端的Javascript非常不好做。</p>
+<p>Quora的即时搜索好像比较暴力，如果你输入Microsoft（一共9个字符），你会看到其会像后端发送9次查询——每按一个键一次，无论你敲这个单词的速底有多快，每输入一个字符都会发一个请求给后台。对于这样的看上去没有效率的对后台的请求，后台的服务器端会来控制相关的前台请求，所以，就算是前台这样做，也不会增加服务器端的负载，因为后台会做相关的处理。</p>
+<p>Quora的搜索使用HTTP长连接，当你开始敲查询的时候，连接就建立了，这个连接会持续在那里，你下次搜索的时候会继续使用这个连接，除非你60秒没有动作了。</p>
+<blockquote><p>
+<a href="http://www.quora.com/Quora-product/Is-Quora-going-to-implement-full-text-search" rel="nofollow" ><img width="16" height="16" style="padding-right: 10px;" src="http://www.quora.com/favicon.ico" title="Quora使用的技术" alt="favicon Quora使用的技术" />Is Quora going to implement full-text search?</a><br />
+<small>Adam D’Angelo, I made a lot of the early Quora … (Sep 1, 2010)</small><br />
+Yes, eventually. We haven’t implemented this yet because we’ve prioritized other things, but we will definitely do it in the future.
+</p></blockquote>
+<h3>Webnode2 And LiveNode</h3>
+<p>Webnode2 和 LiveNode 是 Quora 内部的系统，其用来管理内容。Webnode2 &nbsp;生成 HTML, CSS 和 JavaScript 并且和 LiveNode 紧紧地耦合在一起，Webnode2主要是用来管理内容在网页上显示的，LiveNode主要是用来做动态网页内容更新的。Charlie Cheever 说，如果他可以从新开始，他<a href="http://www.quora.com/What-limitations-has-Quora-encountered-due-to-LiveNode-WebNode#answers" rel="nofollow" >第一件事要做的就是重写整个LiveNode</a>。</p>
+<p>Quora的工程师看上去对他们搞的这些东西非常的满意，并且<a href="http://www.quora.com/What-limitations-has-Quora-encountered-due-to-LiveNode-WebNode#answers" rel="nofollow" >他们也在努力地找到这些东西的弱点</a>。有一个有意思的关于LiveNode的问题是，如果A和B同时正在看相当的一个问题，那么用户A的一些交互动作会影响B的页面。例如，如果A顶了一下某个答案，那么这个答案可能会往上移动。这样的一个显示变化会通过AJAX更新B的浏览器。如果B此时展开了评论，可能会受到影响。</p>
+<p><a href="http://www.quora.com/What-is-LiveNode-written-in" rel="nofollow" >LiveNode 由这些东西写成：</a>Python, C++, 和 JavaScript。<a href="http://jquery.com/" rel="nofollow" >jQuery</a> ，<a href="http://cython.org/" rel="nofollow" >Cython</a>也用到了。<br />
+因为Quora<a href="http://www.quora.com/Is-Quora-planning-on-open-sourcing-LiveNode" rel="nofollow" >想要对他们的LiveNode开源</a> 并准备把他们的代码分开，做这个事可能需要太多的工作和时间。<br />
+Charlie Cheever 指出 WebNode2 和<a href="http://www.quora.com/Quora-Infrastructure/What-is-webnode2" rel="nofollow" >有一个叫做 “free and easy website builder” 的 Webnode 的 webnode.com</a> 没有任何的关系。</p>
+<h3>Amazon Web Services</h3>
+<p>Quora全部托管在Amazon的EC2和S3上，因为这样就不像在相当长的时间内自己运营服务器那样成本高昂，他们就是为像Quora这样快速增长的公司量身定做的。</p>
+<h3>Ubuntu Linux</h3>
+<p>Quora使用Ubuntu Linux作为操作系统。没有什么大惊喜。在Amazon EC2上部署和管理都非常容易。Adam D’Angelo <a href="http://www.quora.com/Quora-Infrastructure/Which-Linux-flavor-does-Quora-use-Why" rel="nofollow" >指出</a>他在高中时就使用Debian Linux，并且一直坚持到大学时还在用。原因就是<a href="http://www.quora.com/Quora-Infrastructure/Which-Linux-flavor-does-Quora-use-Why" rel="nofollow" >“它工作的很好，而且没有令人信服的理由用别的操作系统去替代它”</a>。</p>
+<h3>Static Content</h3>
+<p>你只需要看一下Quora任何一个HTML的源代码，就可以看到他们在使用Amozon的分布式CDN, <a href="http://aws.amazon.com/cloudfront/" rel="nofollow" >Cloudfront</a>。URLs在form里：</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html" style="font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;">http://d2o7bfz2il9cb7.cloudfront.net/main-thumb-670336-25-7kmigSSkkdusoE6gHRkdQsXfjuTCaxQs.jpeg</pre></div></div>
+
+<p>CloudFront用来处理所有的静态页面,CSS和JavaScript (除了Google的 Analytics JavaScript,这是被Google托管)。<a href="http://www.quora.com/How-is-Quora-doing-image-uploads-to-Amazon-S3" rel="nofollow" >图片被上传到EC2服务器,然后调整大小后上传到S3服务器</a>。这些都是用<a href="http://aws.amazon.com/code/134" rel="nofollow" >Python S3 API</a>来管理的。</p>
+<h3>HAProxy Load-Balancing</h3>
+<p>Quora把<a href="http://haproxy.1wt.eu/" rel="nofollow" >HAProxy</a>放在最前端，作为在它后面的分布式Nginx服务器的负载均衡服务器。</p>
+<h3>Nginx</h3>
+<p>反向代理服务器是Nginx，如果要了解更多这种设置方式，我推荐阅读<a href="http://kovyrin.net/2006/05/18/nginx-as-reverse-proxy/" rel="nofollow" >Using Nginx As Reverse-Proxy Server On High-Loaded Sites</a>。</p>
+<h3>Pylons And Paste</h3>
+<p><a href="http://pylonshq.com/" rel="nofollow" >Pylons</a>是一个轻量级的Web框架，通常都是在Nginx之后作为主要的web服务器。他们使用默认的<a href="http://spacepants.org/blog/pylons-paste-stack" rel="nofollow" >Pylon + Paste stack</a>方式。选择Pylons就像在万圣节选择南瓜一样。他们把Pylons中的template和ORM用他们自己的用Python写成的技术替换掉，这就是<a href="http://www.quora.com/What-languages-and-frameworks-were-used-to-code-Quora" rel="nofollow" >LiveNode和WebNode2所在的地方</a>。<br />
+<a href="http://www.mochimedia.com/" rel="nofollow" >MochiMedia</a>也是使用Pylons的启发中的一个，因为他们自己正在用它。</p>
+<h3>Python</h3>
+<p>从Facebook出来的Charlie 和 Adam选用了Python而不是PHP。正如Adam指出的 “<a href="http://www.quora.com/Why-did-Quora-choose-Python-for-its-development" rel="nofollow" >Facebook is stuck on that for legacy reasons, not because it is the best choice right now</a>”（Facebook使用PHP并不是因为其好，而是因为历史原因的问题），当然他们也不会使用C#，因为那样一来就会引入一堆微软的东西。当然，也不会是Java，因为Python要比Java更容易写出代码，Scala太年轻了，还需要考验。Ruby看上来很像Python，但是他们对Ruby没有过多的经验。最终还是Python胜出。当然，他们知道Python的弱点是性能和速度，所以，他们在需要速度和性能的地方使用了C/C++。 他们使用Python的版本是2.6。</p>
+<p>使用Python的另一个原因是Python的数据结构和JSON可以很好的映射起来。代码易读性很高。而且有很多的库，调试器和重载器。Quora的B/S结构几乎完全通过JSON进行数据交互。</p>
+<p>他们<a href="http://www.quora.com/Adam-DAngelo/What-version-of-Python-are-you-programming-in-and-what-IDE-do-you-use" rel="nofollow" >没有使用IDE</a>，他们使用得最多的是Emacs，一看就知道这是一个个人的选择，随着他们开发团队的扩大，这种情况会得到改变的。</p>
+<p>另外，他们提到了<a href="http://pypy.org/" rel="nofollow" >PyPy</a>，一个让Python更快更灵活的项目。</p>
+<h3>Thrift</h3>
+<p><a href="http://incubator.apache.org/thrift/" rel="nofollow" >Thrift</a> 用于后端服务器间的通讯。Thrift &nbsp;服务由 C++开发。<a href="http://coolshell.cn/articles/4549.html" rel="nofollow" >Facebook同样使用了这个技术</a>。</p>
+<blockquote><p>
+<a href="http://www.quora.com/Why-would-you-write-a-Thrift-service-in-C" rel="nofollow" ><img width="16" height="16" style="padding-right: 10px;" src="http://www.quora.com/favicon.ico" title="Quora使用的技术" alt="favicon Quora使用的技术" />Why would you write a Thrift service in C++?</a><br />
+<small>Adam D’Angelo, I’ve written a lot of Python, in… (Sep 4, 2010)</small><br />
+Mainly if you want to keep data in memory between requests, and want to keep your Python code stateless. Writing a Python wrapper around a C library involves some memory management with reference counting that requires some understanding of the Python internals, but writing a thrift interface is simple. You also isolate failures this way &ndash; if the service goes down it won’t take the Python code down with it.
+</p></blockquote>
+<h3>Tornado</h3>
+<p><a href="http://www.tornadoweb.org/" rel="nofollow" >Tornado</a> web 框架用于实时更新，其运行在Comet 服务器上，其用来处理大量的需要长时间poll和push更新的网络连接。</p>
+<h3>Long Polling (Comet)</h3>
+<p>Quora的网页并不是简单的显示，每一个页面都需要更新，或是创建问题，答案和评论。所以，他们使用了Long Polling而不是传统的Polling，传统的Polling需要浏览器一端不停地重复地向服务器询问——“有更新吗？”，服务器说没有，于是过一会浏览大再问，现在呢？服务器说，还是没有，浏览器过一会又问，现在呢？服务器说，还没好。这样一来，就好像让我们的客户端放到了驾驶室里，这显然是有问题的，因为只有服务器知道什么时候会有更新。而且浏览器这么干，很快会让服务器的负载加上去。</p>
+<p>Long polling也就是我们熟知的<a href="http://en.wikipedia.org/wiki/Comet_(programming)" rel="nofollow" >Comet</a>，其让服务器来控制这些事，让客服端等在那里听服务器的响应。在client和server的会话对于两者是是相同的，而不是client需要等着然后向服务器查询。服务器端可以把一个连接打开很长时间（比如：60秒），在这段时间里，服务器会查看是否有相应的东西需要更新，如果有的话，就发给浏览器。如果没有的话，就等下一次的client询问。可见，这种服务器等一会再响应的方法可以让浏览器少发几次查询。</p>
+<p>对于long-polling的最好的地方是，可以降低浏览器和客户端间来来回回的次数。让服务器端来控制时间，所以，内容更新可能会只是几个毫秒，或是几十秒。 服务器端也可以积攒一堆更新后，一次发给浏览器。这样做会更有效率。</p>
+<p>但是，这个方法的黑暗面是——这会让服务器端出现大量的TCP链接，想一想，Quora也是百万级用户的应用了，只需要10%的在线用户，你就需要一个可以处理10万并发量的架构。注意，如果一个用户在其浏览器里打开了多个Quora网页的话，那么，这个链接器会是非常致命的。</p>
+<p>当然，好的消息是已经有一些技术专门为Long Polling设计，这些技术可以让你在那些等待的连接中只会消耗非常非常少的内存（因为那些等待连接并不需要所有的资源）。例如：Nginx是一个单线程的事件驱动的小型服务器，每一个链接只花非常小的内存。每一个Nginx的进程只会在一个时候处理一个连接。这意味着其很容易扩展成一个可以处理成千上的并发量的服务架构。</p>
+<blockquote><p>
+<a href="http://www.quora.com/How-do-you-push-messages-back-to-a-web-browser-client-through-AJAX-Is-there-any-way-to-do-this-without-having-the-client-constantly-polling-the-server-for-updates" rel="nofollow" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.quora.com/How-do-you-push-messages-back-to-a-web-browser-client-through-AJAX-Is-there-any-way-to-do-this-without-having-the-client-constantly-polling-the-server-for-updates']);" ><img width="16" height="16" style="padding-right: 10px;" src="http://www.quora.com/favicon.ico" title="Quora使用的技术" alt="favicon Quora使用的技术" />How do you push messages back to a web-browser client through AJAX?  Is there any way to do this without having the client constantly polling the server for updates?</a><br />
+<small>Adam D’Angelo, Quora (Sep 29, 2010)</small><br />
+There is no reliable way to do this without having the client polling the server. However, you can make the server stall its responses (50 seconds is a safe bet) and then complete them when a message is ready for the client. This is called “long polling” and it’s how Quora, Gmail, Meebo, etc all handle the problem.<br />
+If you have a specialized server that uses epoll or kqueue, you should be able to hold on the order of 100k users per server (depending on how many messages are going). This is called the “c10k” problem. http://www.kegel.com/c10k.html
+</p></blockquote>
+<h3>MySQL</h3>
+<p>就像Adam D’Angelo的老东家Facebook一样，Quora同样重度使用MySQL。在回答Quora的问题“<a href="http://www.quora.com/When-Adam-DAngelo-says-partition-your-data-at-the-application-level-what-exactly-does-he-mean" rel="nofollow" >When Adam D’Angelo says “partition your data at the application level”, what exactly does he mean?</a>“, D’Angelo详细描述了怎样使用MySQL(或者一般的关系型数据库）来做分布式数据存储。</p>
+<p>基本建议是，如果需要的话把数据库里的数据分区。尽可能的把数据放在一台机器上，使用hash主键对多数据库中的大规模的数据进行分区。必须避免使用表连接（join）。Adam参考了FriendFeed的一篇文章<a href="http://bret.appspot.com/entry/how-friendfeed-uses-mysql" rel="nofollow" >How FriendFeed uses MySQL to store schema-less data</a>，他<a href="http://www.quora.com/NoSQL/In-what-parts-of-a-social-site-with-concert-listings-should-one-use-a-NoSQL-DB-versus-a-SQL-DB" rel="nofollow" >还说</a>在还没有100万用户之前，不要使用NoSQL。</p>
+<p>并不只是Quora和FriendFeed重度使用MySQL，Google也在一些与搜索无关的应用上使用MySQL。Google已经为MySQL的复制，同步，监控和更快的速度提升发布了<a href="http://code.google.com/p/google-mysql-tools/wiki/Mysql4Patches" rel="nofollow" >补丁</a>。</p>
+<blockquote><p>
+<a href="http://www.quora.com/How-does-one-evaluate-if-a-database-is-efficient-enough-to-not-crash-as-its-put-under-increasing-load" rel="nofollow" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.quora.com/How-does-one-evaluate-if-a-database-is-efficient-enough-to-not-crash-as-its-put-under-increasing-load']);" ><img width="16" height="16" style="padding-right: 10px;" src="http://www.quora.com/favicon.ico" title="Quora使用的技术" alt="favicon Quora使用的技术" />How does one evaluate if a database is efficient enough to not crash as it’s put under increasing load?</a><br />
+<small>Adam D’Angelo, Quora (Oct 10, 2010)</small><br />
+One option is to simulate some load. Write a script that mimics the kinds of queries your application will be doing, and make sure it can handle the amount of load you want it to be ready for (especially as the size of the dataset changes).
+</p></blockquote>
+<h3>Memcached</h3>
+<p><a href="http://memcached.org/" rel="nofollow" >Memcached</a>作为MySQL的前端缓存。</p>
+<h3>Git</h3>
+<p>用<a href="http://git-scm.com/" rel="nofollow" >Git</a>作为<a href="http://www.quora.com/What-languages-and-frameworks-were-used-to-code-Quora" rel="nofollow" >版本控制工具</a>。</p>
+<h3>JavaScript Placement</h3>
+<p>如果你看一下Quora的网页源码，你会看到其JavaScript总是在页面的最后。 Charlie Cheever<a href="http://www.quora.com/Why-is-the-Quora-website-so-fast" rel="nofollow" >建议</a>这样做会让页面加载变快，因为会先渲染网页内容，然后再加载JavaScript。</p>
+<h3>Charlie Cheever Follows “14 Rules for Faster-Loading Web Sites”</h3>
+<p>Steve Souders,《High Performance Web Sites》和《Even Faster Web Sites》的作者，列出了<a href="http://stevesouders.com/hpws/rules.php" rel="nofollow" >让你网页更快的原则</a>。Charlie Cheever提到过这个列表，这是Quora的速度快的原因之一。</p>
+<h3>Steve Souders的14条规则是：</h3>
+<ul>
+<li>尽可能少的HTTP请求</li>
+<li>使用CDN</li>
+<li>添加过期头</li>
+<li>用Gzip压缩组件</li>
+<li>把CSS放在页面的顶部</li>
+<li>把JavaScript放在页面的底部</li>
+<li>避免CSS表达式</li>
+<li>JavaScript,CSS和HTML分离</li>
+<li>减少DNS查询</li>
+<li>最小化JavaScript</li>
+<li>避免重定向</li>
+<li>减少重复的脚本</li>
+<li>定义ETags</li>
+<li>使AJAX可缓存化</li>
+</ul>
+<h3>参考资料</h3>
+<ul>
+<li>http://www.philwhln.com/quoras-technology-examined</li>
+<li>http://coolshell.cn/articles/4939.html</li>
+</ul>
+							</div>
+			
+			<p class="entry-meta"><span class="entry-categories">Posted in: <a href="http://liuxuan.info/category/architecture/" title="View all posts in Architecture" rel="category tag">Architecture</a>.</span><br />
+							<span class="entry-tags">Tagged: <a href="http://liuxuan.info/tag/facebook/" rel="nofollow tag">Facebook</a> &middot; <a href="http://liuxuan.info/tag/mysql/" rel="nofollow tag">MySQL</a> &middot; <a href="http://liuxuan.info/tag/python/" rel="nofollow tag">Python</a> &middot; <a href="http://liuxuan.info/tag/quora/" rel="nofollow tag">Quora</a> &middot; <a href="http://liuxuan.info/tag/stackoverflow/" rel="nofollow tag">StackOverflow</a><br /></span>
+			</p>
+		</div><!--.entry-->
+		
+				
+		<div id="post-221" class="post-221 post type-post status-publish format-standard hentry category-architecture tag-architecture tag-stack-overflow entry">
+			
+			<h2 class="entry-title"><a href="http://liuxuan.info/2011/07/stack-overflow-architecture/" rel="bookmark" title="Permalink to Stack Overflow的系统架构">Stack Overflow的系统架构</a></h2>
+			
+			<div class="entry-byline">
+				<a class="entry-date" rel="bookmark" title="2011-07-14T20:52:19+0000" href="http://liuxuan.info/2011/07/stack-overflow-architecture/"><abbr class="updated" title="2011-07-14T20:52:19+0000">Jul 14th, 2011</abbr></a>
+				<address class="author vcard">by <a class="url fn" href="">Foredoomed</a>. </address>
+				<a href="http://liuxuan.info/2011/07/stack-overflow-architecture/#respond" class="comments-link"  rel="nofollow" title="Comment on Stack Overflow的系统架构">No comments yet</a>							</div>
+			
+			<div class="entry-content">
+				<a href="http://liuxuan.info/2011/07/stack-overflow-architecture/" title="Stack Overflow的系统架构"></a>				<p><a href="http://stackoverflow.com" rel="nofollow"  title="Stack Overflow">Stack Overflow</a>是我最喜欢的网站之一，无论是他的内容相关度还是用户体验。就我自己而言，如果在编程中遇到问题，我会第一时间上去搜索。如果没有搜到相关的问题，我就会自己提问让老外来回答。一般来说，只要是主流技术，或者不是太小众的，都会很快得到回答。最主要的是，老外会非常认真详细地回答你的问题，由于国内没有与之完全对应的网站，就这点来说可以把国内具有类似功能的网站（例如CSDN，ItEye等）暴出屎来。</p>
+<p>今天无意中看到一篇介绍Stack Overflow架构的文章后觉得非常有价值，所以决定翻译成中文，供以后参考。</p>
+<p><a href="http://www.flickr.com/photos/60110479@N08/5940332610/" rel="nofollow"  title="Flickr 上 Foredoomed 的 stackoverflow"><img src="http://farm7.static.flickr.com/6128/5940332610_b983b2c9a6.jpg" width="368" height="104" alt="5940332610 b983b2c9a6 Stack Overflow的系统架构"  title="Stack Overflow的系统架构" /></a></p>
+<p>Stack Overflow目前已经有超过1600万用户，并且每月有将近9500万PV。Stack Overflow已经发展并扩大成为了<a href="http://stackexchange.com" rel="nofollow"  title="Stack Exchange Network">Stack Exchange Network</a>。Stack Exchange Network现在包括<strong>Stack Overflow</strong>, <strong>Server Fault</strong>, 和 <strong>Super User</strong>，旗下拥有43个网站,并且还在以成倍的速度增长。</p>
+<p>Stack Overflow不变的是对他们做的事保有开放的态度，这也是写这篇的原因。最近有一系列关于其成长的文章：</p>
+<ul>
+<li><a href="http://blog.serverfault.com/post/stack-exchanges-architecture-in-bullet-points/" rel="nofollow" >Stack Exchange’s Architecture in Bullet Points</a>
+    </li>
+<li><a href="http://blog.serverfault.com/post/1432571770/" rel="nofollow" >Stack Overflow’s New York Data Center</a></li>
+<li><a href="http://blog.serverfault.com/post/1097492931/" rel="nofollow" >Designing For Scalability of Management and Fault Tolerance</a></li>
+<li><a href="http://blog.stackoverflow.com/2011/01/stack-overflow-search-now-81-less-crappy/" rel="nofollow" >Stack Overflow Search &mdash; Now 81% Less</a></li>
+<li><a href="http://blog.stackoverflow.com/2010/01/stack-overflow-network-configuration/" rel="nofollow" >Stack Overflow Network Configuration</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/69164/does-stackoverflow-use-caching-and-if-so-how" rel="nofollow" >Does StackOverflow use caching and if so, how?</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/10369/which-tools-and-technologies-build-the-stack-exchange-network" rel="nofollow" >Which tools and technologies build the Stack Exchange Network?</a></li>
+</ul>
+<p>StackOverflow在这段时间里一些明显的变化有：</p>
+<ul>
+<li><strong>快速增长</strong>. 更多的用户，更多的PV，更多的数据中心，更多的网站，更多的开发人员，更多的操作系统，更多的数据库，更多的服务器。很多的<a href="http://blog.stackoverflow.com/2011/01/state-of-the-stack-2010-a-message-from-your-ceo/" rel="nofollow" >更多</a>。
+    </li>
+<li><strong>Linux</strong>. Stack Overflow被人熟知的是它大量使用部署了Windows的服务器, 但是他们现在使用很多部署了Linux的服务器来跑 HAProxy, Redis, Bacula, Nagios, 日志和路由。 所有需要<a href="http://blog.serverfault.com/post/1097492931/" rel="nofollow" >并行处理</a>的功能都会交给Linux处理。</li>
+<li><strong>容错</strong>. Stack Overflow现在<a href="http://blog.stackoverflow.com/2010/01/stack-overflow-network-configuration/" rel="nofollow" >使用两个不同网络线路接入的交换机</a> 他们增加了冗余的服务器，一些功能也被转移到了第二个数据中心。</li>
+<li><strong>NoSQL</strong>. Redis现在作为整站的<a href="http://meta.stackoverflow.com/questions/69164/does-stackoverflow-use-caching-and-if-so-how" rel="nofollow" >缓存层</a>在使用。以前并没有一个单独的缓存层，平且在Linux服务器上使用NoSQL，所以这是一个很大的变化。</li>
+</ul>
+<p>遗憾的是，我没有找到我所关心的问题的答案，比如他们是怎么在这么多不同的特性中处理<a href="http://en.wikipedia.org/wiki/Multitenancy" rel="nofollow" >Multitenancy（多租户）</a>的问题的，但是还是有很多东西可以学习。下面是一些数据汇总：</p>
+<p><strong>统计信息</strong></p>
+<ul>
+<li>每月9500万次浏览量</li>
+<li>每秒800个HTTP请求</li>
+<li>每秒180个DNS请求</li>
+<li>每秒55M流量</li>
+<li>1600万个用户（Stack Overflow的流量在2010年增长了131%，全球每月不重复访客增至1660万人）。</li>
+</ul>
+<p><strong>数据中心</strong></p>
+<ul>
+<li>1个机架放在俄勒冈州的Peak Internet（用于放置chat和Data Explorer）</li>
+<li>2个机架放在纽约州的Peer 1（用于放置Stack Exchange Network的其余部分）</li>
+</ul>
+<p><strong>硬件设备</strong></p>
+<ul>
+<li>10台戴尔R610 IIS Web服务器（3台专门用于Stack Overflow）：1个英特尔至强处理器E5640，2.66 GHz四核，8线程；16 GB内存；Windows Server 2008 R2</li>
+<li>2台戴尔R710数据库服务器：2个英特尔至强处理器X5680，3.33 GHz；64 GB内存；8个硬盘；SQL Server 2008 R2</li>
+<li>2台戴尔R610 HAProxy服务器：1个英特尔至强处理器E5640，2.66 GHz；4 GB内存；Ubuntu Server</li>
+<li>2台戴尔R610 Redis服务器：2个英特尔至强处理器E5640，2.66 GHz；16 GB内存；CentOS</li>
+<li>1台戴尔R610 Linux备份服务器，运行Bacula：1个英特尔至强处理器E5640，2.66 GHz；32 GB内存</li>
+<li>1台戴尔R610 Linux管理服务器，用于Nagios和日志：1个英特尔至强处理器E5640，2.66 GHz；32 GB内存</li>
+<li>2个戴尔R610 VMWare ESXi域控制器：1个英特尔至强处理器E5640，2.66 GHz；16 GB内存；2只Linux路由器；5台戴尔Power Connect交换机</li>
+</ul>
+<p><strong>开发工具</strong></p>
+<ul>
+<li>编程语言：C#（ASP.NET）</li>
+<li>开发环境：Visual Studio 2010 Team Suite</li>
+<li>开发框架：Microsoft ASP.NET Framework 4.0</li>
+<li>Web框架：ASP.NET MVC 3</li>
+<li>视图引擎：Razor</li>
+<li>Ajax框架：jQuery 1.4.2</li>
+<li>数据访问：LINQ to SQL，一些原生SQL</li>
+<li>版本控制：Mercurial和Kiln</li>
+<li>代码比较：Beyond Compare 3</li>
+</ul>
+<p><strong>软件与技术</strong></p>
+<ul>
+<li>堆栈技术：<a href="http://blog.stackoverflow.com/2009/03/stack-overflow-and-bizspark/" rel="nofollow" >BizSpark</a> 的 <a href="http://stackoverflow.com/questions/177901/what-does-wisc-stack-mean" rel="nofollow" >WISC</a></li>
+<li>操作系统：<a href="http://www.microsoft.com/windowsserver2008/en/us/default.aspx" rel="nofollow" >Windows Server 2008 R2 x64</a>，<a href="http://www.ubuntu.com/server" rel="nofollow" >Ubuntu Server</a>，<a href="http://www.centos.org/" rel="nofollow" >CentOS</a></li>
+<li>数据库：运行于Microsoft Windows Server 2008 Enterprise Edition x64 的<a href="http://www.microsoft.com/sqlserver/en/us/default.aspx" rel="nofollow" >SQL Server 2008 R2</a></li>
+<li>WEB服务器：IIS7.0</li>
+<li>负载均衡：<a href="http://haproxy.1wt.eu/" rel="nofollow" >HAProxy</a></li>
+<li>缓存：&nbsp;<a href="http://redis.io/" rel="nofollow" >Redis</a>（分布式缓存）</li>
+<li>代码部署：<a href="http://sourceforge.net/projects/ccnet/" rel="nofollow" >CruiseControl.NET</a></li>
+<li>搜索系统：<a href="http://incubator.apache.org/lucene.net/" rel="nofollow" >Lucene.NET</a></li>
+<li>备份系统：<a href="http://www.bacula.org/en/" rel="nofollow" >Bacula</a></li>
+<li>监控系统：<a href="http://www.nagios.org/" rel="nofollow" >Nagios</a>&nbsp;(使用 n2rrd 和 drraw 插件)</li>
+<li>日志分析：<a href="http://www.splunk.com/" rel="nofollow" >Splunk</a></li>
+<li>SQL Server监控：<a href="http://www.red-gate.com/products/dba/sql-monitor/" rel="nofollow" >SQL Monitor from Red Gate</a></li>
+<li>DNS解析：<a href="http://www.isc.org/software/bind" rel="nofollow" >Bind</a></li>
+<li>远程控制：<a href="http://www.wowwee.com/en/products/tech/telepresence/rovio/rovio" rel="nofollow" >Rovio</a></li>
+<li>外部监控：<a href="http://tools.pingdom.com/" rel="nofollow" >Pingdom</a></li>
+</ul>
+<p><strong>外部组件</strong>（作为一部分开发工具并没有包含在代码中）</p>
+<ul>
+<li>reCAPTCHA</li>
+<li>DotNetOpenId</li>
+<li>WMD &#8211; Now developed as open source. See github network graph</li>
+<li>Prettify</li>
+<li>Google Analytics</li>
+<li>Cruise Control .NET</li>
+<li>HAProxy</li>
+<li>Cacti</li>
+<li>MarkdownSharp</li>
+<li>Flot</li>
+<li>Nginx</li>
+<li>Kiln</li>
+<li>CDN: 没有使用CDN，所有静态内容由<a href="http://sstatic.net" rel="nofollow" >sstatic.net</a>提供。sstatic.net是一个快速的、无cookie的域，用于将静态内容分发到Stack Exchange系列网站。</li>
+</ul>
+<p><strong>开发人员和系统管理员</strong></p>
+<ul>
+<li>14名开发人员</li>
+<li>2名系统管理员</li>
+</ul>
+<p><strong>内容</strong></p>
+<ul>
+<li><strong>协议:</strong> Creative Commons Attribution-Share Alike 2.5 Generic</li>
+<li><strong>标准:</strong> OpenSearch, Atom</li>
+<li><strong>托管:</strong> PEAK Internet</li>
+</ul>
+<p><strong>每个站点有三种不同的缓存：本地缓存、站点缓存和全局缓存。</strong></p>
+<ul><strong>本地缓存：</strong>只能被一对服务器或站点访问.。</ul>
+<ul>
+<li>为了限制网络等待时间，他们使用本地“L1”缓存。基本上是在一台服务器上用HttpRuntime.Cache缓存最近设置或读取的数据。这样就可以使在网络上的缓存查找开销减少到0字节。
+        </li>
+<li>本地缓存包含用户session和待定的查看计数更新。</li>
+<li>本地缓存只在内存中，没有网络或数据库的访问。</li>
+</ul>
+<ul><strong>站点缓存：</strong>可以被单个站点的任何一个服务器上的实例访问。</ul>
+<ul>
+<li>绝大多数的数据被缓存在这里，比如热门问题的id列表和用户的回答被接受的百分比是很好的例子。</li>
+<li>站点缓存使用的是Redis（在一个不同的数据库里，为了更方便调试）。</li>
+<li>Redis非常快，导致缓存查找中最慢的部分变成了从网络读字节或写字节到网络中去。
+        </li>
+<li>
+        数据是被压缩过后再发送到Redis的。有很多的CPU，并且大多数数据是字符串类型的，所以他们可以得到很好的压缩比率。
+        </li>
+<li>
+        Redis所在服务器的CPU使用率是0%。
+        </li>
+</ul>
+<ul><strong>全局缓存：</strong>所有站点和服务器共享。</ul>
+<ul>
+<li>包括收件箱，API使用的引用和一些其他全局数据。</li>
+<li>全局缓存使用Redis（在DB 0，同样为了调试方便）。</li>
+</ul>
+<p><strong>更多的架构和经验</strong></p>
+<ul>
+<li>使用HAProxy替代Windows NLB 的原因是：HAProxy不仅使用简单而且还是免费的，通过Hyper-V可以成为优秀的网络上的一个512M虚拟机“设备”。它运行在服务器的前端，所以对服务器来说完全透明，而且作为一个不同的网络层，比起和windows的配置混在一起，更容易故障检测，</li>
+<li>没有使用CDN，因为就连亚马逊这样“便宜的”CDN，如果考虑捆绑到现有主机方案中的带宽，其费用都相当昂贵的。根据亚马逊的CDN费用和Stack Overflow使用的带宽，每月至少要支付1000美元。</li>
+<li>为了快速恢复，把数据备份到磁盘上。为了历史归档，把数据备份到磁带（tape）上。</li>
+<li>SQL Server对的全文搜索的集成相当差，bug多，功能少，所以改用了Lucene。</li>
+<li>最让人感兴趣的是他们能够确保可以处理的HTTP请求峰值。</li>
+<li>所有特性都运行在Stack Exchange平台上。Stack Overflow、Super User、Server Fault、Meta、WebApps和Meta Web Apps都运行同一软件上。</li>
+<li>对StackExchange的用户进行区分是因为拥有不同专业技能的人不应该在不同主题的站点之间穿梭。<a href="http://meta.stackoverflow.com/questions/69422/why-separate-stack-exchange-accounts" rel="nofollow" >你可以是世界上最出色的大厨，但这并不能说明修复服务器的能力</a>。</li>
+<li>尽可能缓存所有数据。</li>
+<li>所有匿名用户访问的页面都由<a href="http://learn.iis.net/page.aspx/154/walkthrough-iis-70-output-caching/" rel="nofollow" >Output Caching</a>缓存。</li>
+<li>
+    大多数数据会在超时时间段后过期（通常是几分钟），并且他们不会被显示地删除。<br />
+    当需要特定的缓存失效时，使用<a href="http://code.google.com/p/redis/wiki/PublishSubscribe" rel="nofollow" >Redis messaging</a>向“L1”缓存发送删除通知。
+    </li>
+<li>
+    Joel Spolsky并不是微软的忠实用户，他并不对Stack Overflow做技术决策，他认为微软许可发放是个错误。认为你自己是正确的<a href="http://news.ycombinator.com/item?id=2284900" rel="nofollow" >Hacker News commentor</a>。
+    </li>
+<li>
+    他们在<a href="http://www.intel.com/design/flash/nand/extreme/index.htm" rel="nofollow" >Intel X25 solid state drives</a>上做RAID 10来作为IO系统。RAID解决了可靠性的顾虑，并且对比FusionIO，SSD性能更好，价格更便宜。
+    </li>
+<li>
+    全部的微软许可<a href="http://news.ycombinator.com/item?id=2285931" rel="nofollow" >费用</a>大约是$242K，因为Stack Overflow使用的是Bizspark，所以并没有支付全价，但这已经是他们可能支付的最大费用。
+    </li>
+<li>
+    <a href="http://blog.serverfault.com/post/broadcom-die-mutha/" rel="nofollow" >Intel NICs are replacing Broadcom NICs</a>和他们主要的生产环境服务器。这样就解决了连接丢失，包丢失和ARP表冲突。
+    </li>
+</ul>
+<p><strong>相关文章</strong></p>
+<ul>
+<li><a href="http://news.ycombinator.com/item?id=2284900" rel="nofollow" >Hacker News Thread on this Post</a> / <a href="http://www.reddit.com/r/programming/comments/fwpik/stackoverflow_scales_using_a_mixture_of_linux_and/" rel="nofollow" >Reddit Thread</a></li>
+<li><a href="http://blog.serverfault.com/post/stack-exchanges-architecture-in-bullet-points/" rel="nofollow" >Stack Exchange’s Architecture in Bullet Points</a> / <a href="http://news.ycombinator.com/item?id=2207789" rel="nofollow" >HackerNews Thread</a></li>
+<li><a href="http://blog.serverfault.com/post/1432571770/" rel="nofollow" >Stack Overflow’s New York Data Center</a> &#8211; <span style="font-family: 'Trebuchet MS',Arial,'Bitstream Vera Sans',sans-serif; line-height: 17px; color: rgb(0, 0, 0);">hardware of the various machines?</span></li>
+<li><a href="http://blog.serverfault.com/post/1097492931/" rel="nofollow" >Designing For Scalability of Management and Fault Tolerance</a></li>
+<li><a href="http://blog.stackoverflow.com/" rel="nofollow" >Stack Overflow Blog</a></li>
+<li><a href="http://blog.stackoverflow.com/2011/01/stack-overflow-search-now-81-less-crappy/" rel="nofollow" >Stack Overflow Search &mdash; Now 81% Less Crappy</a>&nbsp;- Lucene is now running on an underused cluster.</li>
+<li><a href="http://blog.stackoverflow.com/2011/01/state-of-the-stack-2010-a-message-from-your-ceo/" rel="nofollow" >State of the Stack 2010 (a message from your CEO)</a></li>
+<li><a href="http://blog.stackoverflow.com/2010/01/stack-overflow-network-configuration/" rel="nofollow" >Stack Overflow Network Configuration</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/69164/does-stackoverflow-use-caching-and-if-so-how" rel="nofollow" >Does StackOverflow use caching and if so, how?</a></li>
+<li><a href="http://meta.stackoverflow.com/" rel="nofollow" >Meta StackOverflow</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/6435/how-does-stackoverflow-handle-cache-invalidation" rel="nofollow" >How does StackOverflow handle cache invalidation?</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/10369/which-tools-and-technologies-build-the-stack-exchange-network" rel="nofollow" >Which tools and technologies build the Stack Exchange Network?</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/2765/how-does-stack-overflow-handle-spam" rel="nofollow" >How does Stack Overflow handle spam?</a></li>
+<li><a href="http://blog.serverfault.com/post/our-storage-decision/" rel="nofollow" >Our Storage Decision</a></li>
+<li><a href="http://meta.stackoverflow.com/questions/4766/how-are-hot-questions-selected" rel="nofollow" >How are “Hot” Questions Selected?</a>&nbsp;</li>
+<li><a href="http://meta.stackoverflow.com/questions/20473/how-are-related-questions-selected" rel="nofollow" >How are “related” questions selected?</a>&nbsp;- the title, the question body, and the tags.&nbsp;</li>
+<li><a href="http://blog.stackoverflow.com/2010/04/stack-overflow-and-dvcs/" rel="nofollow" >Stack Overflow and DVCS</a>&nbsp;- Stack Overflow selects Mercurial for source code control.</li>
+<li><a href="http://chat.stackexchange.com/rooms/127/the-comms-room" rel="nofollow" >Server Fault Chat Room</a>&nbsp;</li>
+<li><a href="https://github.com/ServiceStack/ServiceStack.Redis" rel="nofollow" >C# Redis Client</a></li>
+<li><a href="http://blog.serverfault.com/post/broadcom-die-mutha/" rel="nofollow" >Broadcom, Die Mutha</a></li>
+</ul>
+<p>原文链接：</p>
+<p>http://highscalability.com/blog/2011/3/3/stack-overflow-architecture-update-now-at-95-million-page-vi.html</p>
+							</div>
+			
+			<p class="entry-meta"><span class="entry-categories">Posted in: <a href="http://liuxuan.info/category/architecture/" title="View all posts in Architecture" rel="category tag">Architecture</a>.</span><br />
+							<span class="entry-tags">Tagged: <a href="http://liuxuan.info/tag/architecture/" rel="nofollow tag">Architecture</a> &middot; <a href="http://liuxuan.info/tag/stack-overflow/" rel="nofollow tag">Stack Overflow</a><br /></span>
+			</p>
+		</div><!--.entry-->
+		
+				
+		
+	<div class="navigation">
+	<div class='wp-pagenavi'>
+<span class='pages'>Page 1 of 6</span><span class='current'>1</span><a href='http://liuxuan.info/page/2/' class='page larger'>2</a><a href='http://liuxuan.info/page/3/' class='page larger'>3</a><a href='http://liuxuan.info/page/4/' class='page larger'>4</a><a href='http://liuxuan.info/page/5/' class='page larger'>5</a><a href="http://liuxuan.info/page/2/" class="nextpostslink">»</a><span class='extend'>...</span><a href='http://liuxuan.info/page/6/' class='last'>Last »</a>
+</div>	</div>
+
+		
+			
+
+	</div><!--#primary-->
+
+<div id="secondary">
+
+<div id="pp-subscribe" class="clearfix">
+	<ul class="clearfix">
+	<li id="pp-feed">
+		<a href="http://liuxuan.info/feed" title="Subscribe to this Feed via RSS">Subscribe <span class="email-narrow">to this blog</span></a>
+	</li>
+
+		</ul>
+</div>
+<div id="pp-sidebars" class="clearfix">
+
+<div id="sidebar-wide" class="sidebar">
+	
+	<ul class="xoxo sidebar-items">
+	<li id="text-6" class="widget widget_text"><h2 class="widgettitle">Weibo</h2>			<div class="textwidget"><iframe width="250" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=250&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=0&isWeibo=1&isFans=1&uid=1928638455&verifier=b92d5ce3"></iframe></div>
+		</li><li id="search-4" class="widget widget_search"><h2 class="widgettitle search-title">Search</h2>
+<form method="get" id="pp-searchform" action="http://liuxuan.info">
+<div>
+	<input type="text" name="s" id="s-input" maxlength="150" accesskey="4" title="Search Zhixingheyi" onblur="this.value=(this.value=='') ? 'Type in and hit enter to search' : this.value;" onfocus="this.value=(this.value=='Type in and hit enter to search') ? '' : this.value;" value="Type in and hit enter to search" />
+	<input type="hidden" id="s-submit" value="Search" />
+</div>
+</form></li>		<li id="recent-posts-4" class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+				<li><a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-three/" title="Java常见疑惑和陷阱(三)">Java常见疑惑和陷阱(三)</a></li>
+				<li><a href="http://liuxuan.info/2011/08/java-puzzles-and-traps-two/" title="Java常见疑惑和陷阱(二)">Java常见疑惑和陷阱(二)</a></li>
+				<li><a href="http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/" title="单精度浮点类型的二进制表示格式">单精度浮点类型的二进制表示格式</a></li>
+				<li><a href="http://liuxuan.info/2011/07/quoras-technology-examined/" title="Quora使用的技术">Quora使用的技术</a></li>
+				<li><a href="http://liuxuan.info/2011/07/stack-overflow-architecture/" title="Stack Overflow的系统架构">Stack Overflow的系统架构</a></li>
+				<li><a href="http://liuxuan.info/2011/06/flag-argument-for-method/" title="方法的标记参数">方法的标记参数</a></li>
+				<li><a href="http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/" title="Ubuntu下编译安装Vim">Ubuntu下编译安装Vim</a></li>
+				<li><a href="http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/" title="JMeter的简单介绍">JMeter的简单介绍</a></li>
+				<li><a href="http://liuxuan.info/2011/06/comparison-of-raid/" title="常用磁盘阵列比较">常用磁盘阵列比较</a></li>
+				<li><a href="http://liuxuan.info/2011/06/nothing-but-sad/" title="悲凉和无奈">悲凉和无奈</a></li>
+				</ul>
+		</li><li id="categories-3" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-31"><a href="http://liuxuan.info/category/architecture/" title="View all posts filed under Architecture">Architecture</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="http://liuxuan.info/category/cool/" title="View all posts filed under Cool">Cool</a>
+</li>
+	<li class="cat-item cat-item-49"><a href="http://liuxuan.info/category/http/" title="View all posts filed under HTTP">HTTP</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://liuxuan.info/category/ide/" title="View all posts filed under IDE">IDE</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://liuxuan.info/category/java/" title="View all posts filed under Java">Java</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://liuxuan.info/category/life/" title="View all posts filed under Life">Life</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://liuxuan.info/category/nosql/" title="View all posts filed under NoSQL">NoSQL</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://liuxuan.info/category/objective-c/" title="View all posts filed under Objective-C">Objective-C</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="http://liuxuan.info/category/opensource/" title="View all posts filed under Opensource">Opensource</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="http://liuxuan.info/category/programming/" title="View all posts filed under Programming">Programming</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="http://liuxuan.info/category/reading/" title="View all posts filed under Reading">Reading</a>
+</li>
+		</ul>
+</li><li id="archives-3" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>		<ul>
+			<li><a href='http://liuxuan.info/2011/08/' title='August 2011'>August 2011</a></li>
+	<li><a href='http://liuxuan.info/2011/07/' title='July 2011'>July 2011</a></li>
+	<li><a href='http://liuxuan.info/2011/06/' title='June 2011'>June 2011</a></li>
+	<li><a href='http://liuxuan.info/2011/05/' title='May 2011'>May 2011</a></li>
+	<li><a href='http://liuxuan.info/2011/04/' title='April 2011'>April 2011</a></li>
+	<li><a href='http://liuxuan.info/2011/03/' title='March 2011'>March 2011</a></li>
+		</ul>
+</li><li id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href='http://liuxuan.info/tag/2011/' class='tag-link-10' title='1 topic' style='font-size: 8pt;'>2011</a>
+<a href='http://liuxuan.info/tag/anonymous-class/' class='tag-link-7' title='1 topic' style='font-size: 8pt;'>Anonymous Class</a>
+<a href='http://liuxuan.info/tag/anonymous-inner-class/' class='tag-link-6' title='1 topic' style='font-size: 8pt;'>Anonymous Inner Class</a>
+<a href='http://liuxuan.info/tag/architecture/' class='tag-link-31' title='2 topics' style='font-size: 11.4054054054pt;'>Architecture</a>
+<a href='http://liuxuan.info/tag/closure/' class='tag-link-8' title='1 topic' style='font-size: 8pt;'>Closure</a>
+<a href='http://liuxuan.info/tag/cool/' class='tag-link-38' title='1 topic' style='font-size: 8pt;'>Cool</a>
+<a href='http://liuxuan.info/tag/definition/' class='tag-link-65' title='1 topic' style='font-size: 8pt;'>Definition</a>
+<a href='http://liuxuan.info/tag/design-pattern/' class='tag-link-26' title='1 topic' style='font-size: 8pt;'>Design Pattern</a>
+<a href='http://liuxuan.info/tag/facebook/' class='tag-link-32' title='2 topics' style='font-size: 11.4054054054pt;'>Facebook</a>
+<a href='http://liuxuan.info/tag/flag-argumnet/' class='tag-link-52' title='1 topic' style='font-size: 8pt;'>Flag Argumnet</a>
+<a href='http://liuxuan.info/tag/gc-tuning/' class='tag-link-18' title='1 topic' style='font-size: 8pt;'>GC Tuning</a>
+<a href='http://liuxuan.info/tag/health/' class='tag-link-33' title='1 topic' style='font-size: 8pt;'>Health</a>
+<a href='http://liuxuan.info/tag/http-2/' class='tag-link-24' title='1 topic' style='font-size: 8pt;'>http</a>
+<a href='http://liuxuan.info/tag/invokeinterface/' class='tag-link-19' title='1 topic' style='font-size: 8pt;'>invokeinterface</a>
+<a href='http://liuxuan.info/tag/invokespecial/' class='tag-link-20' title='1 topic' style='font-size: 8pt;'>invokespecial</a>
+<a href='http://liuxuan.info/tag/invokestatic/' class='tag-link-21' title='1 topic' style='font-size: 8pt;'>invokestatic</a>
+<a href='http://liuxuan.info/tag/invokevirtual/' class='tag-link-22' title='1 topic' style='font-size: 8pt;'>invokevirtual</a>
+<a href='http://liuxuan.info/tag/java/' class='tag-link-3' title='10 topics' style='font-size: 22pt;'>Java</a>
+<a href='http://liuxuan.info/tag/jmeter/' class='tag-link-48' title='1 topic' style='font-size: 8pt;'>JMeter</a>
+<a href='http://liuxuan.info/tag/jvm/' class='tag-link-17' title='1 topic' style='font-size: 8pt;'>JVM</a>
+<a href='http://liuxuan.info/tag/lazy-initialization/' class='tag-link-27' title='1 topic' style='font-size: 8pt;'>Lazy Initialization</a>
+<a href='http://liuxuan.info/tag/license/' class='tag-link-41' title='1 topic' style='font-size: 8pt;'>License</a>
+<a href='http://liuxuan.info/tag/life/' class='tag-link-5' title='1 topic' style='font-size: 8pt;'>Life</a>
+<a href='http://liuxuan.info/tag/mongodb/' class='tag-link-43' title='1 topic' style='font-size: 8pt;'>MongoDB</a>
+<a href='http://liuxuan.info/tag/myeclipse/' class='tag-link-15' title='1 topic' style='font-size: 8pt;'>MyEclipse</a>
+<a href='http://liuxuan.info/tag/mysql/' class='tag-link-58' title='1 topic' style='font-size: 8pt;'>MySQL</a>
+<a href='http://liuxuan.info/tag/nosql/' class='tag-link-42' title='1 topic' style='font-size: 8pt;'>NoSQL</a>
+<a href='http://liuxuan.info/tag/objective-c/' class='tag-link-4' title='1 topic' style='font-size: 8pt;'>Objective-C</a>
+<a href='http://liuxuan.info/tag/opensource/' class='tag-link-40' title='1 topic' style='font-size: 8pt;'>Opensource</a>
+<a href='http://liuxuan.info/tag/plans/' class='tag-link-9' title='1 topic' style='font-size: 8pt;'>Plans</a>
+<a href='http://liuxuan.info/tag/programming/' class='tag-link-28' title='2 topics' style='font-size: 11.4054054054pt;'>Programming</a>
+<a href='http://liuxuan.info/tag/puzzle/' class='tag-link-66' title='3 topics' style='font-size: 13.6756756757pt;'>Puzzle</a>
+<a href='http://liuxuan.info/tag/python/' class='tag-link-57' title='1 topic' style='font-size: 8pt;'>Python</a>
+<a href='http://liuxuan.info/tag/quora/' class='tag-link-55' title='1 topic' style='font-size: 8pt;'>Quora</a>
+<a href='http://liuxuan.info/tag/raid/' class='tag-link-47' title='1 topic' style='font-size: 8pt;'>RAID</a>
+<a href='http://liuxuan.info/tag/reading/' class='tag-link-45' title='1 topic' style='font-size: 8pt;'>Reading</a>
+<a href='http://liuxuan.info/tag/redis/' class='tag-link-44' title='1 topic' style='font-size: 8pt;'>Redis</a>
+<a href='http://liuxuan.info/tag/reference-types/' class='tag-link-11' title='1 topic' style='font-size: 8pt;'>Reference Types</a>
+<a href='http://liuxuan.info/tag/ruby/' class='tag-link-51' title='1 topic' style='font-size: 8pt;'>Ruby</a>
+<a href='http://liuxuan.info/tag/sad/' class='tag-link-46' title='1 topic' style='font-size: 8pt;'>Sad</a>
+<a href='http://liuxuan.info/tag/stackoverflow/' class='tag-link-56' title='1 topic' style='font-size: 8pt;'>StackOverflow</a>
+<a href='http://liuxuan.info/tag/stack-overflow/' class='tag-link-53' title='1 topic' style='font-size: 8pt;'>Stack Overflow</a>
+<a href='http://liuxuan.info/tag/timetable/' class='tag-link-34' title='1 topic' style='font-size: 8pt;'>Timetable</a>
+<a href='http://liuxuan.info/tag/trap/' class='tag-link-13' title='3 topics' style='font-size: 13.6756756757pt;'>Trap</a>
+<a href='http://liuxuan.info/tag/vim/' class='tag-link-50' title='1 topic' style='font-size: 8pt;'>Vim</a></div>
+</li><!--#sidebar-wide widgets end-->
+	</ul>
+
+</div><!--#sidebar-wide-->
+
+</div><!--#pp-sidebars-->
+
+</div><!--#secondary-->	<div id="footer">
+		<p class="left">&#169; 2011 <strong>Zhixingheyi</strong> | Powered by <strong><a href="http://wordpress.org/">WordPress</a></strong></p>
+		<p class="right">A <strong><a href="http://www.techtrot.com/primepress/" title="PrimePress theme homepage">WordPress theme</a></strong> by <strong>Ravi Varma</strong></p>
+	</div><!--#footer-->
+
+</div><!--#container-->	
+	
+</div><!--#page-->
+</body>
+</html>
+<!-- Dynamic page generated in 4.513 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-08-11 15:02:47 -->
+<!-- super cache -->

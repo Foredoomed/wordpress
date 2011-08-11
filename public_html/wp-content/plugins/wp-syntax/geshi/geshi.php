@@ -445,7 +445,7 @@ class GeSHi {
      * The overall style for this code block
      * @var string
      */
-    var $overall_style = 'font-family: Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;';
+    var $overall_style = 'font-family:Monaco,Consolas,Menlo,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;';
 
     /**
      *  The style for the actual code
@@ -3949,6 +3949,7 @@ class GeSHi {
             } else {
                 $attributes = ' style="'. $this->code_style .'"';
             }
+
             if ($this->header_type == GESHI_HEADER_PRE_VALID) {
                 $parsed_code .= '<pre'. $attributes .'>';
             } elseif ($this->header_type == GESHI_HEADER_PRE_TABLE) {

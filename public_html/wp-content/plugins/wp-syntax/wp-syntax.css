@@ -10,6 +10,7 @@
 .wp_syntax {
   overflow-x: auto;
   overflow-y: hidden;
+  padding-bottom: expression(this.scrollWidth > this.offsetWidth ? 15 : 0);
   width: 100%;
 }
 
@@ -36,6 +37,7 @@
   float: none;
   clear: none;
   overflow: visible;
+  font-size: 13px;
   line-height: 1.333;
   white-space: pre;
 }

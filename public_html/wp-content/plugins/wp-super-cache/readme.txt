@@ -1,7 +1,7 @@
 === WP Super Cache ===
 Contributors: donncha, automattic
 Tags: performance,caching,wp-cache,wp-super-cache,cache
-Tested up to: 3.1
+Tested up to: 3.2
 Stable tag: 0.9.9.9
 Requires at least: 2.9.2
 
@@ -244,11 +244,11 @@ Serve repeated static files from the same CDN hostname, translations, lots of bu
 	`  SetEnvIfNoCase Request_URI \.gz$ no-gzip`
 	`</IfModule>`
 	`<IfModule mod_headers.c>`
-	`  Header set Cache-Control 'max-age=300, must-revalidate'`
+	`  Header set Cache-Control 'max-age=3, must-revalidate'`
 	`</IfModule>`
 	`<IfModule mod_expires.c>`
 	`  ExpiresActive On`
-	`  ExpiresByType text/html A300`
+	`  ExpiresByType text/html A3`
 	`</IfModule>`
 	``
 	`# END supercache`

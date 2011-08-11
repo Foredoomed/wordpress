@@ -3,10 +3,12 @@
 Plugin Name: WP-Syntax
 Plugin URI: http://wordpress.org/extend/plugins/wp-syntax/
 Description: Syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a> supporting a wide range of popular languages.  Wrap code blocks with <code>&lt;pre lang="LANGUAGE" line="1"&gt;</code> and <code>&lt;/pre&gt;</code> where <code>LANGUAGE</code> is a geshi supported language syntax.  The <code>line</code> attribute is optional.
-Author: Ryan McGeary, Steven A. Zahm
-Version: 0.9.10
+Author: Steven A. Zahm
+Version: 0.9.12
 Author URI: http://connections-pro.com
 */
+
+#  Original Author: Ryan McGeary
 
 #
 #  Copyright (c) 2007-2009 Ryan McGeary 2010 Steven A. Zahm
@@ -37,12 +39,14 @@ if (!CUSTOM_TAGS) {
     'escaped' => array(),
     'style' => array(),
     'width' => array(),
+	'highlight' => array()
   );
   //Allow plugin use in comments
   $allowedtags['pre'] = array(
     'lang' => array(),
     'line' => array(),
     'escaped' => array(),
+	'highlight' => array()
   );
 }
 
@@ -101,22 +105,45 @@ function wp_syntax_line_numbers($code, $start)
 function wp_syntax_highlight($match)
 {
     global $wp_syntax_matches;
-
+ 
     $i = intval($match[1]);
     $match = $wp_syntax_matches[$i];
-
+ 
     $language = strtolower(trim($match[1]));
     $line = trim($match[2]);
     $escaped = trim($match[3]);
-    $code = wp_syntax_code_trim($match[4]);
-    if ($escaped == "true") $code = htmlspecialchars_decode($code);
-
+ 
+    $code = wp_syntax_code_trim($match[5]);
+    //if ($escaped == "true") $code = htmlspecialchars_decode($code);
+    if ($escaped != "false") $code = htmlspecialchars_decode($code);
+ 
     $geshi = new GeSHi($code, $language);
     $geshi->enable_keyword_links(false);
     do_action_ref_array('wp_syntax_init_geshi', array(&$geshi));
+ 
+    //START LINE HIGHLIGHT SUPPORT
+    $highlight = array();
+    if ( !empty($match[4]) )
+    {
+        $highlight = strpos($match[4],',') == false ? array($match[4]) : explode(',', $match[4]);
+ 
+	$h_lines = array();
+	for( $i=0; $i<sizeof($highlight); $i++ )
+	{
+		$h_range = explode('-', $highlight[$i]);
+ 
+		if( sizeof($h_range) == 2 )
+			$h_lines = array_merge( $h_lines, range($h_range[0], $h_range[1]) );
+		else
+			array_push($h_lines, $highlight[$i]);
+	}
 
+        $geshi->highlight_lines_extra( $h_lines );
+    }
+    //END LINE HIGHLIGHT SUPPORT
+ 
     $output = "\n<div class=\"wp_syntax\">";
-
+ 
     if ($line)
     {
         $output .= "<table><tr><td class=\"line_numbers\">";
@@ -132,16 +159,16 @@ function wp_syntax_highlight($match)
         $output .= "</div>";
     }
     return
-
+ 
     $output .= "</div>\n";
-
+ 
     return $output;
 }
 
 function wp_syntax_before_filter($content)
 {
     return preg_replace_callback(
-        "/\s*<pre(?:lang=[\"']([\w-]+)[\"']|line=[\"'](\d*)[\"']|escaped=[\"'](true|false)?[\"']|\s)+>(.*)<\/pre>\s*/siU",
+        "/\s*<pre(?:lang=[\"']([\w-]+)[\"']|line=[\"'](\d*)[\"']|escaped=[\"'](true|false)?[\"']|highlight=[\"']((?:\d+[,-])*\d+)[\"']|\s)+>(.*)<\/pre>\s*/siU",
         "wp_syntax_substitute",
         $content
     );

@@ -1,4 +1,5 @@
 <?php 
+
 require_once(TEMPLATEPATH . '/library/pp-options.php');
 require_once(TEMPLATEPATH . '/library/widgets.php');
 
@@ -64,10 +65,6 @@ function pp_breadcrubs() {
 
 }
 
-/**
- * Prevent wp from decoding.
- */
-remove_filter('the_content', 'wptexturize'); 
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.

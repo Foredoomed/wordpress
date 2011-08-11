@@ -31,61 +31,39 @@
 </div>
 
 <?php
-//Basic split-testing. Pick a line at random and remember our choice for later.
-$copy_versions = array(
-	'cy1' => 'A link checker for your <em>other</em> sites.',
-	'cy2' => 'A link checker for your <span style="white-space:nowrap;">non-WP</span> sites.',
-	'cy3' => 'A link checker for your <span style="white-space:nowrap;">non-WordPress</span> sites.',
-	'c3' => 'A link checker for <span style="white-space:nowrap;">non-WordPress</span> sites.',
-);
-
-$configuration = blc_get_configuration();
-$key = $configuration->get('_findbroken_ad');
-if ( ($key == null) || !array_key_exists($key, $copy_versions) ){
-	//Pick a random version of the ad.
-	$keys = array_keys($copy_versions);
-	$key = $keys[rand(0, count($keys)-1)];
-	$configuration->set('_findbroken_ad', $key);
-	$configuration->save_options();
+if ( !function_exists('fetch_feed') ){
+	include_once(ABSPATH . WPINC . '/feed.php');
 }
-
-$text = $copy_versions[$key];
-$url = 'http://findbroken.com/?source=the-plugin&line='.urlencode($key);
-$image_url = plugins_url('images/findbroken.png', BLC_PLUGIN_FILE);
+if ( function_exists('fetch_feed') ):
+	$feed_url = 'http://w-shadow.com/files/blc-plugin-links.rss';
+	$num_items = 3;
+	
+	$feed = fetch_feed($feed_url);
+	if ( !is_wp_error($feed) ):	
 ?>
 <style>
 #advertising .inside {
 	text-align: left;
 }
-#advertising .inside img {
-	display: block;
-	margin: 1em auto 0.5em 0;
-	border: 0;
-}
 </style>
 <div id="advertising" class="postbox">
-	<h3 class="hndle">Recommended</h3>
+	<h3 class="hndle"><?php _e('More plugins by Janis Elsts', 'broken-link-checker'); ?></h3>
 	<div class="inside">
-		<a href="<?php echo esc_attr($url); ?>" title="FindBroken.com">
-			<img src="<?php echo esc_attr($image_url); ?>"">
-		</a>
-		<?php echo $text; ?>
-	</div>					
-</div>
-
-<?php
-//This ad currently disabled.
-/*
-?>
-<div id="advertising2" class="postbox">
-	<h3 class="hndle"><?php _e('Recommended', 'broken-link-checker'); ?></h3>
-	<div class="inside" style="text-align: center;">
-		<a href="http://www.maxcdn.com/wordpress-cdn.php?type=banner&&affId=102167&&img=c_160x600_maxcdn_simple.gif">
-			<img src="<?php echo esc_attr(plugins_url('images/maxcdn.gif', BLC_PLUGIN_FILE)); ?>" border=0>
-		</a>
-		<img src="http://impression.clickinc.com/impressions/servlet/Impression?merchant=70291&&type=impression&&affId=102167&&img=c_160x600_maxcdn_simple.gif" style="display:none" border=0>
+		<ul>
+		<?php
+		foreach($feed->get_items(0, $num_items) as $item) {
+			printf(
+				'<li><a href="%1$s" title="%2$s">%3$s</a></li>',
+				esc_url( $item->get_link() ),
+				esc_attr( strip_tags( $item->get_title() ) ),
+				esc_html( $item->get_title() )
+			);
+		}
+		?>
+		</ul>
 	</div>					
 </div>
 <?php
-//*/
+	endif; 
+endif; 
 ?>

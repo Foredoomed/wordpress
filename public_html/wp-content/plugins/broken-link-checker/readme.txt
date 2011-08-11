@@ -2,9 +2,9 @@
 Contributors: whiteshadow
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A6P9S6CE3SRSW
 Tags: links, broken, maintenance, blogroll, custom fields, admin, comments, posts
-Requires at least: 3.0
-Tested up to: 3.1.2
-Stable tag: 1.2.5
+Requires at least: 3.2
+Tested up to: 3.2.1
+Stable tag: 1.3
 
 This plugin will check your posts, comments and other content for broken links and missing images, and notify you if any are found. 
 
@@ -87,6 +87,17 @@ To upgrade your installation
 1. Reactivate the plugin. Your settings will be retained from the previous version.
 
 == Changelog ==
+
+= 1.3 =
+* Dropped PHP 4 support.
+* Fixed a whole lot of PHP 5 related notices and strict-mode warnings.
+* Fixed some inconsistent method declarations.
+* Fixed a long-standing bug in the ver. 0.9.5 upgrade routine.
+* Fixed the look and behavior of the "Feedback" and "Go to Broken Links/Go to Settings" links to be consistent with other WP screen meta links.
+* Updated Chinese (TW) translation.
+* Updated Portuguese translation.
+* Updated Italian translation (minor fix).
+* Replaced the link to FindBroken with a short list of (some of) my other plugins.
 
 = 1.2.5 =
 * Added Irish translation.
