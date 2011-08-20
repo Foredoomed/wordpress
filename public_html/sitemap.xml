@@ -1,7 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.2.1" -->
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3604" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.5" -->
-<!-- generated-on="August 11, 2011 8:53 am" -->
+<!-- generated-on="August 20, 2011 6:12 am" -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
+		<loc>http://liuxuan.info/2011/08/setup-lnmp-and-pptp-on-vps/</loc>
+		<lastmod>2011-08-20T06:11:05+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/closure-in-java/</loc>
+		<lastmod>2011-08-16T04:51:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
 		<loc>http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/</loc>
 		<lastmod>2011-08-11T08:51:51+00:00</lastmod>
 		<changefreq>monthly</changefreq>
@@ -58,12 +70,6 @@
 	<url>
 		<loc>http://liuxuan.info/2011/03/java-anonymous-class/</loc>
 		<lastmod>2011-07-21T05:01:15+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/03/closure-in-java/</loc>
-		<lastmod>2011-07-21T04:58:22+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>

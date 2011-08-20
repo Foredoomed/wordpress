@@ -1,5 +1,5 @@
 .wp_syntax {
-  color: #100;
+  color: #000;
   background-color: #EEEEEE;
   border: 1px solid silver;
   margin: 0 0 1.5em 0;
@@ -37,7 +37,7 @@
   float: none;
   clear: none;
   overflow: visible;
-  font-size: 13px;
+  font-size: 90%;
   line-height: 1.333;
   white-space: pre;
 }

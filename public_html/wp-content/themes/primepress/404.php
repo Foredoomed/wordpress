@@ -1,5 +1,21 @@
-<?php get_header(); ?>
-	<div id="primary">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+
+<head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<title>Oops! Page Not Found (Error 404)</title>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/custom.css" type="text/css" media="screen" />
+
+	<!--[if lte IE 6]>	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/library/ie6.css" /><![endif]-->
+</head>
+<body>
+	<div id="primary" style="padding:0 0 0 250px" >
 		<div class="entry">
 		<h1 class="page-title">Oops! Page Not Found (Error 404)</h1>
 			<div class="entry-content">
@@ -15,8 +31,7 @@
 		</div>
 	</div><!--#primary-->
 	
-<?php get_sidebar(); ?>
-
-</div>
+</body>
+</html>
 	
-<?php get_footer(); ?>
+

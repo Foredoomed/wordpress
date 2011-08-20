@@ -88,7 +88,7 @@ background-color: #EEEEEE;
   float: none;
   clear: none;
   overflow: visible;
-  font-size: 100%;
+  font-size: 90%;
   line-height: 1.333;
   white-space: pre;
 }
