@@ -59,12 +59,13 @@ add_filter( 'wp_page_menu_args', 'my_page_menu_args' );
 delete => font-weight:bold; 
 
 -------------------------------------------------------------
-.comment-meta {font-size:1.1em; font-style:italic; color:#777;}
+5..comment-meta {font-size:1.1em; font-style:italic; color:#777;}
 
 delete => font-style:italic;
 
 --------------------------------------------------------------
-
+6.modify: #pp-subscribe a {padding:5px 5px 5px 50px; font-weight:bold; font-size:14px; line-height:33px; display:block;}
+delete: #pp-feed
 **************************************************************
 
 ==============================================================
@@ -102,3 +103,23 @@ java.php:
             4 => 'color: #00008B; font-weight: bold;'
             ),
 ----------------------------------------------------------------------
+**************************************************************
+
+==============================================================
+**********subscribe.php********
+==============================================================
+
+*******delete********：
+
+<a href="<?php if ($pp_feed_address) {echo $pp_feed_address;} else {bloginfo('rss2_url');} ?>" title="Subscribe to this Feed via RSS">Subscribe <span class="email-narrow">to this blog</span></a> 
+--------------------------------------------------------------------------------
+*******add*******：
+
+<li>
+<a href="http://feeds.feedburner.com/zhixingheyi" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="Subscribe in a reader" style="border:0;vertical-align:middle"/></a><a href="http://feeds.feedburner.com/zhixingheyi" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe in a reader</a>
+</li>
+<li>
+<a target="_blank" href="https://twitter.com/nauxuil" title="Follow me on Twitter">
+<img src="Twitter_32x32.png" alt="Follow me on Twitter" style="border:0;vertical-align:middle"/></a><a target="_blank" href="https://twitter.com/nauxuil" title="Follow me on Twitter">Follow me on Twitter</a>
+</li>
+
