@@ -1,76 +1,178 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3604" -->
-<!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.5" -->
-<!-- generated-on="August 20, 2011 6:12 am" -->
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://liuxuan.info/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/9674" -->
+<!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.6" -->
+<!-- generated-on="September 29, 2011 7:55 am" -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
-		<loc>http://liuxuan.info/2011/08/setup-lnmp-and-pptp-on-vps/</loc>
-		<lastmod>2011-08-20T06:11:05+00:00</lastmod>
+		<loc>http://liuxuan.info/2011/09/ibatis-and-mybatis-source-code-analysis-three-cache/</loc>
+		<lastmod>2011-09-27T01:30:36+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://liuxuan.info/2011/03/closure-in-java/</loc>
-		<lastmod>2011-08-16T04:51:22+00:00</lastmod>
+		<loc>http://liuxuan.info/2011/08/install-vnstat-on-vps/</loc>
+		<lastmod>2011-09-27T00:56:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/</loc>
-		<lastmod>2011-08-11T08:51:51+00:00</lastmod>
+		<loc>http://liuxuan.info/2011/08/ibatis-and-mybatis-source-code-analysis-one-overview/</loc>
+		<lastmod>2011-09-27T00:55:20+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://liuxuan.info/2011/08/java-puzzles-and-traps-three/</loc>
-		<lastmod>2011-08-11T06:07:25+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/07/quoras-technology-examined/</loc>
-		<lastmod>2011-08-10T08:23:45+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/08/java-puzzles-and-traps-two/</loc>
-		<lastmod>2011-08-10T01:52:19+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/03/java-puzzles-and-traps-one/</loc>
-		<lastmod>2011-08-08T04:54:57+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/about/</loc>
-		<lastmod>2011-08-04T13:08:57+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/</loc>
-		<lastmod>2011-08-02T06:03:12+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/04/difference-between-invokeinterface-invokespecial-invokestatic-invokevirtual-in-java-bytecode/</loc>
-		<lastmod>2011-07-21T05:08:53+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/03/myeclipse-optimization/</loc>
-		<lastmod>2011-07-21T05:06:54+00:00</lastmod>
+		<loc>http://liuxuan.info/2011/08/ibatis-and-mybatis-source-code-analysis-two-logging/</loc>
+		<lastmod>2011-09-27T00:27:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://liuxuan.info/2011/03/java-anonymous-class/</loc>
-		<lastmod>2011-07-21T05:01:15+00:00</lastmod>
+		<lastmod>2011-09-22T09:11:55+00:00</lastmod>
 		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/closure-in-java/</loc>
+		<lastmod>2011-09-22T09:10:01+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/objective-c-notes/</loc>
+		<lastmod>2011-09-22T09:08:48+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/java-puzzles-and-traps-one/</loc>
+		<lastmod>2011-09-22T09:07:26+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/myeclipse-optimization/</loc>
+		<lastmod>2011-09-22T09:05:42+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/java-memory-management/</loc>
+		<lastmod>2011-09-22T09:01:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/04/difference-between-invokeinterface-invokespecial-invokestatic-invokevirtual-in-java-bytecode/</loc>
+		<lastmod>2011-09-22T08:58:54+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/05/http-definitive-guide-notes/</loc>
+		<lastmod>2011-09-22T08:56:18+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/05/initialization-on-demand-holder-idiom/</loc>
+		<lastmod>2011-09-22T08:54:39+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/05/pragmatic-programmers-practices-of-an-agile-developer-notes/</loc>
+		<lastmod>2011-09-22T08:53:29+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/05/the-best-timetable-for-health-in-the-world/</loc>
+		<lastmod>2011-09-22T08:51:36+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/guide-to-open-source-licenses/</loc>
+		<lastmod>2011-09-22T08:47:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/comparison-of-nosql-databases/</loc>
+		<lastmod>2011-09-22T08:45:29+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/comparison-of-raid/</loc>
+		<lastmod>2011-09-22T08:44:49+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/</loc>
+		<lastmod>2011-09-22T08:43:37+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/flag-argument-for-method/</loc>
+		<lastmod>2011-09-22T08:41:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/07/stack-overflow-architecture/</loc>
+		<lastmod>2011-09-22T08:37:05+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/07/quoras-technology-examined/</loc>
+		<lastmod>2011-09-22T08:31:32+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/08/single-precision-binary-floating-point-format/</loc>
+		<lastmod>2011-09-22T08:30:51+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/08/java-puzzles-and-traps-two/</loc>
+		<lastmod>2011-09-22T08:30:26+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/08/java-puzzles-and-traps-three/</loc>
+		<lastmod>2011-09-22T08:28:40+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/08/setup-lnmp-and-pptp-on-vps/</loc>
+		<lastmod>2011-09-22T08:28:05+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/</loc>
+		<lastmod>2011-09-21T04:25:03+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/2011/03/java-four-types-of-reference/</loc>
+		<lastmod>2011-09-16T15:48:19+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://liuxuan.info/about/</loc>
+		<lastmod>2011-09-07T13:23:57+00:00</lastmod>
+		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
@@ -80,74 +182,8 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://liuxuan.info/2011/03/objective-c-notes/</loc>
-		<lastmod>2011-07-21T04:53:11+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/03/java-four-types-of-reference/</loc>
-		<lastmod>2011-07-21T04:51:35+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
 		<loc>http://liuxuan.info/2011/05/block-advertising-on-youku-and-tudou/</loc>
 		<lastmod>2011-07-21T04:50:30+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/05/http-definitive-guide-notes/</loc>
-		<lastmod>2011-07-21T04:48:56+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/05/initialization-on-demand-holder-idiom/</loc>
-		<lastmod>2011-07-21T04:43:49+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/03/java-memory-management/</loc>
-		<lastmod>2011-07-21T04:41:22+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/05/pragmatic-programmers-practices-of-an-agile-developer-notes/</loc>
-		<lastmod>2011-07-21T04:37:28+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/guide-to-open-source-licenses/</loc>
-		<lastmod>2011-07-21T04:31:09+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/comparison-of-raid/</loc>
-		<lastmod>2011-07-21T04:26:45+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/make-install-vim-on-ubuntu/</loc>
-		<lastmod>2011-07-21T04:23:36+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/flag-argument-for-method/</loc>
-		<lastmod>2011-07-21T04:21:38+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/comparison-of-nosql-databases/</loc>
-		<lastmod>2011-07-20T16:29:45+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
@@ -161,18 +197,6 @@
 		<loc>http://liuxuan.info/programmer-competency-matrix/</loc>
 		<lastmod>2011-07-16T11:23:29+00:00</lastmod>
 		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/07/stack-overflow-architecture/</loc>
-		<lastmod>2011-07-15T15:04:58+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://liuxuan.info/2011/06/a-brief-introduction-to-jmeter/</loc>
-		<lastmod>2011-06-25T08:50:46+00:00</lastmod>
-		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>

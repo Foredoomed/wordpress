@@ -12,12 +12,15 @@
 <div id="comments">	
 
 <?php
+
+        
 	if ( have_comments() ) : ?>
 	
 	<h3 class="comments-number"><?php comments_number('No Comments', 'One Comment', '% Comments' );?></h3>
 	
 	<ol class="commentlist">
-		<?php wp_list_comments(array('style' => 'ol')); ?>
+		<?php wp_list_comments(array('style' => 'ol','type'=>'comment','callback'=>'mytheme_comment')); ?>
+
 	</ol>
 	
 <?php if ( get_option('page_comments') && get_comment_pages_count() > 1 ) { ?>
@@ -31,6 +34,8 @@
 		}
 		
 	endif; // have_comments()
+
+
 ?>
 
 <?php comment_form(); ?>

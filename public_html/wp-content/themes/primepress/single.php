@@ -15,6 +15,7 @@
 			<div class="entry-byline">
 				<a class="entry-date" rel="bookmark" title="<?php the_time('Y-m-d\TH:i:sO'); ?>" href="<?php the_permalink(); ?>"><abbr class="updated" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_time('M jS, Y'); ?></abbr></a>
 				<address class="author vcard"><?php _e('by '); ?><a class="url fn" href="<?php the_author_meta('user_url'); ?>"><?php the_author(); ?></a>. </address>
+<?php if(function_exists('the_views')) { the_views(); } ?>
 				<?php edit_post_link('Edit', '[', ']'); ?>
 			</div>
 			

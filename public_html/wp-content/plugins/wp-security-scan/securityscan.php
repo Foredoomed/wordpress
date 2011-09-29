@@ -5,10 +5,16 @@ Plugin URI: http://www.websitedefender.com/news/free-wordpress-security-scan-plu
 
 Description: Perform security scan of WordPress installation.
 Author: WebsiteDefender
-Version: 3.0.5
+Version: 3.0.7
 Author URI: http://www.websitedefender.com/
 */
-
+/*
+ * $rev #1 07/17/2011 {c}
+ * $rev #2 07/26,27/2011 {c}
+ * $rev #3 08/05/2011 {c}
+ * $rev #4 08/26/2011 {c}
+ * $rev #5 09/12/2011 {c}
+ */
 /*
 Copyright (C) 2008-2010 Acunetix / http://www.websitedefender.com/
 (info AT websitedefender DOT com)
@@ -39,20 +45,21 @@ if ( ! defined('WP_PLUGIN_URL')) {
 if ( ! defined('WP_PLUGIN_DIR')) {
     define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 }
-      
-//main files
-//## $rev #1 07/17/2011 {c}$
-if(!function_exists('json_encode') || !class_exists('Services_JSON')) {
-    require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/json.php");
-}
 
+
+//! #r4# @see http://wordpress.org/support/topic/update-to-306-breaks-wp-321
+@require_once(ABSPATH.'wp-includes/pluggable.php');
+
+
+//## $rev #1, #2, #3 {c}$
+if(!function_exists('json_encode') || !class_exists('Services_JSON')) {
+    @require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/json.php");
+}
 require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/functions.php");
 
-//## $rev #1 07/17/2011 {c}$
 if (!defined('WSD_RECAPTCHA_API_SERVER')) {
-    require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/recaptchalib.php");
+    @require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/recaptchalib.php");
 }
-
 require_once(WP_PLUGIN_DIR . "/wp-security-scan/libs/wsd.php");
 
 //menus
@@ -67,6 +74,8 @@ require_once(WP_PLUGIN_DIR . "/wp-security-scan/inc/admin/templates/footer.php")
 
 //## this is the container for header scripts
 add_action('admin_head', 'mrt_hd');
+// # $rev #2 {c}
+add_action('admin_init', 'wps_admin_init_load_resources');
 
 //before sending headers
 add_action("init",'mrt_wpdberrors',1);
@@ -82,9 +91,28 @@ add_action("init", 'mrt_remove_wp_version',1);   //comment out this line to make
 //before rendering each admin init
 add_action('admin_init','mrt_wpss_admin_init');
 
+// Check to see whether or not we should display the dashboard widget
+//@ $rev4
+$plugin1 = 'websitedefender-wordpress-security';
+$plugin2 = 'secure-wordpress';
+if (! in_array($plugin1.'/'.$plugin1.'.php', apply_filters('active_plugins', get_option('active_plugins')))
+        || ! in_array($plugin2.'/'.$plugin2.'.php', apply_filters('active_plugins', get_option('active_plugins'))))
+{
+    define('WPSS_WSD_BLOG_FEED', 'http://www.websitedefender.com/feed/');
+    @require_once('libs/wpssUtil.php');
+    //@@ Hook into the 'wp_dashboard_setup' action to create the dashboard widget
+    add_action('wp_dashboard_setup', "wpssUtil::addDashboardWidget");
+}
+unset($plugin1,$plugin2);
+
+//@===
 
 function mrt_wpss_admin_init(){
     wp_enqueue_style('wsd_style', WP_PLUGIN_URL . '/wp-security-scan/css/wsd.css');
+    /* #r5# */
+    $h6 = 'swp-dashboard';
+    wp_register_style($h6, WP_PLUGIN_URL . '/wp-security-scan/css/acx-wp-dashboard.css');
+    wp_enqueue_style($h6);
 }
 
 remove_action('wp_head', 'wp_generator');
@@ -92,10 +120,10 @@ function add_men_pg() {
     if (function_exists('add_menu_page'))
     {
         add_menu_page('Security', 'Security', 'edit_pages', __FILE__, 'mrt_opt_mng_pg', WP_PLUGIN_URL.'/wp-security-scan/images/wsd-logo-small.png');
-        add_submenu_page(__FILE__, 'Scanner', 'Scanner', 'edit_pages', 'scanner', 'mrt_sub0');
-        add_submenu_page(__FILE__, 'Password Tool', 'Password Tool', 'edit_pages', 'passwordtool', 'mrt_sub1');
-        add_submenu_page(__FILE__, 'Database', 'Database', 'edit_pages', 'database', 'mrt_sub3');
-        add_submenu_page(__FILE__, 'Support', 'Support', 'edit_pages', 'support', 'mrt_sub2');
+            add_submenu_page(__FILE__, 'Scanner', 'Scanner', 'edit_pages', 'scanner', 'mrt_sub0');
+            add_submenu_page(__FILE__, 'Password Tool', 'Password Tool', 'edit_pages', 'passwordtool', 'mrt_sub1');
+            add_submenu_page(__FILE__, 'Database', 'Database', 'edit_pages', 'database', 'mrt_sub3');
+            add_submenu_page(__FILE__, 'Support', 'Support', 'edit_pages', 'support', 'mrt_sub2');
     }
 }
 
@@ -199,14 +227,20 @@ function wpss_mrt_meta_box2()
     </ul>
 <?php
 }
-	
+
+
+// $rev #2: only load if they're not already.
+function wps_admin_init_load_resources()
+{
+    wp_enqueue_script('acx-json', WP_PLUGIN_URL.'/wp-security-scan/js/json.js');
+    wp_enqueue_script('acx-md5', WP_PLUGIN_URL.'/wp-security-scan/js/md5.js');
+    wp_enqueue_script('wsd-scripts', WP_PLUGIN_URL.'/wp-security-scan/js/scripts.js');
+    wp_enqueue_script('wsd-wsd', WP_PLUGIN_URL.'/wp-security-scan/js/wsd.js');
+}
+
 function mrt_hd()
 {
 ?>
-	<script type="text/javascript" src="<?php echo WP_PLUGIN_URL;?>/wp-security-scan/js/json.js"></script>
-	<script type="text/javascript" src="<?php echo WP_PLUGIN_URL;?>/wp-security-scan/js/md5.js"></script>
-	<script type="text/javascript" src="<?php echo WP_PLUGIN_URL;?>/wp-security-scan/js/scripts.js"></script>
-	<script type="text/javascript" src="<?php echo WP_PLUGIN_URL;?>/wp-security-scan/js/wsd.js"></script>
 	<script type="text/javascript">
 		var wordpress_site_name = "<?php echo htmlentities(get_bloginfo('siteurl'));?>"
 	</script>

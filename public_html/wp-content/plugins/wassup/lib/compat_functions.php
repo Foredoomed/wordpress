@@ -31,6 +31,14 @@ if (!function_exists('json_decode')) {
 	} //end function json_decode 
 }
 
+//'microtime_float' replicates microtime(true) from PHP5
+if (!function_exists('microtime_float')) {
+	function microtime_float() {
+		list($usec, $sec) = explode(" ", microtime());
+		return ((float)$usec + (float)$sec);
+	}
+}
+
 if (!function_exists('admin_url')) {
 	function admin_url($admin_file="") {
 		$adminurl = get_bloginfo('wpurl')."/wp-admin/".$admin_file;

@@ -8,7 +8,7 @@
  *  and perform some maintenance operations.
  */
 function wassup_optionsView() {
-	global $wpdb, $wp_version, $user_level, $wassupversion, $wassup_options, $debug_mode;
+	global $wpdb, $wp_version, $user_level, $wassupversion, $wassup_options, $wdebug_mode;
 
 	$GMapsAPI="http://code.google.com/intl/en/apis/maps";
 
@@ -19,6 +19,7 @@ function wassup_optionsView() {
 	$alert_msg = "";
 	$alertstyle = 'color:red; background-color:#ffd;';
 	$wassup_table = (!empty($wassup_options->wassup_table))? $wassup_options->wassup_table: $wpdb->prefix . "wassup";
+	$wassup_meta_table = $wassup_table . "_meta";
 	$table_engine = "";
 	$table_collation = "";
 
@@ -76,18 +77,21 @@ function wassup_optionsView() {
 		<select name='wassup_screen_res' style="width:90px;">
 		<?php $wassup_options->showFormOptions("wassup_screen_res"); ?>
 	        </select>
-	        </p>
-		<h3><?php _e('Set minimum users level which can view and manage WassUp plugin (default Administrators)','wassup'); ?></h3>
-		<p><select name="wassup_userlevel">
+	        </p><br/>
+		<h3><?php _e('User Permissions'); ?></h3>
+		<p><strong><?php _e('Set minimum users level which can view and manage WassUp plugin','wassup'); ?></strong>:
+		<select name="wassup_userlevel">
 		<?php $wassup_options->showFormOptions("wassup_userlevel"); ?>
-		</select></p>
+		</select>
+		<?php echo "(".__('default Administrator','wassup').")"; ?>
+		</p><br/>
 
 		<h3><?php _e('Dashboard Settings','wassup'); ?></h3>
 		<p><input type="checkbox" name="wassup_dashboard_chart" value="1" <?php if($wassup_options->wassup_dashboard_chart == 1) print "CHECKED"; ?> /> <strong><?php _e('Display small chart in the dashboard','wassup'); ?></strong>
-		</p>
+		</p><br/>
 
-		<h3><?php _e('GEO IP Map (Spy view)','wassup'); ?></h3>
-		<p><input type="checkbox" name="wassup_geoip_map" value="1" <?php
+		<h3><?php _e('Spy Visitors Settings','wassup'); ?></h3>
+		<p> <input type="checkbox" name="wassup_geoip_map" value="1" <?php
 		//if (!function_exists('curl_init')) { print "DISABLED"; }
 		if ($wassup_options->wassup_geoip_map == 1) print "CHECKED"; ?> />
 		<strong><?php _e('Display a GEO IP Map in the spy visitors view','wassup'); ?></strong></p><?php
@@ -104,54 +108,66 @@ function wassup_optionsView() {
 				echo "$code_error\n";
 			}
 		} ?>
-		<p><strong>Google Maps API <?php _e("key","wassup"); ?>:</strong> <input type="text" name="wassup_googlemaps_key" size="40" value="<?php print $wassup_options->wassup_googlemaps_key; ?>" /> - <a href="<?php echo $GMapsAPI.'/signup.html?url='.get_bloginfo('wpurl'); ?>"><?php _e("signup for your key","wassup"); ?></a></p></br /> <?php
+		<p> <strong>Google Maps API <?php _e("key","wassup"); ?>:</strong> <input type="text" name="wassup_googlemaps_key" size="40" value="<?php print $wassup_options->wassup_googlemaps_key; ?>" /> - <a href="<?php echo $GMapsAPI.'/signup.html?url='.get_bloginfo('wpurl'); ?>"><?php _e("signup for your key","wassup"); ?></a></p> <?php
 		//no curl - now works without cUrl using 'wp_remote_get'
 		//} else {
 		//echo '<p class="small">'.__("Geo IP Map requires","wassup")." PHP <strong>Curl</strong>. ".__("Please install it to be able to activate this feature","wassup").".</p>";
-		//} ?><br/>
+		//} ?>
+		<p> <strong><?php echo _e('Set update speed of Spy data in microseconds','wassup'); ?></strong> :
+		<input type="text" name="wassup_spy_speed" size="5" value="<?php if (empty($wassup_options->wassup_spy_speed)) echo "5000"; else echo $wassup_options->wassup_spy_speed; ?>" />
+		<?php echo "<nobr>(".__('default 5000, minimum 1000','wassup').")</nobr>"; ?><br/>
+		<?php  echo __('Decrease if some visitor records are missing from Spy view. Increase if multiple duplicate records are shown.','wassup'); ?>
+		</p><br/>
 
 		<h3><?php _e('Visitor Detail Settings','wassup'); ?></h3>
-		<p><strong><?php _e('Time format 12/24 Hour','wassup'); ?></strong>:
+		<p> <strong><?php _e('Time format 12/24 Hour','wassup'); ?></strong>:
 		&nbsp; 12h <input type="radio" name="wassup_time_format" value="12" <?php if($wassup_options->wassup_time_format == 12) print "CHECKED"; ?> />
 		&nbsp; &nbsp; 24h <input type="radio" name="wassup_time_format" value="24" <?php if($wassup_options->wassup_time_format == 24) print "CHECKED"; ?> />
 		</p>
-
-		<p><strong><?php _e('Show chart type - How many axes','wassup'); ?></strong>:
-		<select name='wassup_chart_type'><?php 
-		$wassup_options->showFormOptions("wassup_chart_type");
-		?></select>
+		<p> <strong><?php _e('Show chart type - How many axes','wassup'); ?></strong>:
+		<select name='wassup_chart_type'>
+		<?php $wassup_options->showFormOptions("wassup_chart_type"); ?>
+		</select>
 		</p>
-
-		<p><strong><?php echo __('Set how many minutes wait for automatic page refresh','wassup'); ?></strong>:
+		<p> <strong><?php echo __('Set how many minutes wait for automatic page refresh','wassup'); ?></strong>:
 		<input type="text" name="wassup_refresh" size="2" value="<?php print $wassup_options->wassup_refresh; ?>" /> <?php _e('minutes (default 3)','wassup'); ?>
 		</p>
-
-		<p><strong><?php _e('Show visitor details for the last','wassup');
-		?></strong>: <select name='wassup_time_period'> <?php 
-		$wassup_options->showFormOptions("wassup_time_period");
-		?></select>
+		<p> <strong><?php _e('Show visitor details for the last','wassup'); ?></strong>:
+		<select name='wassup_time_period'>
+		<?php $wassup_options->showFormOptions("wassup_time_period"); ?>
+		</select>
 		</p>
-		<p><strong><?php _e('Filter visitor details for','wassup');
-		?></strong>: <select name='wassup_default_type'> <?php 
-		$wassup_options->showFormOptions("wassup_default_type");
-		?></select>
+		<p> <strong><?php _e('Filter visitor details for','wassup'); ?></strong>: 
+		<select name='wassup_default_type'>
+		<?php $wassup_options->showFormOptions("wassup_default_type"); ?>
+		</select>
 		</p>
-
-		<p><strong><?php _e('Number of items per page','wassup'); ?></strong>:
+		<p> <strong><?php _e('Number of items per page','wassup'); ?></strong>:
 		<select name='wassup_default_limit'>
 		<?php $wassup_options->showFormOptions("wassup_default_limit"); ?>
 		</select>
 		</p><br />
-		<?php
-		//TODO: Make Top 10 Customizable with up to 10 choices
+
+		<h3><?php _e('Customize Top Stats Lists','wassup'); ?></h3><?php
+		//New in 1.8.3: 
+		//  1) toplimit option to customize top stats list size
+		//  2) toppostid option to list top post-ID items (articles)
+		//  3) top_nospider option to exclude spider visits from all
+		//     top stats lists
 		$top_ten = unserialize(html_entity_decode($wassup_options->wassup_top10));
-		?>
-		<h3><?php _e('Customize Top Ten List','wassup'); ?></h3>
-		<p style="margin-top:5px;"> <strong> <?php _e("Choose one or more items for your Top Ten list", "wassup"); ?></strong> (<?php _e("over 5 selections may cause horizontal scrolling","wassup"); ?>):<br />
+		if (!is_array($top_ten)) {	//in case corrupted
+			$top_ten = $wassup_options->defaultSettings("top10");
+		}
+		if (empty($top_ten["toplimit"])) $top_ten["toplimit"] = 10;
+		echo "\n"; ?>
+		<p> <strong> <?php _e("Set the list length size for Top Stats", "wassup"); ?></strong>:
+		<input type="text" name="toplimit" size="2" value="<?php echo (int)$top_ten['toplimit']; ?>" /> (<?php _e("default 10","wassup"); ?>)
+		</p>
+		<p style="margin-top:5px;"> <strong> <?php _e("Choose one or more items to list in Top Stats", "wassup"); ?></strong> (<?php _e("over 5 selections may cause horizontal scrolling","wassup"); ?>):<br />
 		<div style="padding-left:25px;padding-top:0;margin-top:0;display:block;clear:left;">
 		<div style="display:block; vertical-align:top; float:left; width:225px;">
 	        <input type="checkbox" name="topsearch" value="1" <?php if($top_ten['topsearch'] == 1) print "CHECKED"; ?> /><?php _e("Top Searches", "wassup"); ?><br />
-	        <input type="checkbox" name="topreferrer" value="1" <?php if($top_ten['topreferrer'] == 1) print "CHECKED"; ?> /><?php _e("Top Referrers", "wassup"); ?><br />
+	        <input type="checkbox" name="topreferrer" value="1" <?php if($top_ten['topreferrer'] == 1) print "CHECKED"; ?> /><?php _e("Top Referrers", "wassup"); ?>*<br />
 		<input type="checkbox" name="toprequest" value="1" <?php if($top_ten['toprequest'] == 1) print "CHECKED"; ?> /><?php _e("Top Requests", "wassup"); ?><br />
 		</div>
 		<div style="display:block; vertical-align:top; float:left; width:225px;">
@@ -160,21 +176,25 @@ function wassup_optionsView() {
 	        <input type="checkbox" name="toplocale" value="1" <?php if($top_ten['toplocale'] == 1) print "CHECKED"; ?> /><?php _e("Top Locales", "wassup"); ?></span><br />
 		</div>
 		<div style="vertical-align:top; float:left; width:225px;">
-		<input type="checkbox" name="topvisitor" value="1" <?php if($top_ten['topvisitor'] == 1) print "CHECKED"; ?> /><?php _e("Top Visitors", "wassup"); ?><br /><!--  
+		<input type="checkbox" name="topvisitor" value="1" <?php if(!empty($top_ten['topvisitor'])) print "CHECKED"; ?> /><?php _e("Top Visitors", "wassup"); ?><br />
+	        <input type="checkbox" name="toppostid" value="1" <?php if(!empty($top_ten['toppostid'])) print "CHECKED"; ?> /><?php _e("Top Articles", "wassup"); ?></span><br /><!--  
 		//TODO
 	        <input type="checkbox" name="topfeed" value="1" DISABLED /><?php _e("Top Feeds", "wassup"); ?><br />
 	        <input type="checkbox" name="topcrawler" value="1" DISABLED /><?php _e("Top Crawlers", "wassup"); ?> --><br />
 		</div>
 		</div>
-		</p>
-		<p style="margin-top:10px; clear:left;"> <strong><?php _e("Websites/domains to exclude from top referrers", "wassup"); ?></strong> :<br />
+		</p><p style="clear:left;"></p>
+		<p style="margin-top:5px;"> *<strong><?php _e("Exclude the following website domains from Top Referrers", "wassup"); ?></strong> :<br />
 		<span style="padding-left:10px;display:block;clear:left;">
 		<textarea name="topreferrer_exclude" rows="2" style="width:66%;"><?php echo $top_ten['topreferrer_exclude']; ?></textarea><br />
-		<?php  echo __("Comma separated value","wassup")."(ex: mydomain2.net, mydomain2.info). ". __("List whole domains only. Wildcards and partial domains will NOT be excluded.","wassup"). " ";
+		<?php  echo __("Comma separated value","wassup")." (ex: mydomain2.net, mydomain2.info). ". __("List whole domains only. Wildcards and partial domains will be ignored.","wassup"). " ";
 		_e("Don't list your website domain defined in WordPress","wassup"); ?>.</span>
 		</p>
+		<p> <input type="checkbox" name="top_nospider" value="1" <?php if($top_ten['top_nospider'] == 1) print "CHECKED"; ?> />
+		<strong> <?php _e("Exclude all spider records from Top Stats", "wassup"); ?></strong>
+		</p>
 		<br /><br />
-		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options" class="submit-opt wassup-button" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
+		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options" class="submit-opt wassup-button button-primary" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
 	</div>
 
 	<div id="wassup_opt_frag-2" class="optionstab<?php if ($tab == "2") echo ' tabselected'; ?>">
@@ -205,45 +225,26 @@ function wassup_optionsView() {
 		<br /><p><strong><?php echo __("Users","wassup")."\n<br /> &nbsp; ".__('Enter usernames to exclude from recording','wassup'); ?></strong>:
 		<br /><span style="padding-left:10px;display:block;clear:left;">
 	        <textarea name="wassup_exclude_user" rows="2" style="width:60%;"><?php print $wassup_options->wassup_exclude_user; ?></textarea></span> &nbsp; <?php _e("comma separated value, enter a registered user's login name (ex: bobmarley, enyabrennan, etc.)", "wassup") ?></p>
-		<br /><p><strong><?php echo __("Posts/pages","wassup")."\n<br /> &nbsp; ".__('enter requested URLs to exclude from recording','wassup'); ?></strong>:
+		<br /><p><strong><?php echo __("Posts/pages","wassup")."\n<br /> &nbsp; ".__('Enter requested URLs to exclude from recording','wassup'); ?></strong>:
 		<br /><span style="padding-left:10px;display:block;clear:left;">
 	        <textarea name="wassup_exclude_url" rows="2" style="width:60%;"><?php print $wassup_options->wassup_exclude_url; ?></textarea></span> &nbsp; <?php _e("comma separated value, don't enter entire url, only the last path or some word to exclude (ex: /category/wordpress, 2007, etc...)", "wassup") ?></p>
-		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options2" class="submit-opt wassup-button" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
+		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options2" class="submit-opt wassup-button button-primary" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
 	</div>
 	
 	<div id="wassup_opt_frag-3" class="optionstab<?php if ($tab == "3") echo ' tabselected'; ?>">
-	   <?php /*
-	//   <h3>&lt;?php _e('Temporary files location folder','wassup'); ?&rt;</h3>
-	//	<p>&lt;?php echo '<strong>'.__('Current "Save path" directory for storing temporary files used to track visitor activity','wassup').'</strong>:<br />';
-	//	$sessionpath = $wassup_options->wassup_savepath;
-	//	if (empty($sessionpath)) {
-	//		$sessionpath = getSessionpath();
-	//	}
-	//	//$sessionpath = "/fakefolder/temp";	//#debug
-	//	$sessionstyle = '';
-	//	//# check that session_save_path exists and is writable...
-	//	if ($sessionpath == "" || $wassup_options->isWritableFolder($sessionpath) == false) {
-	//		$sessionwarn = '<span style="font-size:95%; padding-left:5px;'.$alertstyle.'"><span style="text-decoration:blink;">'.__('WARNING','wassup').'!</span> '.__('Directory does not exist or is not writable. Please enter a different path above or change "session.save_path" in "php.ini" to point to a valid, writable folder','wassup').'.</span>';
-	//		$sessionstyle = $alertstyle;
-	//	} else {
-	//		$sessionwarn ='<span style="font-size:95%; color:#555; padding-left:5px;">'.__('Note: To adjust, modify the directory shown in the box above or edit "sessions.save_path" in','wassup').' <i>php.ini</i>.</span>';
-	//	} 
-	//	<textarea name="wassup_savepath" rows="1" style="width:550px;padding-left:25px;clear:left;&lt;?php echo $sessionstyle; ?&rt;">&lt;?php echo $sessionpath; ?&rt;</textarea>
-	//	<br />&nbsp;&nbsp;&lt;?php echo __('Use absolute directory paths only. This value is usually','wassup').' "/tmp".'."\n"; ?&rt;
-	//	<br />&nbsp; <span style="font-size:95%; color:#555;">System default for session.save_path="&lt;?php echo session_save_path(); //debug ?&rt;" from <i>php.ini</i> or from web server configuration.</span>
-	//	<br />&nbsp;&lt;?php echo $sessionwarn."\n"; ?&rt;
+<?php /*
+	   //TODO ?
+	   //<!--
+	   //<br /><h3><?php _e('Rescan Old Records','wassup'); ?></h3>
+	//	<p><?php _e("Statistical records collected by earlier versions of WassUp may not have the latest spider, search engine, and spam data properly identified.  Click the \"Rescan\" button to retroactively scan and update old records","wassup"); ?>.
+	//	<br /><input type="button" name="rescan" value="<?php _e('Rescan Old Records','wassup'); ?>" /> 
 	//	</p><br />
-	*/ ?>
-	   <?php //TODO ?>
-	   <!--
-	   <br /><h3><?php _e('Rescan Old Records','wassup'); ?></h3>
-		<p><?php _e("Statistical records collected by earlier versions of WassUp may not have the latest spider, search engine, and spam data properly identified.  Click the \"Rescan\" button to retroactively scan and update old records","wassup"); ?>.
-		<br /><input type="button" name="rescan" value="<?php _e('Rescan Old Records','wassup'); ?>" /> 
-		</p><br />
-	   -->
+	//   -->
+*/ ?>
 		<h3><?php _e('Select actions for table growth','wassup'); ?></h3>
 		<p><?php _e("WassUp table grows very fast, especially if your site is frequently visited. I recommend you delete old records sometimes.","wassup");
-		echo " ".__("You can select an option below to delete all Wassup records (empty table); or you can delete selected old records on either an automatic schedule (daily), or as manual task now (once). If you haven't database space problems, you can leave the table as is.","wassup"); ?></p>
+		echo "<br/>".__('You can delete all Wassup records now (Empty Table), you can set an automatic delete option to delete selected old records daily, and you can manually delete selected old records once (Delete NOW).','wassup');
+		echo " ".__("If you haven't database space problems, you can leave the table as is.","wassup"); ?></p>
 		<p><?php _e('Current WassUp table usage is','wassup'); ?>:
 		<strong><?php
 		$tusage = number_format(($data_lenght/1024/1024), 2, ",", " ");
@@ -278,7 +279,12 @@ function wassup_optionsView() {
 		<input type="button" name="delete_now" class="submit-opt wassup-hot-button" value="<?php _e('Delete NOW','wassup'); ?>" onclick="submit();" />
 		</p><br/>
 		<h3><?php _e('Cache storage option','wassup'); ?></h3>
-		<p><input type="checkbox" name="wassup_cache" value="1" <?php if($wassup_options->wassup_cache == 1 ) print "CHECKED"; ?> /> <strong><?php echo __('Enable cache for storing some remote API services data locally in WassUp table','wassup'); ?></strong></p>
+		<p><input type="checkbox" name="wassup_cache" value="1" <?php 
+		if ($wpdb->get_var("SHOW TABLES LIKE '$wassup_meta_table'") != $wassup_meta_table) { 
+			echo "DISABLED"; //meta table required for cache
+		} elseif ($wassup_options->wassup_cache == 1 ) {
+			echo "CHECKED"; 
+		} ?> /> <strong><?php echo __('Enable cache for storing some remote API data locally in WassUp table','wassup'); ?></strong></p>
 		<p style="color:#555; margin-top:0; padding-top:0;"><?php _e('Reduces the number of requests to remote API servers and may improve WassUp admin page load.','wassup'); ?></p><br/>
 
 		<h3><?php _e("Server Settings and Memory Resources","wassup"); ?></h3>
@@ -484,7 +490,7 @@ function wassup_optionsView() {
 					$sql_engine = $var->Value;
 				}
 			}
-			if ($debug_mode) {
+			if ($wdebug_mode) {
 				print_r($sql_vars); //debug
 			}
 		} ?>
@@ -578,7 +584,7 @@ function wassup_optionsView() {
 		?></li>
 		</ul></p>
 		<br /><br />
-		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options3" class="submit-opt wassup-button" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
+		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options3" class="submit-opt wassup-button button-primary" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" class="reset-opt wassup-button" value="<?php _e('Reset','wassup'); ?>" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
 	</div>
 	
 	<div id="wassup_opt_frag-4" class="optionstab<?php if ($tab == "4") echo ' tabselected'; ?>">
@@ -595,7 +601,7 @@ function wassup_optionsView() {
 
 		<br /><p><?php _e("To help improve this plugin, we would appreciate your feedback at","wassup"); ?> <a href="http://www.wpwp.org">www.wpwp.org</a>.</p>
 		<br /><br />
-		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options4" class="submit-opt wassup-button" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" value="<?php _e('Reset','wassup'); ?>" class="reset-opt wassup-button" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
+		<p style="clear:both;padding-left:0;padding-top:15px;"><input type="submit" name="submit-options4" class="submit-opt wassup-button button-primary" value="<?php _e('Save Settings','wassup'); ?>" />&nbsp;<input type="reset" name="reset" value="<?php _e('Reset','wassup'); ?>" class="reset-opt wassup-button" /> - <input type="submit" name="reset-to-default" class="default-opt wassup-button" value="<?php _e("Reset to Default", "wassup"); ?>" /></p><br />
 	</div>
         </form>
 	</div> <!-- /#tabcontainer -->

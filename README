@@ -26,9 +26,38 @@ function my_page_menu_args( $args ) {
 	    return $args;
 }
 add_filter( 'wp_page_menu_args', 'my_page_menu_args' );
-
 ----------------------------------------------------------------
+functions.php: the_content('阅读全文');
+----------------------------------------------------------------
+function mytheme_comment($comment, $args, $depth) {
+   static $comment_number;
+   $comment_number++;
 
+   $GLOBALS['comment'] = $comment; ?>
+
+   <?php $i = 0; ?>
+   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+     <div id="comment-<?php comment_ID(); ?>">
+      <div class="comment-author vcard">
+         <span class="comment-counter"><a href="#comment-<?php comment_ID() ?>" title="Permalink to this comment" rel="nofollow">#<?php echo $comment_number; ?></a></span>
+         <?php echo get_avatar($comment,$size='32'); ?>
+
+         <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+      </div>
+      <?php if ($comment->comment_approved == '0') : ?>
+         <em><?php _e('Your comment is awaiting moderation.') ?></em>
+         <br />
+      <?php endif; ?>
+
+      <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','') ?></div>
+
+      <?php comment_text() ?>
+     <?php $i++; ?>
+     </div>
+<?php
+        }
+
+*************************************************************
 ---------------------------
 -------2.page.php----------
 ---------------------------
@@ -42,7 +71,7 @@ add_filter( 'wp_page_menu_args', 'my_page_menu_args' );
 *********style.css********
 =============================================================
 
-1.all the font/font-family --->  Arial, Helvetica, sans-serif;
+1.all the font/font-family --->  arial, helvetica, sans-serif;
 -------------------------------------------------------------
 2.body ---> color:#333;
 -------------------------------------------------------------
@@ -66,12 +95,28 @@ delete => font-style:italic;
 --------------------------------------------------------------
 6.modify: #pp-subscribe a {padding:5px 5px 5px 50px; font-weight:bold; font-size:14px; line-height:33px; display:block;}
 delete: #pp-feed
+--------------------------------------------------------------
+7..entry-title a:hover, .entry-byline a:hover, .navigation a:hover {
+color: black;[delete]
+}
+
+[modify]
+.entry-content a {
+font-family: arial, helvetica, sans-serif;
+text-decoration: none;
+border-bottom: 1px dotted;
+}
+--------------------------------------------------------------
+8..comment-author cite {font-style:normal;color: #0070C5; }
+--------------------------------------------------------------
+9..comment-counter{font-size:1em; float:right;}
 **************************************************************
 
 ==============================================================
 **********wp-syntex********
 ==============================================================
-geshi.php:
+1.geshi.php:
+
 if ($escaped == "true") $code = htmlspecialchars_decode($code);        
 
 ======>
@@ -79,7 +124,7 @@ if ($escaped == "true") $code = htmlspecialchars_decode($code);
 if ($escaped != "false") $code = htmlspecialchars_decode($code);
 
 ----------------------------------------------------------------
-wp-syntex.css:
+2.wp-syntex.css:
 
 background-color: #EEEEEE;
 
@@ -93,15 +138,29 @@ background-color: #EEEEEE;
   line-height: 1.333;
   white-space: pre;
 }
-
 -------------------------------------------------------------------
-java.php:
+3.java.php:
+
 'KEYWORDS' => array(
-            1 => 'color: #00008B; font-weight: bold;',
-            2 => 'color: #00008B; font-weight: bold;',
-            3 => 'color: #2B91AF;',
-            4 => 'color: #00008B; font-weight: bold;'
+            1 => 'color: #7F0055; font-weight: bold;',
+            2 => 'color: #7F0055; font-weight: bold;',
+            3 => 'color: #000000;',
+            4 => 'color: #7F0055; font-weight: bold;'
             ),
+
+'METHODS'=>array{
+ 1=>'color:#000000;',
+ 2=>'color:#000000;'
+}
+
+'BRACKETS'=>array{
+0=>'color:#000000;'
+}
+
+'ESCAPE_CHAR'=>array{
+0=>'color:#7F0055;font-weight:bold;'
+}
+
 ----------------------------------------------------------------------
 **************************************************************
 
@@ -116,10 +175,17 @@ java.php:
 *******add*******：
 
 <li>
-<a href="http://feeds.feedburner.com/zhixingheyi" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="Subscribe in a reader" style="border:0;vertical-align:middle"/></a><a href="http://feeds.feedburner.com/zhixingheyi" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe in a reader</a>
+<a href="http://feeds.feedburner.com/zhixingheyi&quot; title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png&quot; alt="Subscribe in a reader" style="border:0;vertical-align:middle"/></a><a href="http://feeds.feedburner.com/zhixingheyi&quot; title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe in a reader</a>
 </li>
 <li>
-<a target="_blank" href="https://twitter.com/nauxuil" title="Follow me on Twitter">
-<img src="twitter_32x32.png" alt="Follow me on Twitter" style="border:0;vertical-align:middle"/></a><a target="_blank" href="https://twitter.com/nauxuil" title="Follow me on Twitter">Follow me on Twitter</a>
+<a target="_blank" href="https://twitter.com/nauxuil&quot; title="Follow me on Twitter">
+<img src="twitter_32x32.png" alt="Follow me on Twitter" style="border:0;vertical-align:middle"/></a><a target="_blank" href="https://twitter.com/nauxuil&quot; title="Follow me on Twitter">Follow me on Twitter</a>
 </li>
+**************************************************************
+
+==============================================================
+**********comments.php********
+==============================================================
+<?php wp_list_comments(array('style' => 'ol','type'=>'comment','callback'=>'mytheme_comment')); ?>
+**************************************************************
 

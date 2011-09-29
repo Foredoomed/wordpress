@@ -927,21 +927,21 @@ $language_data = array (
         'KEYWORDS' => array(
             1 => 'color: #7F0055; font-weight: bold;',
             2 => 'color: #7F0055; font-weight: bold;',
-            3 => 'color: #2B91AF;',
-            4 => 'color: #00008B; font-weight: bold;'
+            3 => 'color: #000000;',
+            4 => 'color: #7F0055; font-weight: bold;'
             ),
         'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;',
-            2 => 'color: #006699;',
-            3 => 'color: #008000; font-style: italic; font-weight: bold;',
-            3 => 'color: #008000; font-style: italic; font-weight: bold;',
-            'MULTI' => 'color: #666666; font-style: italic;'
+            1 => 'color: #3F7F5F;',
+            2 => 'color: #3F7F5F;',
+            3 => 'color: #3F7F5F;',
+            4 => 'color: #3F7F5F;',
+            'MULTI' => 'color: #3F7F5F;'
             ),
         'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
+            0 => 'color: #000099;'
             ),
         'BRACKETS' => array(
-            0 => 'color: #009900;'
+            0 => 'color: #000000;'
             ),
         'STRINGS' => array(
             0 => 'color: #0000ff;'
@@ -950,8 +950,8 @@ $language_data = array (
             0 => 'color: #cc66cc;'
             ),
         'METHODS' => array(
-            1 => 'color: #006633;',
-            2 => 'color: #006633;'
+            1 => 'color: #000000;',
+            2 => 'color: #000000;'
             ),
         'SYMBOLS' => array(
             0 => 'color: #339933;'

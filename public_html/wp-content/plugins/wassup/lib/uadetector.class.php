@@ -1,13 +1,13 @@
 <?php
 /**
  * UADetector.class.php
- * Description: a PHP class for browser and spider identification
- * Updated: 2010-09-02
- * @version 0.9a3
- * @author Helene D. <techfromhel@gmail.com>
- * Author URI: http://www.techfromhel.com/
+ * Description: a PHP4 class for browser and spider identification
+ * Updated: 2011-07-13
+ * @version 0.9a5
+ * @author Helene Duncker <techfromhel@gmail.com>
+ * Author URI: http://techfromhel.webege.com/
  *
- * @copyright Copyright (c) 2009,2010 Helene Duncker
+ * @copyright Copyright (c) 2009-2011 Helene Duncker
  * @license http://www.gnu.org/licenses/gpl.txt GNU General Public License
  */
 /**
@@ -15,24 +15,25 @@
  *	  $useragent = new UADetector(); //returns object(16)
  *
  * Note: UADetector attempts to find the actual browser in use. This may 
- *    cause the browser "name" to differ from browser "emulation" field
- *    when user-agent "spoofing" is detected. This means that:
- *    a) "Name" field is best used for information and statistics only.
- *    b) "Emulation" field is best used to format web page by browser type.
+ *    cause the "name" field to differ from "emulation" field when 
+ *    user-agent "spoofing" is detected. Use the appropriate field 
+ *    for your application type:
+ *      a) "Name" field is best for information and statistics only.
+ *      b) "Emulation" field is best for UI and customizations by browser type.
  *
  * Disclaimer: Use at your own risk. No warranty expressed or implied is provided.
  */
 class UADetector {
-	var $name = '';  	//name of browser or spider, not null
-	var $version = '';	//version of browser|spider, if available
+	var $name = '';  	//browser or spider name, not null
+	var $version = '';	//browser or spider version, if available
 	var $os = '';    	//operating system+version, if available
-	var $platform = '';	//operating system|device platform
+	var $platform = '';	//operating system or device platform
 	var $emulation = '';	//emulated browser plus major version#
-	var $language = '';	//language code, if available
-	var $device = '';	//PC, PDA, Phone, TV, if known
-	var $model = '';	//Manufacturer model, if known
+	var $language = '';	//language code (not locale), if available
+	var $device = '';	//PC, PDA, Phone, TV, if available
+	var $model = '';	//Device manufacturer model, if available
 	var $resolution = '';	//screen size (MMMxNNN), if in user-agent
-	var $subscribers = '';	//feed subscribers, if in user-agent
+	var $subscribers = '';	//feed subscriber count, if in user-agent
 	var $is_mobile = false;
 	var $is_browser = false;
 	var $is_robot = false;
@@ -63,12 +64,12 @@ class UADetector {
 	 * @constructor
 	 * @access	public
 	 * @param 	string $ua (optional)
-	 * @return	object(12)
+	 * @return	object(16)
 	 */
 	function __construct($ua="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		$do_profile= false;
-		if ($debug_mode && function_exists('profiler_beginSection')) {
+		if ($wdebug_mode && function_exists('profiler_beginSection')) {
 			$do_profile = true;
 			profiler_beginSection('(Subtot)uaDetector');
 		}
@@ -138,7 +139,7 @@ class UADetector {
 		//NOTE: Top agents are based on recent log data from 
 		//  "WassUp", a web statistics plugin for WordPress 2.2+ 
 		//   available at http://www.wpwp.org
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 
 		// User agent parameter or class variable is required.
 		$ua="";
@@ -173,7 +174,7 @@ class UADetector {
 			if (!empty($match[3])) {
 				$top_ua['device'] = $match[3];
 			}
-		// #3 Firefox or other Mozilla browsers on Windows
+		// #3 Firefox and other Mozilla browsers on Windows
 		} elseif (preg_match('#^Mozilla/\d\.\d\s\(Windows;\sU;\s(.+);\s([a-z]{2}(?:\-[A-Za-z]{2})?);\srv\:\d(?:\.\d+)+\)\sGecko/\d+\s([A-Za-z\-0-9]+)/(\d+(?:\.\d+)+)(?:\s\(.*\))?$#',$ua,$match)>0) {
 			$top_ua['name'] = $match[3];
 			$top_ua['version'] = $match[4];
@@ -192,9 +193,9 @@ class UADetector {
 				$top_ua['language']=$match[2];
 			}
 			$top_ua['agenttype']= 'R';
-		// #5 MSNBot, MSNbot-media
-		} elseif (preg_match('#^(?:msnbot(\-media)?)/(\d\.\d)[^a-z0-9]+http\://search\.msn\.com/msnbot\.htm.$#',$ua,$match)>0) {
-			$top_ua['name'] = 'MSNBot';
+		// #5 BingBot
+		} elseif (preg_match('#^Mozilla/\d\.\d\s\(compatible;\sbingbot/(\d\.\d)[^a-z0-9]+http\://www\.bing\.com/bingbot\.htm.$#',$ua,$match)>0) {
+			$top_ua['name'] = 'BingBot';
 			if (!empty($match[1])) { 
 				$top_ua['name'].=$match[1];
 			}
@@ -202,17 +203,12 @@ class UADetector {
 				$top_ua['version']=$match[2];
 			}
 			$top_ua['agenttype']= 'R';
-		// #6 Twiceler
-		} elseif (preg_match('#^Mozilla/\d\.\d\s\(Twiceler\-(\d\.\d)\shttp://www\.cuill?\.com/twiceler/robot\.html\)$#',$ua,$match)>0) {
-			$top_ua['name'] = 'Twiceler';
-			$top_ua['version']=$match[1];
-			$top_ua['agenttype']= 'R';
-		// #7 FeedBurner
+		// #6 FeedBurner
 		} elseif (preg_match('#^FeedBurner/(\d\.\d)\s\(http\://www\.FeedBurner\.com\)$#',$ua,$match)>0) {
 			$top_ua['name'] = 'FeedBurner';
 			$top_ua['version']=$match[1];
 			$top_ua['agenttype']= 'F';
-		// #8 Wordpress
+		// #7 Wordpress
 		} elseif (preg_match('#^WordPress/(?:wordpress(\-mu)\-)?(\d\.\d+)(?:\.\d+)*(?:\-[a-z]+)?(?:\;\shttp\://[a-z0-9_\.\:\/]+)?$#',$ua,$match)>0) {
 			$top_ua['name'] = 'Wordpress';
 			if (!empty($match[1])) { 
@@ -220,7 +216,7 @@ class UADetector {
 			}
 			$top_ua['version']=$match[2];
 			$top_ua['agenttype']= 'U';
-		// #9 Firefox and Gecko browsers on Mac|*nix|OS/2 etc...
+		// #8 Firefox and Gecko browsers on Mac|*nix|OS/2 etc...
 		} elseif (preg_match('#^Mozilla/\d\.\d\s\((Macintosh|X11|OS/2);\sU;\s(.+);\s([a-z]{2}(?:\-[A-Za-z]{2})?)(?:-mac)?;\srv\:\d(?:.\d+)+\)\sGecko/\d+\s([A-Za-z\-0-9]+)/(\d+(?:\.[0-9a-z\-\.]+))+(?:(\s\(.*\))(?:\s([A-Za-z\-0-9]+)/(\d+(?:\.\d+)+)))?$#',$ua,$match)>0) {
 			$top_ua['name'] = $match[4];
 			$top_ua['version'] = $match[5];
@@ -236,7 +232,7 @@ class UADetector {
 			}
 			list($top_ua['os']) = $this->OSversion($os,$top_ua['platform'],$ua);
 			$top_ua['agenttype']= 'B';
-		// #10 Safari and Webkit-based browsers on all platforms
+		// #9 Safari and Webkit-based browsers on all platforms
 		} elseif (preg_match('#^Mozilla/\d\.\d\s\(([A-Za-z0-9/\.]+);\sU;?\s?(.*);\s?([a-z]{2}(?:\-[A-Za-z]{2})?)?\)\sAppleWebKit/[0-9\.]+\+?\s\((?:KHTML,\s)?like\sGecko\)(?:\s([a-zA-Z0-9\./]+(?:\sMobile)?)/?[A-Z0-9]*)?\sSafari/([0-9\.]+)$#',$ua,$match)>0) {
 			$top_ua['name'] = 'Safari';
 			if (!empty($match[4])) { $vers = $match[4]; } 
@@ -259,6 +255,26 @@ class UADetector {
 			}
 			$top_ua['language']=$match[3];
 			$top_ua['agenttype']= 'B';
+
+		// #10 Google Chrome browser on all platforms with or without language string
+		} elseif (preg_match('#^Mozilla/\d+\.\d+\s(?:[A-Za-z0-9\./]+\s)?\((?:([A-Za-z0-9/\.]+);(?:\sU;)?\s?)?([^;]*)(?:;\s[A-Za-z]{3}64)?;?\s?([a-z]{2}(?:\-[A-Za-z]{2})?)?\)\sAppleWebKit/[0-9\.]+\+?\s\((?:KHTML,\s)?like\sGecko\)(?:\s([A-Za-z0-9_\-]+[^i])/([A-Za-z0-9\.]+)){1,3}(?:\sSafari/[0-9\.]+)?$#',$ua,$match)>0) {
+			$top_ua['name'] = $match[4];
+			$top_ua['version'] = $match[5];
+			if (empty($match[2])) {
+				$os = $match[1];
+			} else {
+				$top_ua['platform'] = $match[1];
+				$os = $match[2];
+			}
+			if ($top_ua['platform'] == 'Windows') {
+				$top_ua['os'] = $this->winOSversion($os);
+			} else {
+				list($top_ua['os']) = $this->OSversion($os,$top_ua['platform'],$ua);
+			}
+			if (!empty($match[3])) {
+				$top_ua['language']=$match[3];
+			}
+			$top_ua['agenttype']= 'B';
 		}
 		//check http header for user agent spoofing and for os and screen resolution
 		if ($is_current_ua) {
@@ -279,7 +295,7 @@ class UADetector {
 		} else {
 			$top_ua=false;
 		}
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "\n".'<br />uadetector: top_ua->name='.$top_ua['name']."&nbsp; ".'top_ua->os='.$top_ua['os']; //debug
 			if ($do_profile) {
 				profiler_endSection('____ua::isTopAgent');
@@ -295,7 +311,7 @@ class UADetector {
 	 * @return array (associative)
 	 */
 	function isBrowserAgent($agent="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		$ua="";
 		$is_current_ua = false;
 		if (empty($agent)) {
@@ -310,7 +326,7 @@ class UADetector {
 		$browser = array('name'=>"",'version'=>"",'os'=>"",'platform'=>"",'language'=>"",'agenttype'=>"B",'resolution'=>"",'device'=>"",'model'=>"", 'emulation'=>"");
 
 		//spiders are not detected here, so exclude user agents that are likely spiders (ie. contains an email or URL, or spider-like keywords)
-		if (isset($this->done_spiders) && !$this->done_spiders && preg_match('#(robot|bot[\s\-_\/\)]|bot$|blog|checker|crawl|feed|fetcher|libwww|[^\.e]link\s?|parser|reader|spider|verifier|href|https?\://|.+(?:\@|\s?at\s?)[a-z0-9_\-]+(?:\.|\s?dot\s?)|www[0-9]?\.[a-z0-9_\-]+\..+|\/.+\.(html?|aspx?|php5?|cgi))#i',$ua)>0) {
+		if (isset($this->done_spiders) && !$this->done_spiders && preg_match('#(robot|bot[\s\-_\/\)]|bot$|blog|checker|crawl|feed|fetcher|libwww|[^\.e]link\s?|parser|reader|spider|verifier|href|https?\://|.+(?:\@|\s?at\s?)[a-z0-9_\-]+(?:\.|\s?dot\s?)|www[0-9]?\.[a-z0-9_\-]+\..+|\/.+\.(s?html?|aspx?|php5?|cgi))#i',$ua)>0) {
 			//not spider if embedded browser or is a browser add-on such as spyware or translator
 			if (preg_match('#(embedded\s?(WB|Web\sbrowser)|dynaweb|bsalsa\.com|muuk\.co|translat[eo]r?)#i',$ua)==0) {
 				return false;
@@ -319,26 +335,23 @@ class UADetector {
 		if ($do_profile) {
 			profiler_beginSection('_____ua::isBrowser');
 		}
-		//Separate check for mobile browsers beforehand
+		//### Step 1: check for mobile or embedded browsers
 		$ismobile = false;
-		//check for mobile or embedded browser
 		$wap = $this->isMobileAgent($ua);
 		if (!empty($wap) && is_array($wap)) {
 			$ismobile = true;
+			$browser['name'] = $wap['name'];
+			$browser['version'] = $wap['version'];
 			$browser['device'] = $wap['device'];
 			$browser['model'] = $wap['model'];
-			$browser['platform'] = $wap['platform'];
-			if (empty($browser['name'])) {
-				$browser['name'] = $wap['name'];
-				$browser['version'] = $wap['version'];
-			}
-			if (!empty($wap['os'])) $browser['os'] = $wap['os'];
+			$browser['os'] = $wap['os'];
+			$browser['platform'] = "WAP";
 			if (!empty($wap['language'])) $browser['language'] = $wap['language'];
 		}
+		//### Step 2: Check for MSIE-based browsers
 		if (!$ismobile || empty($browser['name'])) {
-			//MSIE browsers
 			if (preg_match('/compatible(?:\;|\,|\s)+MSIE\s(\d+)(\.\d+)+(.*)/',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for MSIE-based browser<br/>";
 				}
 				$browser['name'] = 'IE';
@@ -374,17 +387,15 @@ class UADetector {
 					}
 				}
 
+		//### Step 3: Check for All Other browsers
 			//Opera browsers
-			} elseif (preg_match('#(Opera\s(?:Mini|Mobile))[/ ]([0-9\.]+)#',$ua,$pcs)>0) {
-				$browser['name'] = $pcs[1];
-				$browser['version'] = $pcs[2];
 			} elseif (preg_match('#Opera[/ ]([0-9\.]+)#',$ua,$pcs)>0) {
 				$browser['name'] = 'Opera';
 				$browser['version'] = $pcs[1];
 
 			//Firefox-based browsers (Camino, Flock) (find before FF)
 			} elseif (preg_match('#[^a-z](Camino|Flock|Galeon|Orca)/(\d+[\.0-9a-z]*)#',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for Firefox-based browser<br/>";
 				}
 				$browser['name'] = $pcs[1];
@@ -392,7 +403,7 @@ class UADetector {
 
 			//other Gecko-type browsers (incl. Firefox)
 			} elseif (preg_match('#Gecko/\d+\s([a-z0-9_\- ]+)/(\d+[\.0-9a-z]*)(?:$|[^a-z0-9_\-]+([a-z0-9_\- ]+)/(\d+[\.0-9a-z]*)|[^a-z0-9_\-]*\(.*\))#i',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for Gecko-type browser<br/>";
 				}
 				$browser['name'] = $pcs[1];
@@ -403,7 +414,7 @@ class UADetector {
 				}
 			//Firefox browser
 			} elseif (preg_match('#[^a-z](Fire(?:fox|bird))/?(\d+[\.0-9a-z]*)?#',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for Firefox browser<br/>";
 				}
 				$browser['name'] = $pcs[1];
@@ -412,7 +423,7 @@ class UADetector {
 				}
 			//Mozilla browser (like FF, but nothing after "rv:" or "Gecko")
 			} elseif (preg_match('/^Mozilla\/\d\.\d.+\srv\:(\d[\.0-9a-z]+)[^a-z0-9]+(?:Gecko\/\d+)?$/i',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for Mozilla browser<br/>";
 				}
 				$browser['name'] = 'Mozilla';
@@ -422,7 +433,7 @@ class UADetector {
 
 			//WebKit-based browsers
 			} elseif (preg_match('#^Mozilla/\d\.\d\s\((?:([a-z]{3,}.*\s)?([a-z]{2}(?:\-[A-Za-z]{2})?)?)\)\sAppleWebKit/[0-9\.]+\+?\s\([a-z, ]*like\sGecko[a-z\; ]*\)\s([a-zA-Z0-9\./]+(?:\sMobile)?/?[A-Z0-9]*)?(\sSafari/([0-9\.]+))?$#',$ua,$pcs)>0) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for WebKit-based browser<br/>";
 				}
 				if (!empty($pcs[3])) { $vers = $pcs[3]; } 
@@ -438,7 +449,7 @@ class UADetector {
 		
 			//Text-only browsers Lynx, ELinks...(yep, they still exist)
 			} elseif (preg_match("#^(E?Links|Lynx|(?:Emacs\-)?w3m)[^a-z0-9]+([0-9\.]+)?#i",$ua,$pcs)) {
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\nMatch for text browser<br/>";
 				}
 				$browser['name'] = $pcs[1];
@@ -478,7 +489,7 @@ class UADetector {
 				}
 			}
 			}
-		} //end if ($ismobile)
+		} //end if (!$ismobile)
 
 		//get operating system
 		if (empty($browser['os']) && !empty($browser['name']) && $browser['agenttype']=="B") {
@@ -521,7 +532,7 @@ class UADetector {
 			}
 			$browser['agenttype']= "S";
 		}
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "\n".'<br />uadetector: browser->name='.$browser['name']."&nbsp; ".'browser->os='.$browser['os']; //debug
 		}
 		if (!empty($browser['name'])) {
@@ -549,7 +560,7 @@ class UADetector {
 	 * @return array(browser, device, model, platform)
 	 */
 	function isMobileAgent($agent="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		$ua="";
 		$is_current_ua = false;
 		if (empty($agent)) {
@@ -564,17 +575,14 @@ class UADetector {
 			profiler_beginSection('____ua::isMobileUA');
 		}
 		$ismobile = false;
-		$device = $ua;
-		$wap = array('name'=>"", 
-				'version'=>"",
-				'device'=>"",
-				'model'=>"",
-				'platform'=>"WAP");
+		//$device = $ua;
+		$wap = array('name'=>"", 'version'=>"",
+			'device'=>"", 'model'=>"",
+			'os'=>"", 'platform'=>"WAP");
 		//detect known mobile browsers
 
 		//Android-based devices
 		if (preg_match("#^(?:([a-z0-9\-\s_]{3,})\s)?Mozilla/\d\.\d\s\([a-z\;\s]+Android\s([0-9\.]+)(?:\;\s([a-z]{2}(?:\-[A-Za-z]{2})?)\;)?.*Gecko\)\s([a-zA-Z0-9\./]+(?:\sMobile)?/?[A-Z0-9]*)?(\sSafari/([0-9\.]+))?#i",$ua,$pcs)) {
-			$ismobile = true;
 			if (!empty($pcs[4])) { $vers = $pcs[4]; } 
 			else { $vers = $pcs[6]; }
 			$webkit = $this->webkitVersion($vers,$ua);
@@ -585,32 +593,39 @@ class UADetector {
 			$wap['os'] = "Android";
 			if (!empty($pcs[2])) $wap['os'] .= " ".$this->majorVersion($pcs[2]);
 			if (!empty($pcs[3])) $wap['language'] = $pcs[3];
-			if (!empty($pcs[1])) $device = $pcs[1];
+			if (!empty($pcs[1])) $wap['device'] = $pcs[1];
+
+		//Windows Mobile browsers
+		} elseif (preg_match('#Windows\sCE;\s?IEMobile\s(\d+)(\.\d+)*\)#i',$ua,$pcs)>0) {
+			$wap['name'] = 'IEMobile';
+			$wap['version'] = $pcs[1];
+			$wap['os'] = 'WinCE';
+		//Opera Mini/mobile browsers
+		} elseif (preg_match('#(Opera\s(?:Mini|Mobile))[/ ]([0-9\.]+)#',$ua,$pcs)>0) {
+			$wap['name'] = $pcs[1];
+			$wap['version'] = $pcs[2];
 
 		//NetFront and other mobile/embedded browsers
 		} elseif (preg_match("#(NetFront|NF\-Browser)/([0-9\.]+)#i",$ua,$pcs)) {
-			$ismobile = true;
 			$wap['name'] = "NetFront";
 			$wap['version'] = $pcs[2];
-		} elseif (preg_match("#[^a-z0-9](Bolt|Iris|Minimo|Novarra\-Vision|Polaris)/([0-9\.]+)#i",$ua,$pcs)) {
-			$ismobile = true;
+		} elseif (preg_match("#[^a-z0-9](Bolt|Iris|Jasmine|Minimo|Novarra\-Vision|Polaris)/([0-9\.]+)#i",$ua,$pcs)) {
 			$wap['name'] = $pcs[1];
 			$wap['version'] = $pcs[2];
 		} elseif (preg_match("#(UP\.browser|SMIT\-Browser)/([0-9\.]+)#i",$ua,$pcs)) {
-			$ismobile = true;
 			$wap['name'] = $pcs[1];
 			$wap['version'] = $pcs[2];
 		} elseif (preg_match("#\((jig\sbrowser).*\s([0-9\.]+)[^a-z0-9]#i",$ua,$pcs)) {
-			$ismobile = true;
 			$wap['name'] = $pcs[1];
 			$wap['version'] = $pcs[2];
 		} elseif (preg_match("#[^a-z]Obigo#i",$ua,$pcs)) {
-			$ismobile = true;
 			$wap['name'] = 'Obigo';
 		} elseif (preg_match("#openwave(\suntrusted)?/([0-9\.]+)#i",$ua,$pcs)) {
-			$ismobile = true;
 			$wap['name'] = 'OpenWave';
 			$wap['version'] = $pcs[2];
+		}
+		if (!empty($wap['name'])) {
+			$ismobile = true;
 		}
 
 		//known mobile devices...
@@ -648,18 +663,29 @@ class UADetector {
 					$ismobile=true;
 				}
 			}
+			//TODO: check for wireless transcoder service user agents
+			if (!$ismobile && preg_match('#wireless\stranscoder#i',$ua)>0) {
+				$ismobile=true;
+			}
 		}
-		//TODO: check for wireless transcoder service user agents
-		if (!$ismobile && preg_match('#wireless\stranscoder#i',$ua)>0) {
-			$ismobile=true;
+		//set os = device, if missing
+		if ($ismobile) {
+			if (!empty($wap['device'])) {
+				if (empty($wap['name'])) {
+					$wap['name'] = $wap['device'];
+				} elseif (empty($wap['os'])) {
+					$wap['os'] = $wap['device'];
+				}
+			}
 		}
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "\n".'<br />uadetector: wap->name='.$wap['name']."&nbsp; ".'wap->device='.$wap['device']; //debug
 		}
 		if ($do_profile) {
 			profiler_endSection('____ua::isMobileUA');
 		}
 		if ($ismobile) {
+			if (empty($wap['os'])) $wap['os'] = "WAP";
 			return $wap;
 		} else {
 			return false;
@@ -673,7 +699,7 @@ class UADetector {
 	 * @return array (associative)
 	 */
 	function isSpiderAgent($agent="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		$ua="";
 		$is_current_ua = false;
 		list($ua,$is_current_ua) = $this->isCurrentAgent($agent);
@@ -691,7 +717,13 @@ class UADetector {
 			$spider['version']=$match[1];
 			$spider['agenttype']= 'F';
 		
-		// #12 FeedFetcher Google
+		// #12 Twiceler
+		} elseif (preg_match('#^Mozilla/\d\.\d\s\(Twiceler\-(\d\.\d)\shttp://www\.cuill?\.com/twiceler/robot\.html\)$#',$ua,$match)>0) {
+			$spider['name'] = 'Twiceler';
+			$spider['version']=$match[1];
+			$spider['agenttype']= 'R';
+
+		// #13 FeedFetcher Google
 		} elseif (preg_match('#^Feedfetcher\-Google[;\s\(\+]+http\://www\.google\.com/feedfetcher\.html[;\)\s]+(?:(\d)\ssubscriber)?#',$ua,$match)>0) {
 			$spider['name'] = 'FeedFetcher-Google';
 			if (!empty($match[1])) {
@@ -752,6 +784,9 @@ class UADetector {
 			if (!empty($match[2])) {
 				$spider['version']=$match[2];
 			}
+			if (strlen($match[1]) < 5) {
+				$spider['name'] = $match[1]. " Spider";
+			}
 
 		//TODO: Libwww spiders
 		//TODO: Trackback agents from blogs on MovableType, Drupal, DotNetNuke,...
@@ -762,6 +797,12 @@ class UADetector {
 			if (!empty($match[3])) {
 				$spider['version'] = $match[3];
 			}
+		} elseif (preg_match('#^Mozilla\/\d\.\d\s\(compatible;\s([a-z_ ]+)(?:[-/](\d+\.\d+))?;\s.?http://(?:www\.)?[a-z]+(?:[a-z\.]+)\.(?:[a-z]{2,4})/?[a-z/]*(?:\.s?html?|\.php|\.aspx?)?\)$#i',$ua,$match)>0) {
+			$spider['name'] = $match[1];
+			if (!empty($match[2])) {
+				$spider['version'] = $match[2];
+			}
+
 		// #Assume bot if user-agent 1st word and a contact domain are the same name, ex: Feedburner-feedburner.com, CazoodleBot, 
 		} elseif (preg_match('/([a-z\_\s\.]+)[\s\/\-_]?(v?[0-9\.]+)?.*(?:http\:\/\/|www\.)(\1)\.[a-z0-9_\-]+/i',$ua,$match)>0) {
 			$spider['name'] = $match[1];
@@ -789,6 +830,11 @@ class UADetector {
 			}
 
 		// #Assume bot if user-agent includes contact email
+		} elseif (preg_match('#^Mozilla\/\d\.\d\s\(compatible;\s([a-z_ ]+)(?:[-/](\d+\.\d+))?;\s[^a-z0-9]?([a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,4})\)$#i',$ua,$match)>0) {
+			$spider['name'] = $match[1];
+			if (!empty($match[2])) {
+				$spider['version'] = $match[2];
+			}
 		} elseif (preg_match('/^(([a-z]+)\s?(bot|crawler|robot|spider|\s[a-z]+)?)[\/\-\s_](v?[0-9\.]+)?.*[^a-z]+(?:\1|\2|\3)(?:\@|\s?at\s?)[a-z\-_]{2,}(?:\.|\s?dot\s)[a-z]{2,4}/i',$ua,$match)>0) {
 			$spider['name'] = $match[1];
 			if (!empty($match[4])) {
@@ -887,7 +933,7 @@ class UADetector {
 			$spider['name'] = _e("Script Injection Bot");
 			$spider['agenttype']= "S";
 		}
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "\n".'<br />uadetector: spider->name='.$spider['name']."&nbsp; "; //debug
 		}
 		if (empty($spider['name'])) {
@@ -915,7 +961,7 @@ class UADetector {
 				$ua = $this->agent;
 			}
 		}
-		//distinguish feed readers from other spiders
+		//separate feed readers from spiders
 		if (preg_match("/([0-9]+)\s?subscriber/i",$ua,$subscriber) >0) {
 			// It's a feedreader with some subscribers
 			$feed['subscribers'] = $subscriber[1];
@@ -967,7 +1013,7 @@ class UADetector {
 	 * @return none
 	 */
 	function isWTF($ua="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		//recheck browsers or check PHP's browser capabilities file
 		if (isset($this->done_browsers) && !$this->done_browsers) {
 			return $this->isBrowserAgent($ua);
@@ -980,7 +1026,7 @@ class UADetector {
 			if (!empty($unknown_agent['name'])) {
 				$this->setClassVars($unknown_agent);
 			}
-			if ($debug_mode) {
+			if ($wdebug_mode) {
 				echo "\n".'<br />uadetector: unknown_agent->name='.$unknown_agent['name']."&nbsp; "; //debug
 			}
 			if ($do_profile) {
@@ -995,7 +1041,7 @@ class UADetector {
 	 * @return array(os_type, platform, device)
 	 */
 	function OSversion($os="",$platform="",$ua="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		if ($do_profile) {
 			profiler_beginSection('_____ua::OSversion');
 		}
@@ -1226,7 +1272,7 @@ class UADetector {
 	 *  @return string
 	 */
 	function linuxOSversion($os="") {
-		global $debug_mode, $do_profile;
+		global $wdebug_mode, $do_profile;
 		if (empty($os)) { $os = $this->agent; }
 		if (empty($os)) { return false; }
 		if ($do_profile) {
@@ -1292,15 +1338,15 @@ class UADetector {
 	 *  @return associative array (browser, version)
 	 */
 	function webkitVersion($webkit="",$ua="") {
-		global $debug_mode;
+		global $wdebug_mode;
 		$browser = "Safari";
 		$vers = "";
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "<br />webkit=".$webkit."\n"; //debug
 		}
 		if (empty($webkit)) { 
 			return false;
-		} elseif (preg_match("#^([a-zA-Z]+)/([0-9](?:[A-Za-z\.0-9]+))(\sMobile)?#",$webkit,$match)>0) {
+		} elseif (preg_match("#^([a-zA-Z]+)/([0-9]+(?:[A-Za-z\.0-9]+))(\sMobile)?#",$webkit,$match)>0) {
 			if ($match[1] != "Version") { //Chrome,Iron,Shiira
 				$browser = $match[1];
 			}
@@ -1395,7 +1441,7 @@ class UADetector {
 	 * @return array
 	 */
 	function getBrowscap($ua="") {
-		global $debug_mode;
+		global $wdebug_mode;
 		if (empty($ua)) $ua = $this->agent;
 		$browsercap = false;
 		$browser = array('name'=>"",'version'=>"",'os'=>"",'platform'=>"",'agenttype'=>"B");
@@ -1406,7 +1452,7 @@ class UADetector {
 		//}
 		if (ini_get("browscap")!="") {
 			$browsercap = get_browser($ua,true);
-			if ($debug_mode) {
+			if ($wdebug_mode) {
 				echo "\n<br/>Browsercap=";
 				print_r($browsercap);
 				echo "\n<br />";

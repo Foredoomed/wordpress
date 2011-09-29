@@ -64,7 +64,7 @@ echo wsd_eInfo($infoMessage,'information');
         if (empty($wsd_userDbRights['rightsEnough'])) {
             $wsd_Message .= wsd_eInfo('The User which is used to access your Wordpress Database, hasn\'t enough rights (is missing the ALTER right) to alter the Table structure.
                 <br/>Please visit the <a href="http://www.websitedefender.com/category/faq/" target=_blank">WebsiteDefender WP Security Scan WordPress plugin documentation</a> website for more information.
-                <br/>If the user has ALTER rights and the tool is still not working, please <a href="http://semperfiwebdesign.com/contact/" target="_blank">contact</a> the plugin author for assistance.');
+                <br/>If the user <code>has ALTER rights</code> and the tool is still not working, please <a href="http://www.websitedefender.com/support/" target="_blank">contact us</a> for assistance!');
         }
         if (!empty($wsd_userDbRights['rightsTooMuch'])) {
             $wsd_Message .= wsd_eInfo('Your currently used User to access the Wordpress Database, holds too many rights.'.

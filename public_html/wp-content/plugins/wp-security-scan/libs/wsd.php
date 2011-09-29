@@ -20,7 +20,11 @@ define("HTTP_CHUNK_HEADER", 3);
 define("HTTP_CHUNK_BODY", 4);
 //globals
 $GLOBALS['wsd_last_err'] = array('code'=>0, 'message'=>'');
-function wsd_site_url(){return get_option( "siteurl" )."/";}
+
+function wsd_site_url(){
+    $url = get_option( 'siteurl' );
+    return trailingslashit($url);
+}
 
 function wsd_parseUrl($url)
 {
@@ -84,8 +88,8 @@ function wsd_httpRequest($verb, $url, $body="", $headers=array(), $timeout = 10)
 	if($url["error"] !== NULL) return $url;
 	
 	$scheme = $url["scheme"]=="https" ? "ssl://" : "";
-	
-	$fp = fsockopen($scheme.$url["host"], $url["port"] , $errno, $errstr, $timeout);	
+
+ 	$fp = fsockopen($scheme.$url["host"], $url["port"] , $errno, $errstr, $timeout);	
 	
   if (!$fp)
   {
@@ -100,7 +104,7 @@ function wsd_httpRequest($verb, $url, $body="", $headers=array(), $timeout = 10)
     }
     else
     {
-      error_reporting($e);
+        error_reporting($e);
   		return array("error"=>"Can't connect to server [$errno].");
     }
   }
@@ -287,7 +291,7 @@ function wsd_jsonRPC($url, $method, $params, $timeout = 10)
   
   if((! array_key_exists("id", $response["body"])) || ($response["body"]["id"] != $id) )
   {
-    $GLOBALS['wsd_last_err'] = array("code" => 0, "message" => "Invalid JSONRPC response [0].");
+    $GLOBALS['wsd_last_err'] = array("code" => 0, "message" => "Invalid JSONRPC response [0]." . var_export($response, true));
     return NULL;
   }
   
@@ -483,9 +487,9 @@ function wsd_render_add_target_id()
 	<div class="wsd-inside">
 		<?php if(!empty($error)) wsd_render_error($error); ?>
 		<form action="" method="post" id="wsd_target_id_form" name="wsd_target_id_form">
-			<label for="wsd_target_update_id">Target ID:</label>
-				<input type="text" name="targetid" id="targetid"/>
-			<input type="submit" name="wsd_update_target_id" value="Update" />
+			<label for="wsd_target_update_id"><?php echo __('Target ID');?>:</label>
+				<input type="text" name="targetid" id="targetid" value="<?php echo get_option('WSD-TARGETID');?>"/>
+			<input type="submit" name="wsd_update_target_id" value="<?php echo __('Update');?>" />
 		</form>
 	</div>
   <?php
@@ -660,7 +664,7 @@ function wsd_render_target_status()
   #echo "wsd_render_target_status<br>";
   $user = get_option('WSD-USER');
   if((!is_string($user))||($user == "") ) $user = get_option("admin_email");  
-  $status = wsd_jsonRPC(WSD_URL_RPC, "cPlugin.status", array($user, get_option('WSD-TARGETID')));
+  $status = wsd_jsonRPC(WSD_URL_RPC, "cPlugin.status", array($user, get_option('WSD-TARGETID'), wsd_site_url()));
   if($status === NULL)
   {
     wsd_render_error();

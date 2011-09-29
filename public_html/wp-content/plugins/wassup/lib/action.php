@@ -106,7 +106,7 @@ if (!$hashfail) {
 		unset ($wassupurl);	//to free memory
 	}
 
-	$debug_mode=false;	//debug set below
+	$wdebug_mode=false;	//debug set below
 	//echo "Debug: Starting action.php from directory ".dirname(__FILE__).".  ABSPATH=".$wpabspath.".<br />\n"; //debug
 
 	// ### Separate "delete" action because it has no output
@@ -126,7 +126,7 @@ if (!$hashfail) {
 
 	// ### Begin actions that have output...
 	if (!empty($_GET['debug_mode'])) {
-		$debug_mode=true;
+		$wdebug_mode=true;
 		$mode_reset=ini_get('display_errors');
 		error_reporting(E_ALL);	//debug, E_STRICT=php5 only
 		ini_set('display_errors','On');	//debug
@@ -190,25 +190,25 @@ if (!$hashfail) {
 	// ACTION: SUMMARY PIE CHART - TODO
 	} elseif ($_GET['action'] == "piechart") {
 		// Prepare Pie Chart
-		$Tot = New MainItems($table_name,$from_date,$to_date);
-		$items_pie[] = $Tot->calc_tot("count", $search, "AND spam>0", "DISTINCT");
-		$items_pie[] = $Tot->calc_tot("count", $search, "AND searchengine!='' AND spam=0", "DISTINCT");
-		$items_pie[] = $Tot->calc_tot("count", $search, "AND searchengine='' AND referrer NOT LIKE '%".$this->WpUrl."%' AND referrer!='' AND spam=0", "DISTINCT");
-		$items_pie[] = $Tot->calc_tot("count", $search, "AND searchengine='' AND (referrer LIKE '%".$this->WpUrl."%' OR referrer='') AND spam=0", "DISTINCT"); ?>
+		$wTot = New WassupItems($table_name,$from_date,$to_date);
+		$items_pie[] = $wTot->calc_tot("count", $search, "AND spam>0", "DISTINCT");
+		$items_pie[] = $wTot->calc_tot("count", $search, "AND searchengine!='' AND spam=0", "DISTINCT");
+		$items_pie[] = $wTot->calc_tot("count", $search, "AND searchengine='' AND referrer NOT LIKE '%".$this->WpUrl."%' AND referrer!='' AND spam=0", "DISTINCT");
+		$items_pie[] = $wTot->calc_tot("count", $search, "AND searchengine='' AND (referrer LIKE '%".$this->WpUrl."%' OR referrer='') AND spam=0", "DISTINCT"); ?>
 		<div style="text-align: center"><img src="http://chart.apis.google.com/chart?cht=p3&amp;chco=0000ff&amp;chs=600x300&amp;chl=Spam|Search%20Engine|Referrer|Direct&amp;chd=<?php Gchart_data($items_pie, null, null, null, 'pie'); ?>" /></div>
 
 	<?php
 	// ACTION: LINE CHART - TODO
 	//} elseif ($_GET['action'] == "chart") {
-	//	$chart = mainItems::theChart($from_date,$to_date,$search);
+	//	$chart = WassupItems::theChart($from_date,$to_date,$search);
 
 	// ACTION: DISPLAY RAW RECORDS - no longer used (deprecated)
 	//} elseif ($_GET['action'] == "displayraw") {
 
 	// ACTION: SHOW TOP TEN
 	} elseif ($_GET['action'] == "topten") {
-		$top_limit=10;
-		if ($debug_mode) {
+		$top_limit=0;	//use default setting
+		if ($wdebug_mode) {
 			$title='WassUp '.__('Top Stats for Period','wassup');
 			$wdformat = get_option("date_format");
 			if (($to_date - $from_date) > 24*60*60) {
@@ -224,7 +224,7 @@ if (!$hashfail) {
 	} else {
 		echo '<span style="color:red;">Action.php '.__("ERROR: Missing or unknown parameters","wassup").', action='.attribute_escape($_GET["action"]).'</span>';
 	}  
-	if ($debug_mode) {
+	if ($wdebug_mode) {
 		if (function_exists('profiler_endSection')) {
 			profiler_endSection('(Tot)Action.php');
 			profiler_printResults();

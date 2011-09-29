@@ -585,9 +585,9 @@ function wCleanURL($url="") {
 	return $cleaned_url;
 } //end function
 
-//Output wassup records in Digg spy style...
+//Output wassup records in the old Digg spy style...
 function wassup_spiaView ($from_date="",$rows=0,$spytype="",$spy_datasource="") {
-	global $wpdb, $wp_version, $wassup_options, $debug_mode;
+	global $wpdb, $wp_version, $wassup_options, $wdebug_mode;
 
 	if (!class_exists('wassupOptions') && file_exists(dirname(__FILE__). '/wassup.class.php')) {
 		include_once(dirname(__FILE__). '/wassup.class.php');
@@ -806,25 +806,25 @@ function wGetLocationname($geoip_rec=array()) {
 
 // Geocoding location with Google Maps
 function geocodeWassUp($location, $key) {
-	global $debug_mode;
+	global $wdebug_mode;
 	//Three parts to querystring: q= address, output= format, and key
 	$address = urlencode($location);
 	$api_url = "http://maps.google.com/maps/geo?q=".$address."&output=csv&key=".$key;
 
 	/*
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $api_url);
-	curl_setopt($ch, CURLOPT_HEADER,0);
-	curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	//$ch = curl_init();
+	//curl_setopt($ch, CURLOPT_URL, $api_url);
+	//curl_setopt($ch, CURLOPT_HEADER,0);
+	//curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+	//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+	//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-	$data = curl_exec($ch);
-	curl_close($ch);
+	//$data = curl_exec($ch);
+	//curl_close($ch);
 	*/
 	$apidata = wFetchAPIData($api_url);
 	$data = explode(',',$apidata);
-	if ($debug_mode) {
+	if ($wdebug_mode) {
 		echo "\n<!--geocodeWassup data: ";
 		print_r($data);
 		echo "-->" ;
@@ -839,7 +839,7 @@ function geocodeWassUp($location, $key) {
  * @return array (ip, location, latitude, longitude, country)
  */
 function wGeolocateIP($ip) {
-	global $wpdb, $debug_mode;
+	global $wpdb, $wdebug_mode;
 
 	$wassup_settings=get_option('wassup_settings');
 	$wassup_agent = apply_filters('http_headers_useragent',"WassUp/".$wassup_settings['wassup_version']." - www.wpwp.org");
@@ -921,14 +921,14 @@ function wGeolocateIP($ip) {
  * - Helene D. 2009-03-04
  */
 function wGetStats($stat_type, $stat_limit=10, $stat_condition="") {
-	global $wpdb, $debug_mode;
+	global $wpdb, $wdebug_mode;
 
 	$wassup_settings = get_option('wassup_settings');
 	$top_ten = unserialize(html_entity_decode($wassup_settings['wassup_top10']));
 	$wpurl =  get_bloginfo('wpurl');
 	$blogurl =  get_option('home');
-	$table_name = (!empty($wassup_settings['wassup_table'])?$wassup_settings['wassup_table'] : $wpdb->prefix . "wassup");
-	$table_tmp_name = $table_name . "_tmp";
+	$wtable_name = (!empty($wassup_settings['wassup_table'])?$wassup_settings['wassup_table'] : $wpdb->prefix . "wassup");
+	$wtable_tmp_name = $wtable_name . "_tmp";
 
 	if (empty($stat_limit) || !(is_numeric($stat_limit))) {
 		$stat_limit=10;
@@ -949,17 +949,17 @@ function wGetStats($stat_type, $stat_limit=10, $stat_condition="") {
 	//get the stats data
 	//top search phrases...
 	if ($stat_type == "searches") {
-		$stat_results = $wpdb->get_results("SELECT count(search) AS top_count, search AS top_item, referrer AS top_link FROM $table_name WHERE $stat_condition AND search!='' AND spider='' GROUP BY search ORDER BY top_count DESC LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(search) AS top_count, search AS top_item, referrer AS top_link, max(`timestamp`) AS visit_timestamp FROM $wtable_name WHERE $stat_condition AND search!='' AND spider='' GROUP BY search ORDER BY top_count DESC, visit_timestamp DESC LIMIT $stat_limit");
 
 	//top external referrers...
 	} elseif ($stat_type == "referrers") {
 		//exclude internal referrals
-		$url = parse_url($blogurl);
-		$sitedomain = $url['host'];
+		$wurl = parse_url($blogurl);
+		$sitedomain = $wurl['host'];
 		$exclude_list = $sitedomain;
 		if ($wpurl != $blogurl) {
-			$url = parse_url($wpurl);
-			$wpdomain = $url['host'];
+			$wurl = parse_url($wpurl);
+			$wpdomain = $wurl['host'];
 			$exclude_list .= ",".$wpdomain;
 		}
 		//exclude external referrers
@@ -979,34 +979,39 @@ function wGetStats($stat_type, $stat_limit=10, $stat_condition="") {
 				}
 			}
 		}
-		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, LOWER(referrer) AS top_item, referrer AS top_link FROM $table_name WHERE $stat_condition AND referrer!='' AND search='' AND spider='' $exclude_referrers GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
-		if ($debug_mode) {
+		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, LOWER(referrer) AS top_item, referrer AS top_link, max(`timestamp`) AS visit_timestamp FROM $wtable_name WHERE $stat_condition AND referrer!='' AND search='' AND spider='' $exclude_referrers GROUP BY top_item ORDER BY top_count DESC, visit_timestamp DESC LIMIT $stat_limit");
+		if ($wdebug_mode) {
 			echo "\n<pre>exclude_referrers = $exclude_referrers </pre>\n";
 		}
 
 	//top url requests...
 	} elseif ($stat_type == "urlrequested") {
-		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, LOWER(REPLACE(urlrequested, '/', '')) AS top_group, LOWER(urlrequested) AS top_item, urlrequested AS top_link FROM $table_name WHERE $stat_condition GROUP BY top_group ORDER BY top_count DESC LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, LOWER(REPLACE(urlrequested, '/', '')) AS top_group, LOWER(urlrequested) AS top_item, urlrequested AS top_link, max(`timestamp`) AS visit_timestamp FROM $wtable_name WHERE $stat_condition GROUP BY top_group ORDER BY top_count DESC, visit_timestamp DESC LIMIT $stat_limit");
 
 	//top browser...
 	} elseif ($stat_type == "browser") {
-		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, SUBSTRING_INDEX(SUBSTRING_INDEX(browser, ' 0.', 1), '.', 1) AS top_item FROM $table_name WHERE $stat_condition AND `browser`!='' AND `browser` NOT LIKE 'N/A%' AND `spider`='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, SUBSTRING_INDEX(SUBSTRING_INDEX(browser, ' 0.', 1), '.', 1) AS top_item FROM $wtable_name WHERE $stat_condition AND `browser`!='' AND `browser` NOT LIKE 'N/A%' AND `spider`='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
 
 	//top os...
 	} elseif ($stat_type == "os") {
-		$stat_results = $wpdb->get_results("SELECT count(os) as top_count, `os` AS top_item FROM $table_name WHERE $stat_condition AND `os`!='' AND `os` NOT LIKE 'N/A%' AND spider='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(os) as top_count, `os` AS top_item FROM $wtable_name WHERE $stat_condition AND `os`!='' AND `os` NOT LIKE 'N/A%' AND spider='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
 
 	//top language/locale..
 	} elseif ($stat_type == "language" || $stat_type == "locale") {
-		$stat_results = $wpdb->get_results("SELECT count(LOWER(language)) as top_count, LOWER(language) as top_item FROM $table_name WHERE $stat_condition AND language!='' AND spider='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(LOWER(language)) as top_count, LOWER(language) as top_item FROM $wtable_name WHERE $stat_condition AND language!='' AND spider='' GROUP BY top_item ORDER BY top_count DESC LIMIT $stat_limit");
 
 	//top visitors...
 	} elseif ($stat_type == "visitor" || $stat_type == "visitors") {
-		$stat_results = $wpdb->get_results("SELECT count(username) as top_count, username as top_item, '1loggedin_user' as visitor_type, `timestamp` as visit_timestamp FROM $table_name WHERE $stat_condition AND username!='' GROUP BY 2 UNION SELECT count(comment_author) as top_count, comment_author as top_item, '2comment_author' as visitor_type, `timestamp` as visit_timestamp FROM $table_name WHERE $stat_condition AND username='' AND comment_author!='' GROUP BY 2 UNION SELECT count(hostname) as top_count, hostname as top_item, '3hostname' as visitor_type, `timestamp` as visit_timestamp FROM $table_name WHERE $stat_condition AND username='' AND comment_author='' AND spider='' GROUP BY 2 ORDER BY 1 DESC, 3, 2 LIMIT $stat_limit");
+		$stat_results = $wpdb->get_results("SELECT count(username) as top_count, username as top_item, '1loggedin_user' as visitor_type, max(`timestamp`) as visit_timestamp FROM $wtable_name WHERE $stat_condition AND username!='' GROUP BY 2 UNION SELECT count(comment_author) as top_count, comment_author as top_item, '2comment_author' as visitor_type, max(`timestamp`) as visit_timestamp FROM $wtable_name WHERE $stat_condition AND username='' AND comment_author!='' GROUP BY 2 UNION SELECT count(hostname) as top_count, hostname as top_item, '3hostname' as visitor_type, max(`timestamp`) as visit_timestamp FROM $wtable_name WHERE $stat_condition AND username='' AND comment_author='' AND spider='' GROUP BY 2 ORDER BY 1 DESC, 3, 2 LIMIT $stat_limit");
+
+	//top postid (post|page)
+	} elseif ($stat_type == "postid" || $stat_type == "article") {
+		$stat_results = $wpdb->get_results("SELECT count(*) AS top_count, url_wpid AS top_group, post_title AS top_item, urlrequested AS top_link, max(`timestamp`) as visit_timestamp FROM $wtable_name, {$wpdb->prefix}posts WHERE $stat_condition AND url_wpid!='' AND url_wpid!='0' AND url_wpid = {$wpdb->prefix}posts.ID GROUP BY top_group ORDER BY top_count DESC, visit_timestamp DESC LIMIT $stat_limit");
+
 	} else {
 		//TODO: check that wp_wassup.$stat_type column exist and is char
 		if (!empty($stat_type)) {
-			$stat_results = $wpdb->get_results("SELECT count($stat_type) AS top_count, `$stat_type` AS top_item FROM $table_name WHERE $stat_condition AND `$stat_type`!='' AND `$stat_type` NOT LIKE 'N/A%' GROUP BY `$stat_type` ORDER BY top_count DESC LIMIT $stat_limit");
+			$stat_results = $wpdb->get_results("SELECT count($stat_type) AS top_count, `$stat_type` AS top_item FROM $wtable_name WHERE $stat_condition AND `$stat_type`!='' AND `$stat_type` NOT LIKE 'N/A%' GROUP BY `$stat_type` ORDER BY top_count DESC LIMIT $stat_limit");
 		}
 	}
 
@@ -1023,15 +1028,16 @@ function wGetStats($stat_type, $stat_limit=10, $stat_condition="") {
  * @param string(4)
  * @return none
  */
-function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit=10,$title=false) {
+function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit=0,$title=false) {
 	global $wpdb, $wassup_options;
 	if (!class_exists('wassupOptions') && file_exists(dirname(__FILE__). '/wassup.class.php')) {
 		include_once(dirname(__FILE__). '/wassup.class.php');
 	}
 	$wassup_options = new wassupOptions;
 	$top_ten = unserialize(html_entity_decode($wassup_options->wassup_top10));
-	$table_name = (!empty($wassup_options->wassup_table)? $wassup_options->wassup_table: $wpdb->prefix . "wassup");
-	$table_tmp_name = $table_name . "_tmp";
+	if (!is_array($top_ten)) $top_ten = $wassup_options->defaultSettings("top10");
+	//$table_name = (!empty($wassup_options->wassup_table)? $wassup_options->wassup_table: $wpdb->prefix . "wassup");
+	//$table_tmp_name = $table_name . "_tmp";
 
 	$blogurl =  get_bloginfo('home');
 	$url = parse_url($blogurl);
@@ -1052,28 +1058,42 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 			$max_char_len = $max_char_len-16;
 		}
 	}
-	//#add an extra width offset when columns count < 5
+	//#add an extra width offset when columns count < 6
 	$col_count = array_sum($top_ten);
-	if ($col_count > 0 && $col_count < 5 ) {
-		$widthoffset = (($max_char_len*(5 - $col_count))/$col_count)*.4; //just a guess
+	if ($col_count > 0 && $col_count < 6 ) {
+		$widthoffset = (($max_char_len*(6 - $col_count))/$col_count)*.4; //just a guess
 	} else { 
 		$widthoffset = 0;
 	}
 	//extend page width to make room for more than 5 columns
 	$pagewidth = $wassup_options->wassup_screen_res;
-	if ($col_count > 5) {
-		$pagewidth = $pagewidth+17*($col_count-5);
+	if ($col_count > 6) {
+		$pagewidth = $pagewidth+17*($col_count-6);
+	}
+	//New in v1.8.3: top_limit in top10 array
+	if (empty($top_limit) || !is_numeric($top_limit)) {
+		if (!empty($top_ten['toplimit'])) {
+			$top_limit = (int) $top_ten['toplimit'];
+		} else {
+			$top_limit = 10;	//default
+		}
 	}
 
 	//mysql conditional query...
 	$top_condition = '`timestamp` BETWEEN '.$from_date.' AND '.$to_date;
+	if (!empty($top_ten['top_nospider'])) {
+		$top_condition .= " AND spider=''";
+	}
 	echo "\n"; ?>
 	<div id="toptenchart" style="width:auto;">
-	<table width="100%" border="0" style="margin:0; padding:0;">
+	<table width="100%">
 	<tr valign="top"><?php
 	if (!empty($title)) { ?>
 		<th colspan="<?php echo $col_count; ?>"><span style="centered"><?php echo $title; ?></span></th></tr><tr><?php 
 	}
+	//show a line# column for long data columns
+	if ($top_limit > 10) wPrintRowNums($top_limit);
+
 	//#output top 10 searches
 	if ($top_ten['topsearch'] == 1) {
 		$top_results = wGetStats("searches",$top_limit,$top_condition);
@@ -1082,12 +1102,14 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php echo _e("TOP QUERY", "wassup"); ?></li> <?php 
 		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
-			foreach ($top_results as $top10) { 
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': <a href="'.$top10->top_link.'" target="_BLANK" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</a>'; ?></li><?php
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) { 
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count, $ndigits).' <a href="'.$top10->top_link.'" target="_BLANK" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</a>'; ?></nobr></li><?php
 				$i++;
-			}
+		}
 		}
 		//finish list with empty <li> for style consistency
 		wListFiller($i,$top_limit,"charts"); ?>
@@ -1104,19 +1126,21 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<td style="min-width:<?php echo ($char_len-5); ?>px;">
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP REFERRER", "wassup"); ?></li><?php
-		 $i=0;
+		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
+			$ndigits = strlen("{$top_results[0]->top_count}");
 		foreach ($top_results as $top10) {
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': ';
-			print '<a href="'.clean_url($top10->top_link,'','url').'" title="'.attribute_escape($top10->top_link).'" target="_BLANK">';
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits);
+			echo ' <a href="'.clean_url($top10->top_link,'','url').'" title="'.attribute_escape($top10->top_link).'" target="_BLANK">';
 			//#cut http:// from displayed url and truncate
 			//#   instead of using stringShortener
-			print substr(str_replace("http://", "", attribute_escape($top10->top_item)),0,$char_len);
+			echo substr(str_replace("http://", "", attribute_escape($top10->top_item)),0,$char_len);
 			if (strlen($top10->top_item) > ($char_len + 7)) { 
-			   	print '...';
+			   	echo '...';
 			}
-			print '</a>'; ?></li><?php
+			echo '</a>'; ?></nobr></li><?php
 			$i++;
 		}
 		}
@@ -1135,17 +1159,19 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP REQUEST", "wassup"); ?></li><?php
 		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
-			foreach ($top_results as $top10) {
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': ';
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) {
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits);
 			if (strstr($top10->top_item,'[404]')) { //no link for 404 pages
-				echo '<span class="top10" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</span>';
+				echo ' <span class="top10" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</span>';
 			} else {
-				echo '<a href="'.wAddSiteurl($top10->top_link).'" target="_BLANK" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</a>';
-			} ?></li><?php
-				$i++;
-			}
+				echo ' <a href="'.wAddSiteurl($top10->top_link).'" target="_BLANK" title="'.substr($top10->top_item,0,$wassup_options->wassup_screen_res-100).'">'.stringShortener(preg_replace('/'.preg_quote($blogurl,'/').'/i', '', $top10->top_item),$char_len).'</a>';
+			} ?></nobr></li><?php
+			$i++;
+		}
 		}
 		//finish list with empty <li> for styling consistency 
 		wListFiller($i,$top_limit,"charts"); ?>
@@ -1162,13 +1188,15 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP BROWSER", "wassup") ?></li><?php
 		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
-			foreach ($top_results as $top10) {
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': ';
-				echo '<span class="top10" title="'.$top10->top_item.'">'.stringShortener($top10->top_item, $char_len).'</span>'; ?></li><?php
-				$i++;
-			}
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) {
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits);
+			echo ' <span class="top10" title="'.$top10->top_item.'">'.stringShortener($top10->top_item, $char_len).'</span>'; ?></nobr></li><?php
+			$i++;
+		}
 		}
 		//finish list with empty <li> for styling consistency 
 		wListFiller($i,$top_limit,"charts"); ?>
@@ -1185,12 +1213,14 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP OS", "wassup") ?></li><?php
 		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
-			foreach ($top_results as $top10) {
-				echo "\n"; ?>
-		<li class="charts"><?php print $top10->top_count.': '; ?><span class="top10" title="<?php echo $top10->top_item; ?>"><?php echo stringShortener($top10->top_item, $char_len); ?></span></li><?php
-				$i++;
-			}
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) {
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits); ?> <span class="top10" title="<?php echo $top10->top_item; ?>"><?php echo stringShortener($top10->top_item, $char_len); ?></span></nobr></li><?php
+			$i++;
+		}
 		}
 		//finish list with empty <li> for styling consistency 
 		wListFiller($i,$top_limit,"charts"); ?>
@@ -1207,14 +1237,16 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP LOCALE", "wassup"); ?></li><?php
 		$i=0;
+		$ndigits=1;
 		if (count($top_results) >0) {
-			foreach ($top_results as $top10) {
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': ';
-			echo '<img src="'.WASSUPURL.'/img/flags/'.strtolower($top10->top_item).'.png" alt="" />'; ?>
-			<span class="top10" title="<?php echo $top10->top_item; ?>"><?php echo $top10->top_item; ?></span></li><?php
-				$i++;
-			}
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) {
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits);
+			echo ' <img src="'.WASSUPURL.'/img/flags/'.strtolower($top10->top_item).'.png" alt="" />'; ?>
+			<span class="top10" title="<?php echo $top10->top_item; ?>"><?php echo $top10->top_item; ?></span></nobr></li><?php
+			$i++;
+		}
 		}
 		//finish list with empty <li> for styling consistency 
 		wListFiller($i,$top_limit,"charts"); ?>
@@ -1231,29 +1263,67 @@ function wassup_top10view ($from_date="",$to_date="",$max_char_len="",$top_limit
 		<ul class="charts">
 		<li class="chartsT"><?php _e("TOP VISITOR", "wassup"); ?></li><?php 
 		$i=0;
+		$ndigits=1;
 		if (count($top_results)>0) {
-			foreach ($top_results as $top10) { 
-				if ($top10->visitor_type == "1loggedin_user")
-					$uclass=" userslogged";
-				elseif ($top10->visitor_type == "2comment_author")
-					$uclass=" users";
-				else
-					$uclass="";
-				echo "\n"; ?>
-		<li class="charts"><?php echo $top10->top_count.': <span class="top10'.$uclass.'" title="'.$top10->top_item.'">'.stringShortener($top10->top_item, $char_len).'</span>'; ?></li><?php
-				$i++;
-			} //end loop
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) { 
+			if ($top10->visitor_type == "1loggedin_user")
+				$uclass=" userslogged";
+			elseif ($top10->visitor_type == "2comment_author")
+				$uclass=" users";
+			else
+				$uclass="";
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits).' <span class="top10'.$uclass.'" title="'.$top10->top_item.'">'.stringShortener($top10->top_item, $char_len).'</span>'; ?></nobr></li><?php
+			$i++;
+		} //end loop
 		}
 		//finish list with empty <li> for styling consistency 
 		wListFiller($i,$top_limit,"charts"); ?>
 		</ul>
 		</td>
 <?php	} // end if topvisitor
+
+	//#output top article (post|page by id)
+	if ($top_ten['toppostid'] == 1) {
+		echo "\n<!--heartbeat-->";
+		$top_results = wGetStats("postid",$top_limit,$top_condition);
+		$char_len = round(($max_char_len*.28)+$widthoffset,0); ?>
+		<td style="min-width:<?php echo ($char_len-5); ?>px;">
+		<ul class="charts">
+		<li class="chartsT"><?php _e("TOP ARTICLE", "wassup"); ?></li><?php
+		$i=0;
+		$ndigits=1;
+		if (count($top_results) >0) {
+			$ndigits = strlen("{$top_results[0]->top_count}");
+		foreach ($top_results as $top10) {
+			echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($top10->top_count,$ndigits);
+			echo ' <a href="'.wAddSiteurl($top10->top_link).'" target="_BLANK" title="'.$top10->top_item.'">'.stringShortener($top10->top_item,$char_len).'</a>'; ?> </nobr></li><?php
+			$i++;
+		}
+		}
+		//finish list with empty <li> for styling consistency 
+		wListFiller($i,$top_limit,"charts"); ?>
+		</ul>
+		</td><?php 
+	} // end if toppost
+	//show a line# column for long data columns
+	if ($top_limit > 10 && $col_count > 6) {
+		wPrintRowNums($top_limit);
+	}
 	?></tr>
-	</table><?php 
-	if ($wassup_options->wassup_spamcheck == 1) { ?>
-	<br/><span style="font-size:6pt;">* <?php _e("This report excludes Spam records","wassup"); ?></span><?php
-	} ?>
+	</table>
+	<span style="font-size:7pt;"> <?php 
+	if ($wassup_options->wassup_spamcheck == 1 || !empty($top_ten['top_nospider'])) { ?><br/>*<?php
+		if ($wassup_options->wassup_spamcheck == 1 && !empty($top_ten['top_nospider'])) {
+			_e("This report excludes spam and spider records","wassup");
+		} elseif (!empty($top_ten['top_nospider'])) {
+			_e("This report excludes spider records","wassup");
+		} else {
+			_e("This report excludes spam records","wassup");
+		}
+	} ?> </span>
 	</div> <?php
 } //end wassup_top10view
 
@@ -1266,23 +1336,60 @@ function wListFiller($li_count=0,$li_limit=10,$li_class="charts") {
 		}
 	}
 } //end wListFiller
+/*
+ * print a table column with line number rows from 1 to "$top_limit"
+ * @param integer
+ * @output html
+ * @return none
+ */
+function wPrintRowNums($top_limit=10) {
+	$ndigits = strlen("{$top_limit}");
+	echo "\n"; ?>
+		<td style="min-width:8px;">
+		<ul class="charts rownums">
+		<li class="chartsT">&nbsp;</li><?php
+	for ($i=1; $i<= $top_limit; $i++) {
+		echo "\n"; ?>
+		<li class="charts"><nobr><?php echo wPadNum($i, $ndigits); ?></nobr></li><?php
+	} ?>
+		</td><?php
+} //end function
 
-// How many digits have an integer
-function digit_count($n, $base=10) {
-  if($n == 0) return 1;
-  if($base == 10) {
-    # using the built-in log10(x)
-    # might be more accurate than log(x)/log(10).
-    return 1 + floor(log10(abs($n)));
-  }else{
-    # here  logB(x) = log(x)/log(B) will have to do.
-   return 1 + floor(log(abs($n))/ log($base));
-  }
+/**
+ * return html code to pad an integer ($li_number) with spaces to match a
+ * width of $li_width
+ * @param integer (2)
+ * @return string (html)
+ */
+function wPadNum($li_number, $li_width=1) {
+	$numstr = (int)$li_number;
+	$ndigits = strlen("$numstr");
+	$padding = '';
+	if ($ndigits < $li_width) {
+		for ($i=$ndigits; $i < $li_width; $i++) $padding .= '&nbsp;';
+	}
+	$padhtml = '<span class="fixed">'."$padding{$numstr}</span>";
+	return ($padhtml);
 }
+
+// How many digits have an integer -- quicker to use 'strlen' function
+// function digit_count($n, $base=10) {
+//  if($n == 0) return 1;
+//  if($base == 10) {
+//    # using the built-in log10(x)
+//    # might be more accurate than log(x)/log(10).
+//    return 1 + floor(log10(abs($n)));
+//  }else{
+//    # here  logB(x) = log(x)/log(B) will have to do.
+//   return 1 + floor(log(abs($n))/ log($base));
+//  }
+//}
 
 //Round the integer to the next near 10
 function roundup($value) {
-	$dg = digit_count($value);
+	//$dg = digit_count($value);
+	$numstr = (int)$value;
+	$dg = strlen("$numstr");
 	if ($dg <= 2) {
 		$dg = 1;
 	} else {
@@ -1292,7 +1399,7 @@ function roundup($value) {
 }
 
 function Gchart_data($Wvisits, $pages=null, $atime=null, $type, $charttype=null, $axes=null, $chart_loc=null) {
-	global $debug_mode;
+	global $wdebug_mode;
 	$chartAPIdata = false;
 // Port of JavaScript from http://code.google.com/apis/chart/
 // http://james.cridland.net/code
@@ -1373,7 +1480,7 @@ function Gchart_data($Wvisits, $pages=null, $atime=null, $type, $charttype=null,
 } //end function
 
 // Used to show main visitors details query, to count items and to extract data for main chart
-class MainItems {
+class WassupItems {
 	// declare variables
         var $tableName;
         var $from_date;
@@ -1386,8 +1493,8 @@ class MainItems {
 	var $WpUrl;
 
 	/* Constructor */
-	function mainitems($table_name,$date_from,$date_to,$whereis=null,$limit=null) {
-		global $wpdb, $wassup_options, $debug_mode;
+	function wassupitems($table_name,$date_from,$date_to,$whereis=null,$limit=null) {
+		global $wpdb, $wassup_options, $wdebug_mode;
 		if (empty($wassup_options->wassup_table)) {
 			$wassup_options = new wassupOptions;
 		}
@@ -1420,7 +1527,7 @@ class MainItems {
 	/* Methods */
 	// Function to show main query and count items
         function calc_tot($Type, $Search="", $specific_where_clause=null, $distinct_type=null) {
-		global $wpdb, $wassup_options, $debug_mode;
+		global $wpdb, $wassup_options, $wdebug_mode;
 
                 $this->ItemsType = $Type;
 		$this->searchString = $Search;
@@ -1443,7 +1550,7 @@ class MainItems {
 			//main query
 			//  - retrieve one row per wassup_id with timestamp = max(timestamp) (ie. latest record)
 			// "sql_buffer_result" select option helps in cases where it takes a long time to retrieve results.  -Helene D. 2/29/09
-			$qry = sprintf("SELECT SQL_BUFFER_RESULT *, max(`timestamp`) as max_timestamp, count(wassup_id) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY wassup_id ORDER BY max_timestamp DESC %s",
+			$qry = sprintf("SELECT SQL_BUFFER_RESULT *, max(`timestamp`) as max_timestamp, min(`timestamp`) as min_timestamp, count(wassup_id) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY wassup_id ORDER BY max_timestamp DESC %s",
 				$this->tableName,
 				$this->from_date, 
 				$ss,
@@ -1451,7 +1558,7 @@ class MainItems {
 				$this->Limit);
 			$results = $wpdb->get_results($qry);
 			if (empty($results) || !is_array($results)) { //try without buffer
-				$qry = sprintf("SELECT *, max(`timestamp`) as max_timestamp, count(wassup_id) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY wassup_id ORDER BY max_timestamp DESC %s",
+				$qry = sprintf("SELECT *, max(`timestamp`) as max_timestamp, min(`timestamp`) as min_timestamp, count(wassup_id) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY wassup_id ORDER BY max_timestamp DESC %s",
 					$this->tableName,
 					$this->from_date, 
 					$ss,
@@ -1475,7 +1582,7 @@ class MainItems {
 			break;
 		case "main-ip":		//TODO
 			// These are the queries to count the hits/pages/spam by ip
-			$qry = sprintf("SELECT *, max(`timestamp`) as max_timestamp, count(`ip`) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY ip ORDER BY max_timestamp DESC %s",
+			$qry = sprintf("SELECT *, max(`timestamp`) as max_timestamp, min(`timestamp`) as min_timestamp, count(`ip`) as page_hits FROM %s WHERE `timestamp` >= %s %s %s GROUP BY ip ORDER BY max_timestamp DESC %s",
 					$this->tableName,
 					$this->from_date, 
 					$ss,
@@ -1505,7 +1612,7 @@ class MainItems {
 	// $Res = resolution
 	// $Search = string to add to where clause
         function TheChart($Ctype, $Res, $chart_height, $Search="", $axes_type, $chart_bg, $chart_loc="page", $chart_group="") {
-		global $wpdb, $wassup_options, $debug_mode;
+		global $wpdb, $wassup_options, $wdebug_mode;
 
 		$mysqlversion=substr(mysql_get_server_info(),0,3);
 		$cache_table = (!empty($wassup_options->wassup_table)?$wassup_options->wassup_table."_meta":$wpdb->prefix."wassup_meta");
@@ -1528,7 +1635,7 @@ class MainItems {
 			if (count($chart_cache)>0 && !empty($wassup_cache[0]->meta_value)) {
 				$chart_url = html_entity_decode($wassup_cache[0]->meta_value);
 				$cache_id = $wassup_cache[0]->meta_id;
-				if ($debug_mode) {
+				if ($wdebug_mode) {
 					echo "\n<!-- Cached chart found. cache_id=$cache_id -->\n";
 				}
 			}
@@ -1704,7 +1811,7 @@ class MainItems {
 					$tlabel[] = gmdate($wp_timeformat,$x_timestamp);
 				}
 			}
-			if ($debug_mode) {
+			if ($wdebug_mode) {
 				echo "\n<!-- \$x-points= ".implode("|",$tlabel)."\n";
 				echo " \$tgroup=".implode("|",$tgroup)."-->";
 			}
@@ -1730,7 +1837,7 @@ class MainItems {
 			$this->whereis,
 			$ss); 
 		}
-		if ($debug_mode) {
+		if ($wdebug_mode) {
 			echo "\n<!-- \$query= $qry-->\n";
 		}
 		$qry_result = $wpdb->get_results($qry,ARRAY_A);
@@ -1769,7 +1876,7 @@ class MainItems {
 			//prune overcrowded x-axis labels //TODO
 			//if (count($x_label) > 20 && $chart_width < 1000) {
 			//}
-			if ($debug_mode) {
+			if ($wdebug_mode) {
 				echo "\n<!-- \$x-group= ".implode("|",$x_group);
 				echo "\n \$x-labels= ".implode("|",$x_label)."-->\n";
 			}
@@ -1843,7 +1950,7 @@ class MainItems {
 		return $ss;
 	} //end function buildSearch
 
-} //end class mainItems
+} //end class WassupItems
 
 // Class to check if a previous comment with a specific IP was detected as SPAM by Akismet default plugin
 class wassup_checkComment {
@@ -1945,7 +2052,7 @@ class wcURL {
  * @since v1.8
  */
 function wFetchAPIData($api_url) {
-	global $debug_mode;
+	global $wdebug_mode;
 
 	$wassup_settings=get_option('wassup_settings');
 	$wassup_agent = apply_filters('http_headers_useragent',"WassUp/".$wassup_settings['wassup_version']." - www.wpwp.org");
@@ -1985,7 +2092,7 @@ function wFetchAPIData($api_url) {
 		}
 		$api_method='file_get_contents';	//debug
 	}
-	if ($debug_mode) {
+	if ($wdebug_mode) {
 		echo "\n<!-- <br>API Fetch using $api_method data: "; //debug
 		print_r($apidata);
 		echo "-->\n";

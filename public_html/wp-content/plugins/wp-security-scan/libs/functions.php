@@ -1,19 +1,37 @@
 <?php
 
-function make_seed() {
-  list($usec, $sec) = explode(' ', microtime());
-  return (float) $sec + ((float) $usec * 100000);
-}
+if (!function_exists('make_seed')) :
+	/**
+	 * @public
+	 * Create a number
+	 * @return double
+	 */
+    function make_seed()
+    {
+        list($usec, $sec) = explode(' ', microtime());
+        return (float)$sec + ((float)$usec * 100000);
+    }
+endif;
 
-function make_password($password_length){
-srand(make_seed());
-$alfa = "!@123!@4567!@890qwer!@tyuiopa@!sdfghjkl@!zxcvbn@!mQWERTYUIO@!PASDFGH@!JKLZXCVBNM!@";
-$token = "";
-for($i = 0; $i < $password_length; $i ++) {
-  $token .= $alfa[rand(0, strlen($alfa))];
-}
-return $token;
-}
+
+if (!function_exists('make_password')) :
+	/**
+	 * @public
+	 * @uses make_seed()
+	 * Generate a strong password
+	 * @return string
+	 */
+    function make_password($password_length)
+    {
+        srand(make_seed());
+        $alfa = "!@123!@4567!@890qwer!@tyuiopa@!sdfghjkl@!zxcvbn@!mQWERTYUIO@!PASDFGH@!JKLZXCVBNM!@";
+        $token = "";
+        for($i = 0; $i < $password_length; $i ++) {
+          $token .= $alfa[rand(0, strlen($alfa))];
+        }
+        return $token;
+    }
+endif;
 
 function check_perms($name,$path,$perm)
 {
@@ -183,8 +201,8 @@ function wsd_wpConfigCheckPermissions($wpConfigFilePath)
  */
 function wsd_getDbUserRights()
 {
+/*
     global $wpdb;
-    
     $rights = $wpdb->get_results("SHOW GRANTS FOR '".DB_USER."'@'".DB_HOST."'", ARRAY_N);
     $rightsenough = $rightstomuch = false;
 
@@ -207,8 +225,45 @@ function wsd_getDbUserRights()
         'rightsEnough' => $rightsenough,
         'rightsTooMuch' => $rightstomuch,
     );    
-}
+ */
+    global $wpdb;
 
+    $rightsenough = $rightstoomuch = false;
+    $data = array(
+        'rightsEnough' => false,
+        'rightsTooMuch' => false
+    );
+
+//@ $r1 09/12/2011 {c} $
+
+    $rights = $wpdb->get_results("SHOW PRIVILEGES", ARRAY_N);
+
+    if (empty($rights)) { return $data; }
+
+    $_tooManyRights = array('CREATE','DELETE','DROP','EVENT','EXECUTE','FILE','GRANT','PROCESS','RELOAD','SHUTDOWN','SUPER');
+    $numRights = 0;
+    foreach ($rights as $right)
+    {
+        if (! empty($right[0]))
+        {
+            $_right = strtoupper($right[0]);
+            if ('ALTER' == $_right) {
+                $rightsenough = true;
+            }
+            if (in_array($_right, $tooManyRights)) {
+                $numRights += 1;
+            }
+        }
+    }
+    if ($numRights >= 5) {
+        $rightstoomuch = true;
+    }
+
+    return array(
+        'rightsEnough' => $rightsenough,
+        'rightsTooMuch' => $rightstoomuch,
+    );    
+}
 
 
 /**
@@ -510,11 +565,4 @@ function wsd_eInfo($infoMessage, $alertType = 'notify')
 {
     return ('<p class="wsd_user_'.$alertType.'">'.$infoMessage.'</p>');
 }
-
-
-
-
-
-
-
 ?>

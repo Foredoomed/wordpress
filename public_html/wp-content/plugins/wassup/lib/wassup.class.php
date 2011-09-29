@@ -10,7 +10,7 @@ if (!class_exists('wassupOptions')) {
  *   Contains variables and methods used to set or change wassup 
  *   settings in Wordpress' wp_options table and to output those
  *   values for use in forms. 
- * @author: Helene Duncker. 2/24/08, 6/21/09, 2009-11-15
+ * @author: Helene Duncker. 2/24/08, 6/21/09, 2009-11-15, 2011-04-17
  */
 class wassupOptions {
 	/* general/detail settings */
@@ -21,12 +21,13 @@ class wassupOptions {
 	var $wassup_default_type = "";	
 	var $wassup_default_spy_type = "";
 	var $wassup_default_limit = "10";
-	var $wassup_top10 ;	//array containg top ten preferences
+	var $wassup_top10 ;	//array containg top stats preferences
 	var $wassup_dashboard_chart;	
 	var $wassup_geoip_map;	
 	var $wassup_googlemaps_key;
+	var $wassup_spy_speed = "5000";	//New in 1.8.3
 	var $wassup_time_format;
-	var $wassup_time_period; //new in 1.8 - for visitor details default date/time range
+	var $wassup_time_period;	//since 1.8 - visitor details default range
 
 	/* recording settings */
 	var $wassup_active = "1";	
@@ -45,9 +46,9 @@ class wassupOptions {
         var $wassup_refspam;
 
 	/* table/file management settings */
-	//var $wassup_savepath; //deprecated
+	//var $wassup_savepath;	//deprecated
 	var $delete_auto;
-	var $delete_filter;	//new in 1.8 for deleting select records
+	var $delete_filter;	//since 1.8 - auto delete select records
 	var $wassup_remind_mb;
 	var $wassup_remind_flag;
 	var $wassup_uninstall;	//for complete uninstall of wassup
@@ -55,7 +56,7 @@ class wassupOptions {
 	var $wassup_version;	//since 1.7 - revision# for wassup updates
 	var $wassup_table;	//since 1.7.2 - WassUp table name
 	var $wassup_dbengine;	//since 1.7.2 - MySQL table engine type
-	var $wassup_cache;	//new in 1.8 for using wassup_meta table as cache
+	var $wassup_cache;	//since 1.8 - use wassup_meta table as cache
 
 	/* chart display settings */
 	var $wassup_chart;
@@ -77,7 +78,7 @@ class wassupOptions {
 	var $wassup_widget_chars;
 
 	/* temporary action settings */
-	var $wassup_alert_message;	//used to display alerts
+	var $wassup_alert_message;	//to display alerts
 	var $wmark;
 	var $wip;
 	var $whash = "";	//wp_hash value used by action.php
@@ -101,8 +102,19 @@ class wassupOptions {
 	 * @param none
 	 * @return array
 	 */
-	function defaultSettings() {
+	function defaultSettings($dsetting="") {
 		global $wpdb;
+		$top10 = array(	"toplimit"=>"10",	//new in 1.8.3 - top stats list size
+				"topsearch"=>"1",
+				"topreferrer"=>"1",
+				"toprequest"=>"1",
+				"topbrowser"=>"1",
+				"topos"=>"1",
+				"toplocale"=>"0",
+				"topvisitor"=>"0",
+				"toppostid"=>"0",	//new in v1.8.3 - top article by post-id
+				"topreferrer_exclude"=>"",
+				"top_nospider"=>"0");	//new in v1.8.3 - exclude spiders from top stats
 		$defaults = array(
 			'wassup_active'		=>"1",
 			'wassup_loggedin'	=>"1",
@@ -132,6 +144,7 @@ class wassupOptions {
 			'wassup_dashboard_chart'=>"0",
 			'wassup_geoip_map'	=>"0",
 			'wassup_googlemaps_key'	=>"",
+			'wassup_spy_speed'	=>"5000",
 			'wassup_time_format'	=>"24",
 			'wassup_time_period'	=>"1",
 			'wassup_widget_title'	=>"Visitors Online",
@@ -150,17 +163,17 @@ class wassupOptions {
 			'wassup_alert_message'	=>"",
 			'wassup_uninstall'	=>"0",
 			'wassup_optimize'	=>current_time('timestamp'),
-			'wassup_top10'	=>attribute_escape(serialize(array(
-					"topsearch"=>"1",
-					"topreferrer"=>"1",
-					"toprequest"=>"1",
-					"topbrowser"=>"1",
-					"topos"=>"1",
-					"toplocale"=>"0",
-					"topvisitor"=>"0",
-					"topfeed"=>"0",
-					"topcrawler"=>"0",
-					"topreferrer_exclude"=>""))),
+			'wassup_top10'	=>attribute_escape(serialize($top10)),
+//					"topsearch"=>"1", - moved
+//					"topreferrer"=>"1", - moved
+//					"toprequest"=>"1", - moved
+//					"topbrowser"=>"1", - moved
+//					"topos"=>"1", - moved
+//					"toplocale"=>"0", - moved
+//					"topvisitor"=>"0", - moved
+//					"topfeed"=>"0", - moved
+//					"topcrawler"=>"0", - moved
+//					"topreferrer_exclude"=>""))), - moved
 			'whash' 	=>$this->get_wp_hash(),
 			'wassup_version'=>"",
 			'wassup_table'  =>$wpdb->prefix . "wassup",
@@ -177,7 +190,18 @@ class wassupOptions {
 		if (!empty($this->wassup_table)) {
 			$defaults['wassup_table']= $this->wassup_table;
 		}
-		return $defaults;
+		//New in 1.8.3: return a single default value when function argument given
+		if (!empty($dsetting)) {
+			if ($dsetting == "top10" || $dsetting == "wassup_top10" || $dsetting == "top_stats") {
+				return ($top10);
+			} elseif (!empty($defaults[$dsetting])) {
+				return ($defaults[$dsetting]);
+			} else {
+				return (null);
+			}
+		} else { 
+			return($defaults);
+		};
 	} //end defaultSettings
 
 	//#Load class variables with array parameter or current options
